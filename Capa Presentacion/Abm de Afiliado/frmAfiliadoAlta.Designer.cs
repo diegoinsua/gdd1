@@ -333,7 +333,7 @@
             this.btn_Limpiar.TabIndex = 8;
             this.btn_Limpiar.Text = "Limpiar";
             this.btn_Limpiar.UseVisualStyleBackColor = true;
-            
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click_1);
             // 
             // btn_Guardar
             // 
@@ -343,8 +343,9 @@
             this.btn_Guardar.TabIndex = 9;
             this.btn_Guardar.Text = "Guardar";
             this.btn_Guardar.UseVisualStyleBackColor = true;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
-            // Alta_Afiliado
+            // frmAfiliadoAlta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -356,7 +357,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Alta_Afiliado";
+            this.Name = "frmAfiliadoAlta";
             this.Text = "Alta de Afiliado";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
