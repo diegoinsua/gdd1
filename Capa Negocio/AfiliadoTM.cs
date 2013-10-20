@@ -16,6 +16,10 @@ namespace Clinica_frba.CapaNegocio
         public AfiliadoTDG() { afiliadoTDG = new CapaDatos.AfiliadoTDG(); }
        
         // Métodos
+        public static void procesar_AltaAfiliado(DataRow registros_NewAfiliado) {
+        // COMPLETAR
+        }
+        
         public DataSet getAfiliadoById(int idAfiliado)
         {
             DataSet afiliado = afiliadoTDG.getAfiliadoById(idAfiliado);

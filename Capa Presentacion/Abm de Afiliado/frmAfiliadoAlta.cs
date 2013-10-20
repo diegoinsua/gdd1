@@ -34,7 +34,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btn_Guardar_Click(object sender, EventArgs e)
@@ -46,27 +46,27 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
 
             dataTableAuxiliar.Columns.Add("Nombre", typeof(string));
             dataTableAuxiliar.Columns.Add("Apellido", typeof(string));
-            dataTableAuxiliar.Columns.Add("DNI", typeof(int));
+            dataTableAuxiliar.Columns.Add("DNI", typeof(Int32));
             dataTableAuxiliar.Columns.Add("Sexo", typeof(char));
             dataTableAuxiliar.Columns.Add("Fecha", typeof(string));
             dataTableAuxiliar.Columns.Add("Direccion", typeof(string));
-            dataTableAuxiliar.Columns.Add("Telefono", typeof(int));
+            dataTableAuxiliar.Columns.Add("Telefono", typeof(Int32));
             dataTableAuxiliar.Columns.Add("Mail", typeof(string));
             dataTableAuxiliar.Columns.Add("Estado_Civil", typeof(string));
-            dataTableAuxiliar.Columns.Add("Hijos", typeof(int));
-            dataTableAuxiliar.Columns.Add("Acargo", typeof(int));
-            dataTableAuxiliar.Columns.Add("Plan", typeof(int));
+            dataTableAuxiliar.Columns.Add("Hijos", typeof(Int16));
+            dataTableAuxiliar.Columns.Add("Acargo", typeof(Int16));
+            dataTableAuxiliar.Columns.Add("Plan", typeof(Int32));
 
             //AGREO A LA FILA LA INFO DE LOS DISTINTOS CONTROLES
             dataTableAuxiliar.Rows.Add(txt_Nombre.Text, txt_Apellido.Text, mtx_DNI.Text,
                     cmb_Sexo.Text, mtx_FecNacimiento.Text, txt_Direccion.Text, mtx_Telefono.Text,
                            txt_Mail.Text, cmb_EstCivil.Text, mtx_Hijos.Text,
                                 mtx_aCargo.Text, mtx_Plan.Text);
-            
+
             //OBTENGO LA PRIMERA FILA DE LA TABLA AUXILIAR
             DataRow row = dataTableAuxiliar.Rows[0];
-           
-           //DE PRUEBA MUESTRA LOS DATOS CARGADOS EN LA TABLA AUXILIAR
+
+            //DE PRUEBA MUESTRA LOS DATOS CARGADOS EN LA TABLA AUXILIAR
             MessageBox.Show(row[1].ToString());
             MessageBox.Show(row[2].ToString());
             MessageBox.Show(row[3].ToString());
@@ -78,7 +78,10 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
             MessageBox.Show(row[9].ToString());
             MessageBox.Show(row[10].ToString());
             MessageBox.Show(row[11].ToString());
-                       
+
+            //LLAMA A LA FUNCION EN LA CAPA DE NEGOCIO
+            //AFILIADO TM
+            Clinica_frba.CapaNegocio.AfiliadoTM.procesar_AltaAfiliado(row);
         }
 
         private void btn_Limpiar_Click_1(object sender, EventArgs e)
@@ -88,6 +91,6 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
             cmb_EstCivil.SelectedIndex = -1; mtx_Hijos.Clear(); mtx_aCargo.Clear(); mtx_Plan.Clear();
         }
 
-       
+
     }
 }

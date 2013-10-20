@@ -130,11 +130,10 @@
             // mtx_DNI
             // 
             this.mtx_DNI.Location = new System.Drawing.Point(61, 65);
-            this.mtx_DNI.Mask = "99999";
+            this.mtx_DNI.Mask = "99999999";
             this.mtx_DNI.Name = "mtx_DNI";
             this.mtx_DNI.Size = new System.Drawing.Size(110, 20);
             this.mtx_DNI.TabIndex = 4;
-            this.mtx_DNI.ValidatingType = typeof(int);
             // 
             // lbl_Apellido
             // 
@@ -212,11 +211,10 @@
             // mtx_Telefono
             // 
             this.mtx_Telefono.Location = new System.Drawing.Point(58, 35);
-            this.mtx_Telefono.Mask = "99999";
+            this.mtx_Telefono.Mask = "999999999999";
             this.mtx_Telefono.Name = "mtx_Telefono";
             this.mtx_Telefono.Size = new System.Drawing.Size(110, 20);
             this.mtx_Telefono.TabIndex = 6;
-            this.mtx_Telefono.ValidatingType = typeof(int);
             // 
             // lbl_Direccion
             // 
