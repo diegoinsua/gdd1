@@ -15,17 +15,16 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
             InitializeComponent();
         }
 
-
-        // Eventos
-    
-
-
-       
-
         private void btnAlta_Click(object sender, EventArgs e)
         {
             frmProfesionalAlta frmAlta = new frmProfesionalAlta();
             this.ShowABM(frmAlta);
+        }
+
+        private void btnBaja_Click(object sender, EventArgs e)
+        {
+            frmProfesionalBaja frmBaja = new frmProfesionalBaja();
+            this.ShowABM(frmBaja);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -34,22 +33,10 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
             this.ShowABM(frmModificar);
         }
 
-        private void btnBaja_Click(object sender, EventArgs e)
-        {
-            
-             
-           
-            frmProfesionalBaja frmBaja = new frmProfesionalBaja();
-            this.ShowABM(frmBaja);
-     
-        }
 
-      
+        // Eventos
+    
 
-      
 
-       
-
-      
     }
 }

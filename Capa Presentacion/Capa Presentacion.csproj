@@ -74,17 +74,17 @@
     <Compile Include="Abm de Afiliado\frmAfiliadoModificar_Baja.Designer.cs">
       <DependentUpon>frmAfiliadoModificar_Baja.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abm de Profesional\frmProfesionalAlta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Abm de Profesional\frmProfesionalAlta.Designer.cs">
-      <DependentUpon>frmProfesionalAlta.cs</DependentUpon>
-    </Compile>
     <Compile Include="Abm de Profesional\frmProfesionalABM.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Abm de Profesional\frmProfesionalABM.Designer.cs">
       <DependentUpon>frmProfesionalABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abm de Profesional\frmProfesionalAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm de Profesional\frmProfesionalAlta.Designer.cs">
+      <DependentUpon>frmProfesionalAlta.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm de Profesional\frmProfesionalBaja.cs">
       <SubType>Form</SubType>
@@ -203,11 +203,11 @@
     <EmbeddedResource Include="Abm de Afiliado\frmAfiliadoModificar_Baja.resx">
       <DependentUpon>frmAfiliadoModificar_Baja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Abm de Profesional\frmProfesionalAlta.resx">
-      <DependentUpon>frmProfesionalAlta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Abm de Profesional\frmProfesionalABM.resx">
       <DependentUpon>frmProfesionalABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm de Profesional\frmProfesionalAlta.resx">
+      <DependentUpon>frmProfesionalAlta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Abm de Profesional\frmProfesionalBaja.resx">
       <DependentUpon>frmProfesionalBaja.cs</DependentUpon>

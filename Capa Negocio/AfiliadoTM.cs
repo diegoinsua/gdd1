@@ -7,13 +7,13 @@ using System.Data;
 
 namespace Clinica_frba.CapaNegocio
 {
-    class AfiliadoTM
+    public class AfiliadoTM
     {
         // Atributos
         CapaDatos.AfiliadoTDG afiliadoTDG; // Del tipo AfiliadoTDG, clase que se encuentra en la Capa de Datos
 
         // Constructor 
-        public AfiliadoTDG() { afiliadoTDG = new CapaDatos.AfiliadoTDG(); }
+        public AfiliadoTM() { afiliadoTDG = new CapaDatos.AfiliadoTDG(); }
        
         // Métodos
         public DataSet getAfiliadoById(int idAfiliado)
