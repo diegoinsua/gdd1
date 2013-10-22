@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Clinica_frba.CapaNegocio
 {
@@ -45,6 +46,7 @@ namespace Clinica_frba.CapaNegocio
         public static void procesar_AltaAfiliado(DataRow row)
         {
  	        //COMPLETAR
+            MessageBox.Show("Debug: se llamó a procesar Alta Afiliado Capa Negocio");
         }
     }
 }
