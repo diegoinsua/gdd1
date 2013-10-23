@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDNI = new System.Windows.Forms.TextBox();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.lbl_Sexo = new System.Windows.Forms.Label();
             this.lbl_FecNacimiento = new System.Windows.Forms.Label();
@@ -39,20 +40,20 @@
             this.lbl_Nombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lbl_Mail = new System.Windows.Forms.Label();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.lbl_Tel = new System.Windows.Forms.Label();
             this.lbl_Direccion = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
             this.txtMatriculaNumero = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -77,6 +78,14 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Location = new System.Drawing.Point(61, 84);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(89, 20);
+            this.txtDNI.TabIndex = 12;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // cmbSexo
             // 
@@ -179,6 +188,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de Cóntacto";
             // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(61, 54);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(89, 20);
+            this.txtTelefono.TabIndex = 13;
+            // 
             // lbl_Mail
             // 
             this.lbl_Mail.AutoSize = true;
@@ -226,7 +242,6 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.cmbEspecialidad);
-            this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.txtMatriculaNumero);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.ForeColor = System.Drawing.Color.RoyalBlue;
@@ -236,33 +251,6 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos Profesionales";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(11, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Matrícula Nº";
-            // 
-            // txtMatriculaNumero
-            // 
-            this.txtMatriculaNumero.Location = new System.Drawing.Point(84, 54);
-            this.txtMatriculaNumero.Name = "txtMatriculaNumero";
-            this.txtMatriculaNumero.Size = new System.Drawing.Size(209, 20);
-            this.txtMatriculaNumero.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(11, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Especialidad";
             // 
             // cmbEspecialidad
             // 
@@ -275,20 +263,33 @@
             this.cmbEspecialidad.Size = new System.Drawing.Size(139, 21);
             this.cmbEspecialidad.TabIndex = 9;
             // 
-            // txtDNI
+            // txtMatriculaNumero
             // 
-            this.txtDNI.Location = new System.Drawing.Point(61, 84);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(89, 20);
-            this.txtDNI.TabIndex = 12;
-            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
+            this.txtMatriculaNumero.Location = new System.Drawing.Point(84, 54);
+            this.txtMatriculaNumero.Name = "txtMatriculaNumero";
+            this.txtMatriculaNumero.Size = new System.Drawing.Size(209, 20);
+            this.txtMatriculaNumero.TabIndex = 8;
+            this.txtMatriculaNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatriculaNumero_KeyPress);
             // 
-            // txtTelefono
+            // label3
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(61, 54);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(89, 20);
-            this.txtTelefono.TabIndex = 13;
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(11, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Especialidad";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(11, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Matrícula Nº";
             // 
             // btnGuardar
             // 
@@ -298,28 +299,36 @@
             this.btnGuardar.TabIndex = 12;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // button1
+            // btnLimpiar
             // 
-            this.button1.Location = new System.Drawing.Point(12, 385);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Limpiar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Location = new System.Drawing.Point(12, 385);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 13;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmProfesionalAlta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 474);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmProfesionalAlta";
             this.Text = "Alta Profesional";
+            this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Controls.SetChildIndex(this.groupBox2, 0);
+            this.Controls.SetChildIndex(this.groupBox3, 0);
+            this.Controls.SetChildIndex(this.btnGuardar, 0);
+            this.Controls.SetChildIndex(this.btnLimpiar, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -356,7 +365,7 @@
         private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLimpiar;
 
 
     }

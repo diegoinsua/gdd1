@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 {
-    public partial class frmProfesionalBaja : Form
+    public partial class frmProfesionalBaja : frmBase
     {
         public frmProfesionalBaja()
         {

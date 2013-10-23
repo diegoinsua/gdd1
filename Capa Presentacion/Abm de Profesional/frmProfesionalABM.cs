@@ -34,9 +34,5 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         }
 
 
-        // Eventos
-    
-
-
     }
 }
