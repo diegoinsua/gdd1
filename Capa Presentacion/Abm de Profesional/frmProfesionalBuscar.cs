@@ -103,10 +103,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 
             }
 
-            else
-            {
-                dgvProfesional.DataSource = null;
-            }
+           
 
         }
 
