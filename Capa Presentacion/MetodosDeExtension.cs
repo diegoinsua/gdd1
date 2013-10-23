@@ -26,6 +26,7 @@ namespace Clinica_Frba.CapaPresentacion
             }
             else
             {
+                System.Media.SystemSounds.Beep.Play();
                 return e.Handled = true;
             }
         }
