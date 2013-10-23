@@ -93,6 +93,9 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
                 if (txtDNI.ReadOnly == false)
                     dgvProfesional.DataSource = admTDG.getAdmByDNI(txtDNI.Text);
 
+
+                dgvProfesional.agregarBotonSeleccionar();
+
             }
             else
             {

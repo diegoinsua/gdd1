@@ -30,8 +30,16 @@ namespace Clinica_Frba.CapaPresentacion
             }
         }
 
-
-       
+        //-------------------------------------
+        // DATA GRID VIEW
+        //-------------------------------------
+        public static void agregarBotonSeleccionar(this DataGridView dgv)
+        {
+            DataGridViewButtonColumn boton = new DataGridViewButtonColumn();
+            boton.HeaderText = "Seleccionar";
+            boton.Width = 70;
+            dgv.Columns.Add(boton);
+        }
 
     }
 }
