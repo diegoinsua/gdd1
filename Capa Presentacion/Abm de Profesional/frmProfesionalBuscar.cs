@@ -77,9 +77,13 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-          
+            // Limpiio el datagridview
+            dgvProfesional.Columns.Clear();
+            
+            // Válido errores
             this.validarErrores();
 
+            // Si no hubo errores
             if (this.huboErrores == false)
             {
                 Clinica_frba.CapaDatos.ProfesionalTDG admTDG = new Clinica_frba.CapaDatos.ProfesionalTDG();
@@ -94,13 +98,16 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
                     dgvProfesional.DataSource = admTDG.getAdmByDNI(txtDNI.Text);
 
 
+                // Le agrego los botones "Seleccionar"
                 dgvProfesional.agregarBotonSeleccionar();
 
             }
+
             else
             {
                 dgvProfesional.DataSource = null;
             }
+
         }
 
         //--------------------------
@@ -109,6 +116,18 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         private void frmProfesionalBuscar_Load(object sender, EventArgs e)
         {
             dgvProfesional.personalizar();
+        }
+
+
+        //--------------------------
+        // dgvProfesional CELLCLICK
+        //--------------------------
+        private void dgvProfesional_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string col = dgvProfesional.valorColumna(e, "Matricula");
+      
+           if (col != string.Empty)  MessageBox.Show("Matricula Nº " + col);
+
         }
 
     }

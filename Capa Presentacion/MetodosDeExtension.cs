@@ -54,7 +54,28 @@ namespace Clinica_Frba.CapaPresentacion
             
         }
 
-    }
-}
+     
+
+        public static string valorColumna(this DataGridView dgv, DataGridViewCellEventArgs e, string columnaNombre)
+        {
+            // Verfico si la columna seleccionada es la última (que son las que tienen el botón)
+            if (e.ColumnIndex == dgv.ColumnCount - 1)
+            {
+                return dgv.Rows[e.RowIndex].Cells[columnaNombre].Value.ToString();
+            }
+            else
+            {
+                return string.Empty;
+            }
+
+        }
+
+
+
+
+     }                 
+
+ }
+
 
 

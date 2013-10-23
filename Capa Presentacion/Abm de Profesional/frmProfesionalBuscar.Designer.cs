@@ -54,6 +54,7 @@
             this.dgvProfesional.ReadOnly = true;
             this.dgvProfesional.Size = new System.Drawing.Size(485, 259);
             this.dgvProfesional.TabIndex = 7;
+            this.dgvProfesional.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfesional_CellClick);
             // 
             // btnBuscar
             // 
