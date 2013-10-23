@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvProfesional = new System.Windows.Forms.DataGridView();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -49,19 +48,11 @@
             this.dgvProfesional.AllowUserToAddRows = false;
             this.dgvProfesional.AllowUserToDeleteRows = false;
             this.dgvProfesional.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProfesional.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Seleccionar});
             this.dgvProfesional.Location = new System.Drawing.Point(12, 152);
             this.dgvProfesional.Name = "dgvProfesional";
             this.dgvProfesional.ReadOnly = true;
             this.dgvProfesional.Size = new System.Drawing.Size(485, 259);
             this.dgvProfesional.TabIndex = 7;
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.ReadOnly = true;
             // 
             // btnBuscar
             // 
@@ -157,7 +148,7 @@
             this.label1.Tag = "";
             this.label1.Text = "Matricula Nº";
             // 
-            // frmProfesionalModificar
+            // frmProfesionalBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -166,8 +157,9 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.groupBox1);
-            this.Name = "frmProfesionalModificar";
+            this.Name = "frmProfesionalBuscar";
             this.Text = "frmProfesionalModificar";
+            this.Load += new System.EventHandler(this.frmProfesionalBuscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfesional)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -179,7 +171,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvProfesional;
-        private System.Windows.Forms.DataGridViewButtonColumn Seleccionar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.GroupBox groupBox1;

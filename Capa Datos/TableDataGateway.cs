@@ -21,14 +21,14 @@ namespace Clinica_frba.CapaDatos
         //----------------//
         //  Constructor   //
         //----------------//
-        public TableDataGateway()  { this.conexion = new SqlConnection(cadenaConexion);  }
+       // public TableDataGateway()  { this.conexion = new SqlConnection(cadenaConexion);  }
 
 
 
         //----------------//
         //    Destructor  //
         //----------------//
-        ~TableDataGateway() { conexion.Dispose(); }
+        //~TableDataGateway() { conexion.Dispose(); }
 
 
 
