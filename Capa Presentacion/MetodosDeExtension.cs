@@ -43,8 +43,15 @@ namespace Clinica_Frba.CapaPresentacion
 
         public static void personalizar(this DataGridView dgv)
         {
-            dgv.RowHeadersVisible = false;
-            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //dgv.RowHeadersVisible = false;
+            dgv.RowHeadersWidth = 25;
+            dgv.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.AllowUserToResizeColumns = false;
+            dgv.AllowUserToOrderColumns = false;
+            dgv.AllowUserToResizeRows = false;
+            
         }
 
     }
