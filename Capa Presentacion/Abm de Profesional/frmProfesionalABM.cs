@@ -29,7 +29,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            frmProfesionalModificar frmModificar = new frmProfesionalModificar();
+            frmProfesionalBuscar frmModificar = new frmProfesionalBuscar();
             this.ShowABM(frmModificar);
         }
 
