@@ -48,7 +48,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 510);
             this.Name = "frmProfesionalABM";
-            this.Text = "frmProfesionalABM";
+            this.Text = "ABM Profesional";
+            this.TipoABM = "Profesional";
             this.ResumeLayout(false);
             this.PerformLayout();
 
