@@ -89,6 +89,7 @@
             // 
             // cmbSexo
             // 
+            this.cmbSexo.Enabled = false;
             this.cmbSexo.FormattingEnabled = true;
             this.cmbSexo.Items.AddRange(new object[] {
             "M",
@@ -323,11 +324,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmProfesionalAlta";
             this.Text = "Alta Profesional";
-            this.Controls.SetChildIndex(this.groupBox1, 0);
-            this.Controls.SetChildIndex(this.groupBox2, 0);
-            this.Controls.SetChildIndex(this.groupBox3, 0);
-            this.Controls.SetChildIndex(this.btnGuardar, 0);
-            this.Controls.SetChildIndex(this.btnLimpiar, 0);
             ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

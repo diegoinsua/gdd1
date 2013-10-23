@@ -10,19 +10,19 @@ namespace Clinica_frba.CapaDatos
     {
         public DataSet getAdmByApellido(string apellido)
         {
-            DataSet adm;
+            DataSet adm = new DataSet();
             return adm;
         }
 
         public DataSet getAdmByMatricula(string matricula)
         {
-            DataSet adm;
+            DataSet adm = new DataSet();
             return adm;
         }
 
         public DataSet getAdmByDNI(string dni)
         {
-            DataSet adm;
+            DataSet adm = new DataSet();
             return adm;
         }
     }

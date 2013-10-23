@@ -39,26 +39,55 @@ namespace Clinica_Frba.CapaPresentacion
 
         protected void validarMail(Control email)
         {
-            string mail = email.Text;
-
-            if (mail.Contains("@") && (mail.Contains(".com") || mail.Contains(".net") ||
-                                         mail.Contains(".edu") || mail.Contains(".gov") ||
-                                         mail.Contains(".gob")))
+            
+            if (  estaDeshabilitado(email) )
             {
-                erp.SetError(email, String.Empty);
-                return;
+                limpiarError(email);
             }
 
-            if (mail.Length != 0)
+            else 
             {
-                erp.SetError(email, "La dirección de E-Mail que ingresó no es válida");
-                huboErrores = true;
 
+                string mail = email.Text;
+
+                if (mail.Contains("@") && (mail.Contains(".com") || mail.Contains(".net") ||
+                                             mail.Contains(".edu") || mail.Contains(".gov") ||
+                                             mail.Contains(".gob")))
+                {
+                    erp.SetError(email, String.Empty);
+                    return;
+                }
+
+                if (mail.Length != 0)
+                {
+                    erp.SetError(email, "La dirección de E-Mail que ingresó no es válida");
+                    huboErrores = true;
+
+                }
             }
+
         }
 
 
+        protected void validarPersonalizado(Control control, string mensajeError)
+        {
+            if (estaDeshabilitado(control))
+            {
+                limpiarError(control);
+            }
+            else
+            {
+                erp.SetError(control, mensajeError);
 
+                if (mensajeError != String.Empty)
+                {
+                    huboErrores = true;
+                }
+            }
+
+        }
+
+        
         protected bool esNulo(Control control)
         {
             if (control.Text == string.Empty)
@@ -71,95 +100,123 @@ namespace Clinica_Frba.CapaPresentacion
         }
 
 
-
         protected bool validarFecha(Control fecha)
         {
-            DateTime fechaOut;
-            if (DateTime.TryParse(fecha.Text, out fechaOut))
-            {
-                erp.SetError(fecha, String.Empty);
+            
+            if ( estaDeshabilitado(fecha) ) {
+                limpiarError(fecha);
                 return true;
             }
-            
-            erp.SetError(fecha, "La fecha ingresada no es válida");
-            huboErrores = true;
+
+            else
+            {
+                DateTime fechaOut;
+                if (DateTime.TryParse(fecha.Text, out fechaOut))
+                {
+                    erp.SetError(fecha, String.Empty);
+                    return true;
+                }
+                
+                erp.SetError(fecha, "La fecha ingresada no es válida");
+                huboErrores = true;
+                return false;
+            }
+        }
+
+
+        private void limpiarError(Control control)
+        {
+            erp.SetError(control, string.Empty);
+        }
+
+        
+        protected void validarFecha(Control fecha, DateTime fechaMinima)
+        {
+            if ( estaDeshabilitado(fecha) )
+            {
+                limpiarError(fecha);
+            }
+            else
+            {
+                if (validarFecha(fecha))
+                {
+                    DateTime fechaOut;
+                    DateTime.TryParse(fecha.Text, out fechaOut);
+
+                    if (fechaOut < fechaMinima)
+                    {
+                        erp.SetError(fecha, "Debe ser una fecha posterior al día " + fechaMinima);
+                        huboErrores = true;
+                        return;
+                    }
+
+                    erp.SetError(fecha, String.Empty);
+                }
+            }
+
+        }
+
+
+        private bool estaDeshabilitado(Control c)
+        {
+            if (c is TextBox && ((TextBox)c).ReadOnly)                 return true;
+            if (c is MaskedTextBox && ((MaskedTextBox)c).ReadOnly)     return true;
+            if (c is ComboBox && ((ComboBox)c).Enabled == false)       return true;
+            if (c is CheckBox && ((CheckBox)c).Enabled == false)       return true;
+            if (c is RadioButton && ((RadioButton)c).Enabled == false) return true;
+
             return false;
         }
 
-
-
-        protected void validarFecha(Control fecha, DateTime fechaMinima)
-        {
-            if (validarFecha(fecha))
-            {
-                DateTime fechaOut;
-                DateTime.TryParse(fecha.Text, out fechaOut);
-
-                if (fechaOut < fechaMinima)
-                {
-                    erp.SetError(fecha, "Debe ser una fecha posterior al día " + fechaMinima);
-                    huboErrores = true;
-                    return;
-                }
-
-                erp.SetError(fecha, String.Empty);
-            }
+        
+        private void validarControlNulo(Control c, string mensaje) {
+             
+            if (c.Text.Trim() == String.Empty) 
+                    {
+                        erp.SetError(c, mensaje);
+                        huboErrores = true;
+                    }
+                    else
+                    {
+                        erp.SetError(c, String.Empty);
+                    }
         }
-
-
-
+        
         
         private void validarControlesNulos(Control c)
         {
 
             foreach (Control ctrl in c.Controls)
             {
-                if (ctrl is TextBox || ctrl is MaskedTextBox) { 
-                    if (ctrl.Text.Trim() == String.Empty) 
-                    {
-                        erp.SetError(ctrl, "Debe ingresar un valor.");
-                        huboErrores = true;
-                    }
-                    else
-                    {
-                        erp.SetError(ctrl, String.Empty);
-                    }
+
+                if (estaDeshabilitado(ctrl))
+                {
+                   limpiarError(ctrl);
                 }
 
-                if (ctrl is ComboBox || ctrl is CheckBox || ctrl is RadioButton)
-                { 
-                    if (ctrl.Text.Trim() == String.Empty) 
-                    {
-                        erp.SetError(ctrl, "Debe seleccionar un valor.");
-                        huboErrores = true;
-                    }
-                    else
-                    {
-                        erp.SetError(ctrl, String.Empty);
-                    }
+                else
+                {
+
+                    if (ctrl is TextBox || ctrl is MaskedTextBox)
+                        validarControlNulo(ctrl, "Debe ingresar un valor.");
+
+
+                    if (ctrl is ComboBox || ctrl is CheckBox || ctrl is RadioButton)
+                        validarControlNulo(ctrl, "Debe seleccionar un valor.");
+
+
+                    // Si es un contenedor
+                    if (ctrl.Controls.Count > 0)
+                        validarControlesNulos(ctrl);
+                    
                 }
-
-                
-
-                // Si es un contenedor
-                validarControlesNulos(ctrl);
 
             }                      
 
         }
+        
 
-
-
-        protected void validarPersonalizado(Control control, string mensajeError)
-        {            
-            erp.SetError(control, mensajeError);
-
-            if (mensajeError != String.Empty)
-            {
-                huboErrores = true;
-            }           
-
-        }
+        
 
 
 
@@ -168,10 +225,11 @@ namespace Clinica_Frba.CapaPresentacion
         {
             limpiarControles(this);
         }
-
-
+        
         private void limpiarControles(Control c)
         {
+            // Elimino los mensajes de error que pudieran haber
+            if (huboErrores == true) { erp.Clear(); }
 
             foreach (Control ctrl in c.Controls)
             {

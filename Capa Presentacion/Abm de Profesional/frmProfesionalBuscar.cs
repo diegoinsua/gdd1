@@ -59,10 +59,14 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Clinica_frba.CapaDatos.ProfesionalTDG admTDG = new Clinica_frba.CapaDatos.ProfesionalTDG();
-            
-            if (txtApellido.ReadOnly = false) { 
-                dgvProfesional.DataSource = 
+            if (this.huboErrores == false)
+            {
+                Clinica_frba.CapaDatos.ProfesionalTDG admTDG = new Clinica_frba.CapaDatos.ProfesionalTDG();
+
+                if (txtApellido.ReadOnly = false && txtApellido.Text != string.Empty)
+                {
+                    dgvProfesional.DataSource = admTDG.getAdmByApellido(txtApellido.Text);
+                }
             }
         }
 
