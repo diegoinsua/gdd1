@@ -85,7 +85,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
                 Clinica_frba.CapaDatos.ProfesionalTDG admTDG = new Clinica_frba.CapaDatos.ProfesionalTDG();
 
                 if (txtApellido.ReadOnly == false)
-                   dgvProfesional.DataSource = admTDG.getAdmByApellido(txtApellido.Text);
+                    dgvProfesional.DataSource = admTDG.getAdmByApellido(txtApellido.Text);
 
                 if (txtMatricula.ReadOnly == false)
                     dgvProfesional.DataSource = admTDG.getAdmByMatricula(txtMatricula.Text);
@@ -93,6 +93,10 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
                 if (txtDNI.ReadOnly == false)
                     dgvProfesional.DataSource = admTDG.getAdmByDNI(txtDNI.Text);
 
+            }
+            else
+            {
+                dgvProfesional.DataSource = null;
             }
         }
 
