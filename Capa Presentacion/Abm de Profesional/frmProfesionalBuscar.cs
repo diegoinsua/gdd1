@@ -108,8 +108,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         //--------------------------
         private void frmProfesionalBuscar_Load(object sender, EventArgs e)
         {
-            dgvProfesional.RowHeadersVisible = false;
-            dgvProfesional.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProfesional.personalizar();
         }
 
     }
