@@ -138,7 +138,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
             //---------------------------
             if (this.Text == "Modificar Profesional")
             {
-                string matricula = dgvProfesional.valorColumna(e, "Matricula");
+                string matricula = dgvProfesional.valorColumna(e, "Matricula"); // obtengo la PK de la fila seleccionada
 
                 frmProfesional formModificar = new frmProfesional();
                 formModificar.Text = "Modificar Profesional";
@@ -169,11 +169,10 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
                     this.limpiarControles();
                     this.habilitarControles();
                 }
-            }
-
-           
+            }           
 
         }
+
 
     }
 }

@@ -22,6 +22,7 @@ namespace Clinica_Frba.CapaPresentacion
         public frmBase()
         {
             InitializeComponent();
+            this.ShowInTaskbar = false;
             erp = new ErrorProvider();
             erp.BlinkStyle = ErrorBlinkStyle.NeverBlink;
         }
