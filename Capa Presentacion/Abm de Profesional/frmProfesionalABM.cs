@@ -23,7 +23,9 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            frmProfesionalBaja frmBaja = new frmProfesionalBaja();
+            frmProfesionalBuscar frmBaja = new frmProfesionalBuscar();
+            frmBaja.Text = "Baja Profesional";
+            frmBaja.btnBuscar.Text = "Eliminar";
             this.ShowABM(frmBaja);
         }
 

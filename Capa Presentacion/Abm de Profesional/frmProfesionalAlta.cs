@@ -111,13 +111,11 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.limpiarControles();
-        }
-              
-   
-       
+        }             
+      
 
               
     }

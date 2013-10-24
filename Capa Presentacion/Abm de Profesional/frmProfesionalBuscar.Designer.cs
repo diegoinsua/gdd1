@@ -173,7 +173,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvProfesional;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
@@ -182,6 +181,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.TextBox txtDNI;
+        public System.Windows.Forms.Button btnBuscar;
 
     }
 }
