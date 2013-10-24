@@ -34,10 +34,12 @@ namespace Clinica_Frba.CapaPresentacion
         //-------------------------------------
         // DATA GRID VIEW
         //-------------------------------------
-        public static void agregarBotonSeleccionar(this DataGridView dgv)
+        public static void agregarBotonSeleccionar(this DataGridView dgv, string textoBoton)
         {
             DataGridViewButtonColumn boton = new DataGridViewButtonColumn();
-            boton.HeaderText = "Seleccionar";
+            //boton.HeaderText = textoBoton;
+            boton.Text = textoBoton;
+            boton.UseColumnTextForButtonValue = true;
             boton.Width = 70;
             dgv.Columns.Add(boton);
         }
@@ -46,6 +48,7 @@ namespace Clinica_Frba.CapaPresentacion
         {
             //dgv.RowHeadersVisible = false;
             dgv.RowHeadersWidth = 25;
+            dgv.Height = 300;
             dgv.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
             dgv.AllowUserToAddRows = false;
             dgv.AllowUserToDeleteRows = false;

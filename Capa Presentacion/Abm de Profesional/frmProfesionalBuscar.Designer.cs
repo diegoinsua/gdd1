@@ -94,7 +94,7 @@
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(56, 55);
+            this.txtDNI.Location = new System.Drawing.Point(62, 61);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(142, 20);
             this.txtDNI.TabIndex = 11;
@@ -103,7 +103,7 @@
             // 
             // txtMatricula
             // 
-            this.txtMatricula.Location = new System.Drawing.Point(330, 25);
+            this.txtMatricula.Location = new System.Drawing.Point(330, 27);
             this.txtMatricula.Name = "txtMatricula";
             this.txtMatricula.Size = new System.Drawing.Size(139, 20);
             this.txtMatricula.TabIndex = 8;
@@ -114,7 +114,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(6, 28);
+            this.label3.Location = new System.Drawing.Point(12, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 10;
@@ -122,7 +122,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(56, 25);
+            this.txtApellido.Location = new System.Drawing.Point(62, 27);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(181, 20);
             this.txtApellido.TabIndex = 9;
@@ -132,7 +132,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(15, 62);
+            this.label2.Location = new System.Drawing.Point(21, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 5;
@@ -143,7 +143,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(259, 28);
+            this.label1.Location = new System.Drawing.Point(259, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 3;
@@ -181,7 +181,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.TextBox txtDNI;
-        public System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnBuscar;
 
     }
 }

@@ -17,7 +17,8 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
-            frmProfesionalAlta frmAlta = new frmProfesionalAlta();
+            frmProfesional frmAlta = new frmProfesional();
+            frmAlta.Text = "Alta Profesional";
             this.ShowABM(frmAlta);
         }
 
@@ -25,13 +26,13 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         {
             frmProfesionalBuscar frmBaja = new frmProfesionalBuscar();
             frmBaja.Text = "Baja Profesional";
-            frmBaja.btnBuscar.Text = "Eliminar";
             this.ShowABM(frmBaja);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             frmProfesionalBuscar frmModificar = new frmProfesionalBuscar();
+            frmModificar.Text = "Modificar Profesional";
             this.ShowABM(frmModificar);
         }
 

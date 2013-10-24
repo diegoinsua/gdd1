@@ -80,11 +80,11 @@
     <Compile Include="Abm de Profesional\frmProfesionalABM.Designer.cs">
       <DependentUpon>frmProfesionalABM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abm de Profesional\frmProfesionalAlta.cs">
+    <Compile Include="Abm de Profesional\frmProfesional.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm de Profesional\frmProfesionalAlta.Designer.cs">
-      <DependentUpon>frmProfesionalAlta.cs</DependentUpon>
+    <Compile Include="Abm de Profesional\frmProfesional.Designer.cs">
+      <DependentUpon>frmProfesional.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm de Profesional\frmProfesionalBuscar.cs">
       <SubType>Form</SubType>
@@ -206,8 +206,8 @@
     <EmbeddedResource Include="Abm de Profesional\frmProfesionalABM.resx">
       <DependentUpon>frmProfesionalABM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Abm de Profesional\frmProfesionalAlta.resx">
-      <DependentUpon>frmProfesionalAlta.cs</DependentUpon>
+    <EmbeddedResource Include="Abm de Profesional\frmProfesional.resx">
+      <DependentUpon>frmProfesional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Abm de Profesional\frmProfesionalBuscar.resx">
       <DependentUpon>frmProfesionalBuscar.cs</DependentUpon>

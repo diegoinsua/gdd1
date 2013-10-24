@@ -37,5 +37,7 @@ namespace Clinica_frba.CapaDatos
 
             return dt;
         }
+
+        public void delete(string matriculaNumero) { }
     }
 }

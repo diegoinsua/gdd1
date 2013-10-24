@@ -11,12 +11,12 @@ using Clinica_frba.CapaDatos;
 
 namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 {
-    public partial class frmProfesionalAlta : frmBase
+    public partial class frmProfesional : frmBase
     {
         
        
         
-        public frmProfesionalAlta()
+        public frmProfesional()
         {
             InitializeComponent();
         }
@@ -103,6 +103,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
                  
                 if ( resultado ) { 
                      limpiarControles();
+                     if (this.Text == "Modificar Profesional") this.Dispose(); // cierro el form si es una modificación
                  }
                                 
             }

@@ -1,6 +1,6 @@
 ﻿namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 {
-    partial class frmProfesionalAlta
+    partial class frmProfesional
     {
         /// <summary>
         /// Required designer variable.
@@ -48,11 +48,12 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
-            this.txtMatriculaNumero = new System.Windows.Forms.TextBox();
+            this.txtMatricula = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -89,7 +90,6 @@
             // 
             // cmbSexo
             // 
-            this.cmbSexo.Enabled = false;
             this.cmbSexo.FormattingEnabled = true;
             this.cmbSexo.Items.AddRange(new object[] {
             "M",
@@ -242,8 +242,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.cmbEspecialidad);
-            this.groupBox3.Controls.Add(this.txtMatriculaNumero);
+            this.groupBox3.Controls.Add(this.txtMatricula);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.ForeColor = System.Drawing.Color.RoyalBlue;
             this.groupBox3.Location = new System.Drawing.Point(12, 279);
@@ -264,13 +265,13 @@
             this.cmbEspecialidad.Size = new System.Drawing.Size(139, 21);
             this.cmbEspecialidad.TabIndex = 9;
             // 
-            // txtMatriculaNumero
+            // txtMatricula
             // 
-            this.txtMatriculaNumero.Location = new System.Drawing.Point(84, 54);
-            this.txtMatriculaNumero.Name = "txtMatriculaNumero";
-            this.txtMatriculaNumero.Size = new System.Drawing.Size(209, 20);
-            this.txtMatriculaNumero.TabIndex = 8;
-            this.txtMatriculaNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatriculaNumero_KeyPress);
+            this.txtMatricula.Location = new System.Drawing.Point(84, 54);
+            this.txtMatricula.Name = "txtMatricula";
+            this.txtMatricula.Size = new System.Drawing.Size(139, 20);
+            this.txtMatricula.TabIndex = 8;
+            this.txtMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatriculaNumero_KeyPress);
             // 
             // label3
             // 
@@ -311,7 +312,17 @@
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
-            // frmProfesionalAlta
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(11, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Matricula Nº";
+            // 
+            // frmProfesional
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -321,7 +332,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "frmProfesionalAlta";
+            this.Name = "frmProfesional";
             this.Text = "Alta Profesional";
             ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -337,30 +348,31 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.Label lbl_Sexo;
         private System.Windows.Forms.Label lbl_FecNacimiento;
-        private System.Windows.Forms.MaskedTextBox mtxFechaNacimiento;
         private System.Windows.Forms.Label lbl_DNI;
         private System.Windows.Forms.Label lbl_Apellido;
-        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label lbl_Nombre;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lbl_Mail;
-        private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.Label lbl_Tel;
         private System.Windows.Forms.Label lbl_Direccion;
-        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox cmbEspecialidad;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMatriculaNumero;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtDNI;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.ComboBox cmbSexo;
+        public System.Windows.Forms.MaskedTextBox mtxFechaNacimiento;
+        public System.Windows.Forms.TextBox txtApellido;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtMail;
+        public System.Windows.Forms.TextBox txtDireccion;
+        public System.Windows.Forms.ComboBox cmbEspecialidad;
+        public System.Windows.Forms.TextBox txtMatricula;
+        public System.Windows.Forms.TextBox txtDNI;
+        public System.Windows.Forms.TextBox txtTelefono;
 
 
     }

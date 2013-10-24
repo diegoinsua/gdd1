@@ -252,5 +252,38 @@ namespace Clinica_Frba.CapaPresentacion
             }
         }
 
+
+        // Habilitar Controles
+        public void habilitarControles()
+        {
+            habilitarControles(this);
+        }
+
+        private void habilitarControles(Control c)
+        {
+            // Elimino los mensajes de error que pudieran haber
+            if (huboErrores == true) { erp.Clear(); }
+
+            foreach (Control ctrl in c.Controls)
+            {
+                if (ctrl is TextBox) { ((TextBox)ctrl).ReadOnly = false; }
+
+                if (ctrl is MaskedTextBox) { ((MaskedTextBox)ctrl).ReadOnly = false; }
+
+                if (ctrl is CheckBox) { ((CheckBox)ctrl).Enabled = true; }
+
+                if (ctrl is RadioButton) { ((RadioButton)ctrl).Enabled = true; }
+
+                if (ctrl is ComboBox) { ((ComboBox)ctrl).Enabled = true; }
+
+
+                // Si es un contenedor
+                if (ctrl.Controls.Count > 0)
+                {
+                    habilitarControles(ctrl);
+                }
+            }
+        }
+
     }
 }

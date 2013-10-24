@@ -20,7 +20,7 @@ namespace Clinica_frba.CapaDatos
 
         public bool insert(DataRow adm) { return true; }
         public void update(DataTable adm) { }
-        public void delete(DataRow adm) { }
+        public void delete(string matriculaNumero) { }
         public DataSet getAdmById(int id) { return new DataSet(); }
         public DataSet getAdmByAtributos(string apellido) { return new DataSet(); }
 
