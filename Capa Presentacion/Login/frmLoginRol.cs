@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Clinica_Frba.NewFolder10
+namespace Clinica_Frba.CapaPresentacion
 {
-    public partial class Form1 : Form
+    public partial class frmLoginRol : Form
     {
-        public Form1()
+        // Propiedades
+        public Form formPadre { get; set; }
+
+
+        public frmLoginRol()
         {
             InitializeComponent();
         }

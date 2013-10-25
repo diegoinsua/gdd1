@@ -74,6 +74,12 @@
     <Compile Include="Abm de Afiliado\frmAfiliadoModificar_Baja.Designer.cs">
       <DependentUpon>frmAfiliadoModificar_Baja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm de Profesional\frmClinica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm de Profesional\frmClinica.Designer.cs">
+      <DependentUpon>frmClinica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Abm de Profesional\frmProfesionalABM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,11 +116,23 @@
     <Compile Include="frmBaseABM.Designer.cs">
       <DependentUpon>frmBaseABM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\Form1.cs">
+    <Compile Include="Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmLoginUserAndPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmLoginUserAndPass.Designer.cs">
+      <DependentUpon>frmLoginUserAndPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmLoginRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmLoginRol.Designer.cs">
+      <DependentUpon>frmLoginRol.cs</DependentUpon>
     </Compile>
     <Compile Include="MetodosDeExtension.cs" />
     <Compile Include="Registro de Usuario\Form1.cs">
@@ -203,6 +221,10 @@
     <EmbeddedResource Include="Abm de Afiliado\frmAfiliadoModificar_Baja.resx">
       <DependentUpon>frmAfiliadoModificar_Baja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Abm de Profesional\frmClinica.resx">
+      <DependentUpon>frmClinica.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Abm de Profesional\frmProfesionalABM.resx">
       <DependentUpon>frmProfesionalABM.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,6 +242,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBaseABM.resx">
       <DependentUpon>frmBaseABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLoginRol.resx">
+      <DependentUpon>frmLoginRol.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLoginUserAndPass.resx">
+      <DependentUpon>frmLoginUserAndPass.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
