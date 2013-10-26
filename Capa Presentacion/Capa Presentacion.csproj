@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{71DE9239-635F-437B-BF7D-1D898AB408DD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -67,18 +67,6 @@
     </Compile>
     <Compile Include="Abm de Afiliado\frmAfiliadoBusqueda.Designer.cs">
       <DependentUpon>frmAfiliadoBusqueda.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Abm de Afiliado\frmAfiliadoModificar_Baja.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Abm de Afiliado\frmAfiliadoModificar_Baja.Designer.cs">
-      <DependentUpon>frmAfiliadoModificar_Baja.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Abm de Profesional\frmClinica.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Abm de Profesional\frmClinica.Designer.cs">
-      <DependentUpon>frmClinica.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm de Profesional\frmProfesionalABM.cs">
       <SubType>Form</SubType>
@@ -217,13 +205,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Abm de Afiliado\frmAfiliadoBusqueda.resx">
       <DependentUpon>frmAfiliadoBusqueda.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Abm de Afiliado\frmAfiliadoModificar_Baja.resx">
-      <DependentUpon>frmAfiliadoModificar_Baja.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Abm de Profesional\frmClinica.resx">
-      <DependentUpon>frmClinica.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Abm de Profesional\frmProfesionalABM.resx">
       <DependentUpon>frmProfesionalABM.cs</DependentUpon>

@@ -89,7 +89,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 
                 dr["nombre"] = txtNombre.Text;
                 dr["apellido"] = txtApellido.Text;
-                dr["dni"] = txtNombre.Text;
+                dr["dni"] = txtDNI.Text;
                 dr["sexo"] = cmbSexo.Text;
                 dr["fechaNacimiento"] = mtxFechaNacimiento.Text;
                 dr["direccion"] = txtDireccion.Text;
@@ -115,7 +115,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.limpiarControles();
-        }             
+        }   
       
 
               

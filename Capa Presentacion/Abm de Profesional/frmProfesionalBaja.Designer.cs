@@ -1,6 +1,6 @@
-﻿namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
+﻿namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 {
-    partial class frmAfiliadoABM
+    partial class frmProfesionalBaja
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnModificar
+            // label1
             // 
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(142, 177);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Formulario Baja";
             // 
-            // btnBaja
-            // 
-            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
-            // 
-            // btnAlta
-            // 
-            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
-            // 
-            // frmAfiliadoABM
+            // frmProfesionalBaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(671, 510);
-            this.Name = "frmAfiliadoABM";
-            this.Text = "ABM Afiliado";
-            this.TipoABM = "Afiliado";
-           
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(398, 395);
+            this.Controls.Add(this.label1);
+            this.Name = "frmProfesionalBaja";
+            this.Text = "frmProfesionalBaja";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }
