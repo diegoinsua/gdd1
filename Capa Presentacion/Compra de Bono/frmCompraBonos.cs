@@ -15,5 +15,7 @@ namespace Clinica_Frba.NewFolder3
         {
             InitializeComponent();
         }
+
+       
     }
 }
