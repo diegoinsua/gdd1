@@ -81,6 +81,7 @@
             this.btnAceptarRol.TabIndex = 4;
             this.btnAceptarRol.Text = "Aceptar";
             this.btnAceptarRol.UseVisualStyleBackColor = true;
+            this.btnAceptarRol.Click += new System.EventHandler(this.btnAceptarRol_Click);
             // 
             // btnCerrarRol
             // 

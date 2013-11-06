@@ -1,6 +1,6 @@
 ﻿namespace Clinica_Frba.CapaPresentacion.Login
 {
-    partial class frmLogin
+    partial class frmLoginContainer
     {
         /// <summary>
         /// Required designer variable.
