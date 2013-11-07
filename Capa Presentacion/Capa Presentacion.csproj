@@ -86,7 +86,6 @@
     <Compile Include="Abm de Profesional\frmProfesionalBuscar.Designer.cs">
       <DependentUpon>frmProfesionalBuscar.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdministrativoTM.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +103,12 @@
     </Compile>
     <Compile Include="frmBaseABM.Designer.cs">
       <DependentUpon>frmBaseABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClinica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClinica.Designer.cs">
+      <DependentUpon>frmClinica.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\frmLoginContainer.cs">
       <SubType>Form</SubType>
@@ -222,6 +227,9 @@
     <EmbeddedResource Include="frmBaseABM.resx">
       <DependentUpon>frmBaseABM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmClinica.resx">
+      <DependentUpon>frmClinica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\frmLoginContainer.resx">
       <DependentUpon>frmLoginContainer.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -253,6 +261,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Capa Datos\Capa Datos.csproj">

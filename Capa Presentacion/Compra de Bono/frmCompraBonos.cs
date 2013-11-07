@@ -9,12 +9,30 @@ using System.Windows.Forms;
 
 namespace Clinica_Frba.NewFolder3
 {
-    public partial class Form1 : Form
+    public partial class frmCompraBonos : Form
     {
-        public Form1()
+        
+        DataTable plan;
+
+        public frmCompraBonos()
         {
             InitializeComponent();
         }
+
+        private void nudBonosConsulta_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmCompraBonos_Load(object sender, EventArgs e)
+        {
+            Clinica_frba.CapaDatos.PlanTDG planTDG = new Clinica_frba.CapaDatos.PlanTDG();
+            DataTable plan = planTDG.getPlanById(23);
+
+        }
+
+
+       
 
        
     }

@@ -11,6 +11,7 @@ namespace Clinica_Frba.CapaPresentacion
 {
     public partial class frmClinica : Form
     {
+        
         public frmClinica()
         {
             InitializeComponent();

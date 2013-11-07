@@ -34,16 +34,17 @@ namespace Clinica_Frba.CapaPresentacion
                 Clinica_frba.CapaDatos.LoginTDG loginTDG = new Clinica_frba.CapaDatos.LoginTDG();
 
                 bool loginValido = loginTDG.validarUsuario(txtUsuario.Text, txtContrasenia.Text);
-                int usuarioID;
-                DataTable rol;
+                Usuario usuario = new Usuario();
 
 
 
                 if (loginValido)
                 {
                     // Válido usuario y contraseña
-                    usuarioID = loginTDG.getIdUsuario(txtUsuario.Text);
-                    rol = loginTDG.getRol(usuarioID);
+                    usuario.id = loginTDG.getIdUsuario(txtUsuario.Text);
+                    usuario.nombre = txtUsuario.Text;
+                    DataTable roles = loginTDG.getRol(usuario.id);
+
 
 
                     if (rol.Rows.Count > 1) // Si el usuario tiene mas de un rol
@@ -55,6 +56,8 @@ namespace Clinica_Frba.CapaPresentacion
                     }
                     else
                     {
+
+                       
                         // Abro el programa, pues tiene solo un rol
                     }
 
