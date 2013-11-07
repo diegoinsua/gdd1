@@ -68,12 +68,6 @@
     <Compile Include="Abm de Afiliado\frmAfiliadoBusqueda.Designer.cs">
       <DependentUpon>frmAfiliadoBusqueda.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abm de Afiliado\frmAfiliadoModificar_Baja.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Abm de Afiliado\frmAfiliadoModificar_Baja.Designer.cs">
-      <DependentUpon>frmAfiliadoModificar_Baja.cs</DependentUpon>
-    </Compile>
     <Compile Include="Abm de Profesional\frmProfesionalABM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,12 +104,6 @@
     </Compile>
     <Compile Include="frmBaseABM.Designer.cs">
       <DependentUpon>frmBaseABM.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmClinica.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmClinica.Designer.cs">
-      <DependentUpon>frmClinica.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\frmLoginContainer.cs">
       <SubType>Form</SubType>
@@ -164,7 +152,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Compra de Bono\frmCompraBonos.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+      <DependentUpon>frmCompraBonos.cs</DependentUpon>
     </Compile>
     <Compile Include="Pedir Turno\Form1.cs">
       <SubType>Form</SubType>
@@ -213,9 +201,6 @@
     <EmbeddedResource Include="Abm de Afiliado\frmAfiliadoBusqueda.resx">
       <DependentUpon>frmAfiliadoBusqueda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Abm de Afiliado\frmAfiliadoModificar_Baja.resx">
-      <DependentUpon>frmAfiliadoModificar_Baja.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Abm de Profesional\frmProfesionalABM.resx">
       <DependentUpon>frmProfesionalABM.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +210,9 @@
     <EmbeddedResource Include="Abm de Profesional\frmProfesionalBuscar.resx">
       <DependentUpon>frmProfesionalBuscar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Compra de Bono\frmCompraBonos.resx">
+      <DependentUpon>frmCompraBonos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,10 +221,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBaseABM.resx">
       <DependentUpon>frmBaseABM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmClinica.resx">
-      <DependentUpon>frmClinica.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\frmLoginContainer.resx">
       <DependentUpon>frmLoginContainer.cs</DependentUpon>
