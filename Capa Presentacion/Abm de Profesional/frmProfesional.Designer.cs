@@ -60,6 +60,14 @@
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
+            // ttp
+            // 
+            this.ttp.AutomaticDelay = 0;
+            this.ttp.AutoPopDelay = 100;
+            this.ttp.InitialDelay = 50;
+            this.ttp.OwnerDraw = true;
+            this.ttp.ReshowDelay = 0;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtDNI);

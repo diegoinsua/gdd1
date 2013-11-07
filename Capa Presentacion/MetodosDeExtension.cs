@@ -15,7 +15,7 @@ namespace Clinica_Frba.CapaPresentacion
     {
 
 
-        public static Boolean validarCaracter(this TextBox txt, string caracteresPermitidos, KeyPressEventArgs e) 
+        public static Boolean validarCaracter(this TextBox txt, string caracteresPermitidos, KeyPressEventArgs e, string mensaje) 
         {
     
             String Aceptados = caracteresPermitidos + Convert.ToChar(8);
@@ -27,8 +27,27 @@ namespace Clinica_Frba.CapaPresentacion
             else
             {
                 System.Media.SystemSounds.Beep.Play();
+                //txt.mensaje(mensaje);
                 return e.Handled = true;
             }
+        }
+
+
+        
+       
+        public static void mensaje(this Control control, string mensaje)
+        {
+            //ToolTip toolTip1 = new ToolTip();
+
+            //toolTip1.Show(mensaje, control, 3000);
+           // toolTip1.AutoPopDelay = 8000;
+            // toolTip1.InitialDelay = 1000;
+            // toolTip1.ReshowDelay = 500;
+            //toolTip1.IsBalloon = true;
+            //toolTip1.BackColor = System.Drawing.SystemColors.Info;
+            //toolTip1.ShowAlways = false;
+
+            //toolTip1.SetToolTip(control, mensaje);
         }
 
         //-------------------------------------
@@ -75,7 +94,9 @@ namespace Clinica_Frba.CapaPresentacion
         }
 
 
-
+        //-------------------------------------
+        // FORM
+        //-------------------------------------
 
      }                 
 

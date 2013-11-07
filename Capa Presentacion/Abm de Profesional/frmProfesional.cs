@@ -63,12 +63,25 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         // Eventos
         private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtDNI.validarCaracter("0123456789", e);
+            bool a = txtDNI.validarCaracter("0123456789", e, "Solo puede ingresar números.");
+            
+                            
+                // toolTip1.AutoPopDelay = 8000;
+                // toolTip1.InitialDelay = 1000;
+                // toolTip1.ReshowDelay = 500;
+            //MessageBox.Show(ttp.GetToolTip(txtDNI));
+            if (a)
+            {
+                erp.SetError(txtDNI, "error error");
+                
+                
+            }
+            
         }
 
         private void txtMatriculaNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtDNI.validarCaracter("0123456789", e);
+            txtDNI.validarCaracter("0123456789", e, "Solo puede ingresar números.");
         }
 
         //-----------

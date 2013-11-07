@@ -22,7 +22,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         //--------------------
         private void txtMatricula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtMatricula.validarCaracter("0123456789", e);
+            txtMatricula.validarCaracter("0123456789", e, "Solo puede ingresar números.");
         }
 
         //--------------------
@@ -30,7 +30,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         //--------------------
         private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtMatricula.validarCaracter("0123456789", e);
+            txtMatricula.validarCaracter("0123456789", e, "Solo puede ingresar números.");
         }
 
 

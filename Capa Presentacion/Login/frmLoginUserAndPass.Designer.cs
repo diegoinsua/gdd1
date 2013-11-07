@@ -68,14 +68,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(118, 62);
+            this.textBox1.Location = new System.Drawing.Point(106, 62);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(110, 20);
             this.textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(118, 88);
+            this.textBox2.Location = new System.Drawing.Point(106, 88);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(110, 20);
             this.textBox2.TabIndex = 4;
@@ -105,9 +105,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(22, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 13);
+            this.label3.Size = new System.Drawing.Size(160, 13);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Ingrese usuario y contraseña.";
+            this.label3.Text = "Ingrese su usuario y contraseña.";
             // 
             // frmLoginUserAndPass
             // 

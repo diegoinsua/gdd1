@@ -15,6 +15,7 @@ namespace Clinica_Frba.CapaPresentacion
 
         // Atributos
         protected ErrorProvider erp;
+        protected ToolTip ttp;
         protected bool huboErrores = false;
 
 
@@ -22,7 +23,11 @@ namespace Clinica_Frba.CapaPresentacion
         public frmBase()
         {
             InitializeComponent();
+
             this.ShowInTaskbar = false;
+
+            ttp = new ToolTip();
+
             erp = new ErrorProvider();
             erp.BlinkStyle = ErrorBlinkStyle.NeverBlink;
         }
@@ -35,7 +40,6 @@ namespace Clinica_Frba.CapaPresentacion
             huboErrores = false;
             validarControlesNulos(this);            
         }
-
         
 
         protected void validarMail(Control email)
@@ -219,9 +223,7 @@ namespace Clinica_Frba.CapaPresentacion
 
         
 
-
-
-        // Limpiar
+        // Limpiar Controles
         protected void limpiarControles()
         {
             limpiarControles(this);
