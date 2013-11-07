@@ -15,9 +15,10 @@ namespace Clinica_Frba
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            Application.Run(new CapaPresentacion.Login.frmLoginContainer());
+            //DESCOMENTAR LO SIGUIENTE PARA VER EL MENU DE ABMS
             //Application.Run(new Form1());
-            //Application.Run(new CapaPresentacion.Login.frmLogin());
-            Application.Run(new CapaPresentacion.frmClinica());
         }
     }
 }

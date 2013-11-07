@@ -1,16 +1,16 @@
-﻿namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
+﻿namespace Clinica_Frba.CapaPresentacion.Abm_de_Rol
 {
-    partial class frmAfiliadoABM
+    partial class frmRolABM
     {
         /// <summary>
-        /// Required designer variable.
+        /// Variable del diseñador requerida.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Limpiar los recursos que se estén utilizando.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true si los recursos administrados se deben eliminar; false en caso contrario, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,11 +20,11 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido del método con el editor de código.
         /// </summary>
         private void InitializeComponent()
         {
@@ -33,23 +33,25 @@
             // btnModificar
             // 
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnModificar.Enter += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnBaja
             // 
             this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
+            this.btnBaja.Enter += new System.EventHandler(this.btnBaja_Click);
             // 
             // btnAlta
             // 
             this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
+            this.btnAlta.Enter += new System.EventHandler(this.btnAlta_Click);
             // 
-            // frmAfiliadoABM
+            // frmRolABM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(671, 510);
-            this.Name = "frmAfiliadoABM";
-            this.Text = "ABM Afiliado";
-            this.TipoABM = "Afiliado";
-           
+            this.Name = "frmRolABM";
+            this.Text = "ABM Rol";
+            this.TipoABM = "Rol";
             this.ResumeLayout(false);
             this.PerformLayout();
 

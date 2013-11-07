@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Clinica_Frba.CapaPresentacion
 {
-    public partial class frmLoginRol : Form
+    public partial class frmLoginRol : frmBase
     {
         // Propiedades
         public Form formPadre { get; set; }
@@ -18,6 +18,16 @@ namespace Clinica_Frba.CapaPresentacion
         public frmLoginRol()
         {
             InitializeComponent();
+        }
+
+        private void btnAceptarRol_Click(object sender, EventArgs e)
+        {
+            this.validarErrores();
+
+            if (huboErrores)
+            {
+                // abro el programa
+            }
         }
     }
 }

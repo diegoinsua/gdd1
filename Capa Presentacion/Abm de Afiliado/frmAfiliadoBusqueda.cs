@@ -9,66 +9,112 @@ using System.Windows.Forms;
 
 namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
 {
-    public partial class frmAfiliadoBusqueda : Form
+    public partial class frmAfiliadoBusqueda : frmBase
     {
         public frmAfiliadoBusqueda()
         {
             InitializeComponent();
         }
 
-        private void btn_buscar_Click(object sender, EventArgs e)
-        {
-
-            if (!String.IsNullOrEmpty(txt_Apellido.Text) || !String.IsNullOrEmpty(mtx_NroAfiliado.Text) || !String.IsNullOrEmpty(mtx_DNI.Text))
-            {
-                //Primero hacer la consulta
-
-                //DEBUG
-                //Creo una tabla de prueba que será mostrada en el data grid
-                DataTable dataTableAuxiliar = new DataTable();
-
-                dataTableAuxiliar.Columns.Add("Nombre", typeof(string));
-                dataTableAuxiliar.Columns.Add("Apellido", typeof(string));
-                dataTableAuxiliar.Columns.Add("DNI", typeof(Int32));
-                dataTableAuxiliar.Columns.Add("Nro Afiliado", typeof(Int32));
-
-                //Relleno algunas filas de la tabla
-                dataTableAuxiliar.Rows.Add("Pepe", "Lopez", 34784819, 888);
-                dataTableAuxiliar.Rows.Add("Pepita", "Lopez", 35784811, 889);
-                dataTableAuxiliar.Rows.Add("Pepito", "Lopez", 40784819, 887);
-
-                //SE MUESTRAN LOS RESULTADOS LA CONSULTA FICTICIA QUE TRAJO UNA TABLA
-                //EN EL DATA GRID VIEW
-                dgv_resultado.DataSource = dataTableAuxiliar;
-            }
-
-        }
-
         private void btn_limpiar_Click(object sender, EventArgs e)
         {
-            txt_Apellido.Clear(); mtx_DNI.Clear(); mtx_NroAfiliado.Clear();
-            //ACA DA ERROR
-            dgv_resultado.Rows.Clear();
+            this.limpiarControles();
         }
 
-        private void btn_eliminar_Click(object sender, EventArgs e)
-        {
-            int i;
-            //NO ENTRA :/
-            for (i = 0; i < dgv_resultado.Rows.Count; i++)
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {            
+            // Limpio el datagridview
+            dgvAfiliado.Columns.Clear();
+            
+            // Válido errores
+            this.validarErrores();
+
+            // Si no hubo errores
+            if (this.huboErrores == false)
             {
-                if ((bool) dgv_resultado.Rows[i].Cells["eliminar"].Value)
+                Clinica_frba.CapaDatos.AfiliadoTDG aflTDG = new Clinica_frba.CapaDatos.AfiliadoTDG();
+
+                if (txtApellido.ReadOnly == false)
+                    dgvAfiliado.DataSource = aflTDG.getAflByApellido(txtApellido.Text);
+
+                if (mtxNroAfiliado.ReadOnly == false)
+                    dgvAfiliado.DataSource = aflTDG.getAflByNroAfiliado(mtxNroAfiliado.Text);
+
+                if (mtxDNI.ReadOnly == false)
+                    dgvAfiliado.DataSource = aflTDG.getAflByDNI(Convert.ToInt32(mtxDNI.Text));
+
+
+
+                if (this.Text == "Modificar Afiliado")
                 {
-                    //Modificar los datos en capa de Datos
-                    //Mostrar los cambios en la Data Grid
-                    dgv_resultado.Rows[i].Cells["baja_logica"].Value = "Si";
-                    dgv_resultado.Rows[i].Cells["eliminar"].Value = false;
+                    // Le agrego los botones "Seleccionar"
+                    dgvAfiliado.agregarBotonSeleccionar("Seleccionar");
                 }
+
+                if (this.Text == "Baja Afiliado")
+                {
+                    // Le agrego los botones "Eliminar"
+                    dgvAfiliado.agregarBotonSeleccionar("Eliminar");
+                }
+
+
             }
         }
 
-       
+      
+        //--------------------------
+        // frmAfiliadoBusqueda LOAD
+        //--------------------------
+        private void frmAfiliadoBusqueda_Load(object sender, EventArgs e)
+        {
+            dgvAfiliado.personalizar();
+        }
+        
+        //--------------------------
+        // dgvProfesional CELLCLICK
+        //--------------------------
+        private void dgvAfiliado_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+            //---------------------------
+            // Si es por una modificación
+            //---------------------------
+            if (this.Text == "Modificar Afiliado")
+            {
+                string apellido = dgvAfiliado.valorColumna(e, "Apellido"); //Para mostrar en la pantalla de modificacion
+
+                frmAfiliadoAlta formModificar = new frmAfiliadoAlta();
+                formModificar.Text = "Modificar Afiliado";
+                formModificar.txtApellido.Text = apellido;
+                formModificar.ShowDialog();
+            }
+
+
+            //---------------------------
+            // Si es por una eliminación
+            //---------------------------
+            if (this.Text == "Baja Afiliado")
+            {
+                // Pregunto al usuario si esta seguro de eliminar al Profesional
+                string apellido = dgvAfiliado.valorColumna(e, "Apellido");
+                DialogResult dr = MessageBox.Show("¿Esta seguro que desea eliminar al profesional cuyo apellido es " + apellido + "?.",
+                                                         "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                // Si la respuesta es afirmativa, lo elimino.
+                if (dr == DialogResult.Yes)
+                {
+                    // Elimino el profesional
+                    Clinica_frba.CapaDatos.AfiliadoTDG aflTDG = new Clinica_frba.CapaDatos.AfiliadoTDG();
+                    aflTDG.delete(apellido);
+
+                    // Reseteo el form
+                    dgvAfiliado.Columns.Clear();
+                    this.limpiarControles();
+                    this.habilitarControles();
+                }
+            }
+
+        }
        
         
     }

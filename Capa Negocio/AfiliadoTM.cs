@@ -17,13 +17,6 @@ namespace Clinica_frba.CapaNegocio
         public AfiliadoTM() { afiliadoTDG = new CapaDatos.AfiliadoTDG(); }
        
         // Métodos
-        public DataSet getAfiliadoById(int idAfiliado)
-        {
-            DataSet afiliado = afiliadoTDG.getAfiliadoById(idAfiliado);
-            return afiliado;
-        }
-
-
         public DataSet getAfiliadoByAtributos() { return new DataSet(); }
        
                 

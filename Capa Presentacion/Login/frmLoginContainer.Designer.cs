@@ -1,6 +1,6 @@
-﻿namespace Clinica_Frba.NewFolder1
+﻿namespace Clinica_Frba.CapaPresentacion.Login
 {
-    partial class Form1
+    partial class frmLoginContainer
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(267, 170);
+            this.panel1.TabIndex = 0;
+            // 
+            // frmLogin
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(272, 180);
+            this.Controls.Add(this.panel1);
+            this.Name = "frmLogin";
+            this.Text = "frmLogin";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
     }
 }

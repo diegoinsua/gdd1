@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 namespace Clinica_Frba.CapaPresentacion.Login
 {
-    public partial class frmLogin : Form
+    public partial class frmLoginContainer : Form
     {
         
-        public frmLogin()
+        public frmLoginContainer()
         {
             InitializeComponent();
             frmLoginUserAndPass formLogin = new frmLoginUserAndPass();

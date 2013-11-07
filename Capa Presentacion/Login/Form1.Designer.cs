@@ -1,4 +1,4 @@
-﻿namespace Clinica_Frba.NewFolder3
+﻿namespace Clinica_Frba.NewFolder10
 {
     partial class Form1
     {

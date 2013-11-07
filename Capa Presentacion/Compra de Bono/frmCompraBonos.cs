@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Clinica_Frba.NewFolder1
+namespace Clinica_Frba.NewFolder3
 {
     public partial class Form1 : Form
     {
@@ -15,5 +15,7 @@ namespace Clinica_Frba.NewFolder1
         {
             InitializeComponent();
         }
+
+       
     }
 }

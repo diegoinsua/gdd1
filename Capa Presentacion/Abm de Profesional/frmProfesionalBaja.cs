@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Clinica_Frba.NewFolder3
+namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 {
-    public partial class Form1 : Form
+    public partial class frmProfesionalBaja : Form
     {
-        public Form1()
+        public frmProfesionalBaja()
         {
             InitializeComponent();
         }

@@ -29,34 +29,35 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmb_Sexo = new System.Windows.Forms.ComboBox();
+            this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.lbl_Sexo = new System.Windows.Forms.Label();
             this.lbl_FecNacimiento = new System.Windows.Forms.Label();
-            this.mtx_FecNacimiento = new System.Windows.Forms.MaskedTextBox();
+            this.mtxFecNacimiento = new System.Windows.Forms.MaskedTextBox();
             this.lbl_DNI = new System.Windows.Forms.Label();
-            this.mtx_DNI = new System.Windows.Forms.MaskedTextBox();
+            this.mtxDNI = new System.Windows.Forms.MaskedTextBox();
             this.lbl_Apellido = new System.Windows.Forms.Label();
-            this.txt_Apellido = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.lbl_Nombre = new System.Windows.Forms.Label();
-            this.txt_Nombre = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbl_Mail = new System.Windows.Forms.Label();
-            this.txt_Mail = new System.Windows.Forms.TextBox();
+            this.txtMail = new System.Windows.Forms.TextBox();
             this.lbl_Tel = new System.Windows.Forms.Label();
-            this.mtx_Telefono = new System.Windows.Forms.MaskedTextBox();
+            this.mtxTelefono = new System.Windows.Forms.MaskedTextBox();
             this.lbl_Direccion = new System.Windows.Forms.Label();
-            this.txt_Direccion = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lbl_aCargo = new System.Windows.Forms.Label();
-            this.mtx_aCargo = new System.Windows.Forms.MaskedTextBox();
+            this.mtxaCargo = new System.Windows.Forms.MaskedTextBox();
             this.lbl_Hijos = new System.Windows.Forms.Label();
-            this.mtx_Hijos = new System.Windows.Forms.MaskedTextBox();
-            this.cmb_EstCivil = new System.Windows.Forms.ComboBox();
+            this.mtxHijos = new System.Windows.Forms.MaskedTextBox();
+            this.cmbEstCivil = new System.Windows.Forms.ComboBox();
             this.lbl_EstadoCivil = new System.Windows.Forms.Label();
             this.lbl_PlanMedico = new System.Windows.Forms.Label();
-            this.mtx_Plan = new System.Windows.Forms.MaskedTextBox();
+            this.mtxPlan = new System.Windows.Forms.MaskedTextBox();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -64,32 +65,32 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cmb_Sexo);
+            this.groupBox1.Controls.Add(this.cmbSexo);
             this.groupBox1.Controls.Add(this.lbl_Sexo);
             this.groupBox1.Controls.Add(this.lbl_FecNacimiento);
-            this.groupBox1.Controls.Add(this.mtx_FecNacimiento);
+            this.groupBox1.Controls.Add(this.mtxFecNacimiento);
             this.groupBox1.Controls.Add(this.lbl_DNI);
-            this.groupBox1.Controls.Add(this.mtx_DNI);
+            this.groupBox1.Controls.Add(this.mtxDNI);
             this.groupBox1.Controls.Add(this.lbl_Apellido);
-            this.groupBox1.Controls.Add(this.txt_Apellido);
+            this.groupBox1.Controls.Add(this.txtApellido);
             this.groupBox1.Controls.Add(this.lbl_Nombre);
-            this.groupBox1.Controls.Add(this.txt_Nombre);
+            this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Location = new System.Drawing.Point(9, 7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(435, 122);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // cmb_Sexo
+            // cmbSexo
             // 
-            this.cmb_Sexo.FormattingEnabled = true;
-            this.cmb_Sexo.Items.AddRange(new object[] {
+            this.cmbSexo.FormattingEnabled = true;
+            this.cmbSexo.Items.AddRange(new object[] {
             "M",
             "F"});
-            this.cmb_Sexo.Location = new System.Drawing.Point(369, 8);
-            this.cmb_Sexo.Name = "cmb_Sexo";
-            this.cmb_Sexo.Size = new System.Drawing.Size(53, 21);
-            this.cmb_Sexo.TabIndex = 8;
+            this.cmbSexo.Location = new System.Drawing.Point(369, 8);
+            this.cmbSexo.Name = "cmbSexo";
+            this.cmbSexo.Size = new System.Drawing.Size(53, 21);
+            this.cmbSexo.TabIndex = 8;
             // 
             // lbl_Sexo
             // 
@@ -109,14 +110,14 @@
             this.lbl_FecNacimiento.TabIndex = 7;
             this.lbl_FecNacimiento.Text = "Fecha de Nacimiento";
             // 
-            // mtx_FecNacimiento
+            // mtxFecNacimiento
             // 
-            this.mtx_FecNacimiento.Location = new System.Drawing.Point(125, 91);
-            this.mtx_FecNacimiento.Mask = "00/00/0000";
-            this.mtx_FecNacimiento.Name = "mtx_FecNacimiento";
-            this.mtx_FecNacimiento.Size = new System.Drawing.Size(110, 20);
-            this.mtx_FecNacimiento.TabIndex = 6;
-            this.mtx_FecNacimiento.ValidatingType = typeof(System.DateTime);
+            this.mtxFecNacimiento.Location = new System.Drawing.Point(125, 91);
+            this.mtxFecNacimiento.Mask = "00/00/0000";
+            this.mtxFecNacimiento.Name = "mtxFecNacimiento";
+            this.mtxFecNacimiento.Size = new System.Drawing.Size(110, 20);
+            this.mtxFecNacimiento.TabIndex = 6;
+            this.mtxFecNacimiento.ValidatingType = typeof(System.DateTime);
             // 
             // lbl_DNI
             // 
@@ -127,13 +128,13 @@
             this.lbl_DNI.TabIndex = 5;
             this.lbl_DNI.Text = "D.N.I.";
             // 
-            // mtx_DNI
+            // mtxDNI
             // 
-            this.mtx_DNI.Location = new System.Drawing.Point(61, 65);
-            this.mtx_DNI.Mask = "99999999";
-            this.mtx_DNI.Name = "mtx_DNI";
-            this.mtx_DNI.Size = new System.Drawing.Size(110, 20);
-            this.mtx_DNI.TabIndex = 4;
+            this.mtxDNI.Location = new System.Drawing.Point(61, 65);
+            this.mtxDNI.Mask = "99999999";
+            this.mtxDNI.Name = "mtxDNI";
+            this.mtxDNI.Size = new System.Drawing.Size(110, 20);
+            this.mtxDNI.TabIndex = 4;
             // 
             // lbl_Apellido
             // 
@@ -144,12 +145,12 @@
             this.lbl_Apellido.TabIndex = 3;
             this.lbl_Apellido.Text = "Apellido";
             // 
-            // txt_Apellido
+            // txtApellido
             // 
-            this.txt_Apellido.Location = new System.Drawing.Point(61, 39);
-            this.txt_Apellido.Name = "txt_Apellido";
-            this.txt_Apellido.Size = new System.Drawing.Size(209, 20);
-            this.txt_Apellido.TabIndex = 2;
+            this.txtApellido.Location = new System.Drawing.Point(61, 39);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(209, 20);
+            this.txtApellido.TabIndex = 2;
             // 
             // lbl_Nombre
             // 
@@ -161,22 +162,21 @@
             this.lbl_Nombre.Tag = "";
             this.lbl_Nombre.Text = "Nombre";
             // 
-            // txt_Nombre
+            // txtNombre
             // 
-            this.txt_Nombre.Location = new System.Drawing.Point(61, 9);
-            this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(209, 20);
-            this.txt_Nombre.TabIndex = 0;
-            this.txt_Nombre.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtNombre.Location = new System.Drawing.Point(61, 9);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(209, 20);
+            this.txtNombre.TabIndex = 0;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lbl_Mail);
-            this.groupBox2.Controls.Add(this.txt_Mail);
+            this.groupBox2.Controls.Add(this.txtMail);
             this.groupBox2.Controls.Add(this.lbl_Tel);
-            this.groupBox2.Controls.Add(this.mtx_Telefono);
+            this.groupBox2.Controls.Add(this.mtxTelefono);
             this.groupBox2.Controls.Add(this.lbl_Direccion);
-            this.groupBox2.Controls.Add(this.txt_Direccion);
+            this.groupBox2.Controls.Add(this.txtDireccion);
             this.groupBox2.Location = new System.Drawing.Point(9, 137);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(435, 94);
@@ -192,12 +192,12 @@
             this.lbl_Mail.TabIndex = 9;
             this.lbl_Mail.Text = "E- mail";
             // 
-            // txt_Mail
+            // txtMail
             // 
-            this.txt_Mail.Location = new System.Drawing.Point(58, 63);
-            this.txt_Mail.Name = "txt_Mail";
-            this.txt_Mail.Size = new System.Drawing.Size(209, 20);
-            this.txt_Mail.TabIndex = 8;
+            this.txtMail.Location = new System.Drawing.Point(58, 63);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(209, 20);
+            this.txtMail.TabIndex = 8;
             // 
             // lbl_Tel
             // 
@@ -208,13 +208,13 @@
             this.lbl_Tel.TabIndex = 7;
             this.lbl_Tel.Text = "Teléfono";
             // 
-            // mtx_Telefono
+            // mtxTelefono
             // 
-            this.mtx_Telefono.Location = new System.Drawing.Point(58, 35);
-            this.mtx_Telefono.Mask = "999999999999";
-            this.mtx_Telefono.Name = "mtx_Telefono";
-            this.mtx_Telefono.Size = new System.Drawing.Size(110, 20);
-            this.mtx_Telefono.TabIndex = 6;
+            this.mtxTelefono.Location = new System.Drawing.Point(58, 35);
+            this.mtxTelefono.Mask = "999999999999";
+            this.mtxTelefono.Name = "mtxTelefono";
+            this.mtxTelefono.Size = new System.Drawing.Size(110, 20);
+            this.mtxTelefono.TabIndex = 6;
             // 
             // lbl_Direccion
             // 
@@ -225,20 +225,20 @@
             this.lbl_Direccion.TabIndex = 5;
             this.lbl_Direccion.Text = "Dirección";
             // 
-            // txt_Direccion
+            // txtDireccion
             // 
-            this.txt_Direccion.Location = new System.Drawing.Point(58, 9);
-            this.txt_Direccion.Name = "txt_Direccion";
-            this.txt_Direccion.Size = new System.Drawing.Size(209, 20);
-            this.txt_Direccion.TabIndex = 4;
+            this.txtDireccion.Location = new System.Drawing.Point(58, 9);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(209, 20);
+            this.txtDireccion.TabIndex = 4;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.lbl_aCargo);
-            this.groupBox3.Controls.Add(this.mtx_aCargo);
+            this.groupBox3.Controls.Add(this.mtxaCargo);
             this.groupBox3.Controls.Add(this.lbl_Hijos);
-            this.groupBox3.Controls.Add(this.mtx_Hijos);
-            this.groupBox3.Controls.Add(this.cmb_EstCivil);
+            this.groupBox3.Controls.Add(this.mtxHijos);
+            this.groupBox3.Controls.Add(this.cmbEstCivil);
             this.groupBox3.Controls.Add(this.lbl_EstadoCivil);
             this.groupBox3.Location = new System.Drawing.Point(9, 239);
             this.groupBox3.Name = "groupBox3";
@@ -255,14 +255,14 @@
             this.lbl_aCargo.TabIndex = 14;
             this.lbl_aCargo.Text = "Personas a cargo";
             // 
-            // mtx_aCargo
+            // mtxaCargo
             // 
-            this.mtx_aCargo.Location = new System.Drawing.Point(224, 33);
-            this.mtx_aCargo.Mask = "99999";
-            this.mtx_aCargo.Name = "mtx_aCargo";
-            this.mtx_aCargo.Size = new System.Drawing.Size(41, 20);
-            this.mtx_aCargo.TabIndex = 13;
-            this.mtx_aCargo.ValidatingType = typeof(int);
+            this.mtxaCargo.Location = new System.Drawing.Point(224, 33);
+            this.mtxaCargo.Mask = "99999";
+            this.mtxaCargo.Name = "mtxaCargo";
+            this.mtxaCargo.Size = new System.Drawing.Size(41, 20);
+            this.mtxaCargo.TabIndex = 13;
+            this.mtxaCargo.ValidatingType = typeof(int);
             // 
             // lbl_Hijos
             // 
@@ -273,28 +273,28 @@
             this.lbl_Hijos.TabIndex = 12;
             this.lbl_Hijos.Text = "Hijos";
             // 
-            // mtx_Hijos
+            // mtxHijos
             // 
-            this.mtx_Hijos.Location = new System.Drawing.Point(74, 35);
-            this.mtx_Hijos.Mask = "99999";
-            this.mtx_Hijos.Name = "mtx_Hijos";
-            this.mtx_Hijos.Size = new System.Drawing.Size(41, 20);
-            this.mtx_Hijos.TabIndex = 11;
-            this.mtx_Hijos.ValidatingType = typeof(int);
+            this.mtxHijos.Location = new System.Drawing.Point(74, 35);
+            this.mtxHijos.Mask = "99999";
+            this.mtxHijos.Name = "mtxHijos";
+            this.mtxHijos.Size = new System.Drawing.Size(41, 20);
+            this.mtxHijos.TabIndex = 11;
+            this.mtxHijos.ValidatingType = typeof(int);
             // 
-            // cmb_EstCivil
+            // cmbEstCivil
             // 
-            this.cmb_EstCivil.FormattingEnabled = true;
-            this.cmb_EstCivil.Items.AddRange(new object[] {
+            this.cmbEstCivil.FormattingEnabled = true;
+            this.cmbEstCivil.Items.AddRange(new object[] {
             "Soltero/a",
             "Casado/a",
             "Viudo/a",
             "Concubinato",
             "Divorciado/a"});
-            this.cmb_EstCivil.Location = new System.Drawing.Point(74, 8);
-            this.cmb_EstCivil.Name = "cmb_EstCivil";
-            this.cmb_EstCivil.Size = new System.Drawing.Size(112, 21);
-            this.cmb_EstCivil.TabIndex = 10;
+            this.cmbEstCivil.Location = new System.Drawing.Point(74, 8);
+            this.cmbEstCivil.Name = "cmbEstCivil";
+            this.cmbEstCivil.Size = new System.Drawing.Size(112, 21);
+            this.cmbEstCivil.TabIndex = 10;
             // 
             // lbl_EstadoCivil
             // 
@@ -314,14 +314,14 @@
             this.lbl_PlanMedico.TabIndex = 7;
             this.lbl_PlanMedico.Text = "Plan Médico";
             // 
-            // mtx_Plan
+            // mtxPlan
             // 
-            this.mtx_Plan.Location = new System.Drawing.Point(83, 316);
-            this.mtx_Plan.Mask = "99999";
-            this.mtx_Plan.Name = "mtx_Plan";
-            this.mtx_Plan.Size = new System.Drawing.Size(110, 20);
-            this.mtx_Plan.TabIndex = 6;
-            this.mtx_Plan.ValidatingType = typeof(int);
+            this.mtxPlan.Location = new System.Drawing.Point(83, 316);
+            this.mtxPlan.Mask = "99999";
+            this.mtxPlan.Name = "mtxPlan";
+            this.mtxPlan.Size = new System.Drawing.Size(110, 20);
+            this.mtxPlan.TabIndex = 6;
+            this.mtxPlan.ValidatingType = typeof(int);
             // 
             // btn_Limpiar
             // 
@@ -351,12 +351,13 @@
             this.Controls.Add(this.btn_Guardar);
             this.Controls.Add(this.btn_Limpiar);
             this.Controls.Add(this.lbl_PlanMedico);
-            this.Controls.Add(this.mtx_Plan);
+            this.Controls.Add(this.mtxPlan);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmAfiliadoAlta";
             this.Text = "Alta de Afiliado";
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -371,33 +372,33 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txt_Nombre;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lbl_Apellido;
-        private System.Windows.Forms.TextBox txt_Apellido;
         private System.Windows.Forms.Label lbl_Nombre;
         private System.Windows.Forms.Label lbl_DNI;
-        private System.Windows.Forms.MaskedTextBox mtx_DNI;
+        private System.Windows.Forms.MaskedTextBox mtxDNI;
         private System.Windows.Forms.Label lbl_FecNacimiento;
-        private System.Windows.Forms.MaskedTextBox mtx_FecNacimiento;
+        private System.Windows.Forms.MaskedTextBox mtxFecNacimiento;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lbl_Tel;
-        private System.Windows.Forms.MaskedTextBox mtx_Telefono;
+        private System.Windows.Forms.MaskedTextBox mtxTelefono;
         private System.Windows.Forms.Label lbl_Direccion;
-        private System.Windows.Forms.TextBox txt_Direccion;
-        private System.Windows.Forms.ComboBox cmb_Sexo;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.Label lbl_Sexo;
         private System.Windows.Forms.Label lbl_Mail;
-        private System.Windows.Forms.TextBox txt_Mail;
+        private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox cmb_EstCivil;
+        private System.Windows.Forms.ComboBox cmbEstCivil;
         private System.Windows.Forms.Label lbl_EstadoCivil;
         private System.Windows.Forms.Label lbl_aCargo;
-        private System.Windows.Forms.MaskedTextBox mtx_aCargo;
+        private System.Windows.Forms.MaskedTextBox mtxaCargo;
         private System.Windows.Forms.Label lbl_Hijos;
-        private System.Windows.Forms.MaskedTextBox mtx_Hijos;
+        private System.Windows.Forms.MaskedTextBox mtxHijos;
         private System.Windows.Forms.Label lbl_PlanMedico;
-        private System.Windows.Forms.MaskedTextBox mtx_Plan;
+        private System.Windows.Forms.MaskedTextBox mtxPlan;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Guardar;
+        public System.Windows.Forms.TextBox txtApellido;
     }
 }
