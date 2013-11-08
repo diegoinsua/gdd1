@@ -51,29 +51,17 @@ namespace Clinica_Frba.CapaPresentacion
 
                     if (dtRoles.Rows.Count > 1) // Si el usuario tiene mas de un rol
                     {
-                        // Muestro la ventana para seleccionar el rol
-                        frmLoginRol formRol = new frmLoginRol();
-                        formRol.FormLoginContainer = this.FormLoginContainer;
-
-                        this.FormLoginContainer.Text = "Rol";
-                        this.FormLoginContainer.ShowLogin(formRol);
+                        this.seleccionarRol();
+                        
                     }
 
                     else // Si solo tiene un rol
-                    {                       
+                    {
                         // Cargo el rol
                         this.FormLoginContainer.usuario.rolID = (int)dtRoles.Rows[0][0];
                         this.FormLoginContainer.usuario.rolNombre = dtRoles.Rows[0][1].ToString();
                         
-                        // Creo un formulario Clinica y seteo el usuario logueado
-                        frmClinica formClinica = new frmClinica();
-                        formClinica.usuario = FormLoginContainer.usuario;
-                        
-                        // Lo muestro
-                        formClinica.Show();
-
-                        //Cierro el form de login
-                        this.Close();                        
+                        this.lanzarAplicaciones();                     
                     }
 
                 }
@@ -89,5 +77,32 @@ namespace Clinica_Frba.CapaPresentacion
                 // Acciones cuando no completo los textbox
             }
         }
+
+
+        private void seleccionarRol()
+        {
+            frmLoginRol formRol = new frmLoginRol();
+            formRol.FormLoginContainer = this.FormLoginContainer;
+
+            this.FormLoginContainer.Text = "Rol";
+            this.FormLoginContainer.ShowLogin(formRol);
+        }
+
+
+        private void lanzarAplicaciones()
+        {
+            
+            // Creo un formulario Clinica y seteo el usuario logueado
+            frmClinica formClinica = new frmClinica();
+            formClinica.usuario = FormLoginContainer.usuario;
+
+            // Lo muestro
+            formClinica.Show();
+
+            //Cierro el form de login
+            this.Close();   
+
+        }
+
     }
 }
