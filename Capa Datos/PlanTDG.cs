@@ -8,7 +8,7 @@ namespace Clinica_frba.CapaDatos
 {
     public class PlanTDG : TableDataGateway
     {
-        public DataTable getPlanById(int idPlan);
+        public DataTable getPlanById(int idPlan) { return new DataTable(); }
 
     }
 }

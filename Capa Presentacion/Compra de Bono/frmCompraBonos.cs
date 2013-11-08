@@ -26,8 +26,8 @@ namespace Clinica_Frba.NewFolder3
 
         private void frmCompraBonos_Load(object sender, EventArgs e)
         {
-            Clinica_frba.CapaDatos.PlanTDG planTDG = new Clinica_frba.CapaDatos.PlanTDG();
-            DataTable plan = planTDG.getPlanById(23);
+            //Clinica_frba.CapaDatos.PlanTDG planTDG = new Clinica_frba.CapaDatos.PlanTDG();
+            //DataTable plan = planTDG.getPlanById(23);
 
         }
 

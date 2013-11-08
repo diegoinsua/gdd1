@@ -11,22 +11,33 @@ namespace Clinica_Frba.CapaPresentacion
 {
     public partial class frmLoginRol : frmBase
     {
-        // Propiedades
-        public Form formPadre { get; set; }
-
-
+       
         public frmLoginRol()
         {
             InitializeComponent();
         }
 
+
+        //-----------------
+        // btnAceptarRol
+        //-----------------
         private void btnAceptarRol_Click(object sender, EventArgs e)
         {
             this.validarErrores();
 
-            if (huboErrores)
+            if (!huboErrores)
             {
-                // abro el programa
+                //
+                // CHEQUEAR!!!
+                //
+                FormLoginContainer.usuario.rolID = (int)cmbRol.SelectedValue;
+                FormLoginContainer.usuario.rolNombre = cmbRol.ValueMember;
+
+                frmClinica formClinica = new frmClinica();
+                formClinica.usuario = FormLoginContainer.usuario;
+                Show(formClinica);
+                Close();
+
             }
         }
     }

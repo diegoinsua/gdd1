@@ -11,19 +11,27 @@ namespace Clinica_Frba.CapaPresentacion.Login
 {
     public partial class frmLoginContainer : Form
     {
-        
+        // Propiedades
+        public Usuario usuario { get; set; }
+       
+
+        // Constructor
         public frmLoginContainer()
         {
             InitializeComponent();
+
+            usuario = new Usuario();
+
             frmLoginUserAndPass formLogin = new frmLoginUserAndPass();
             this.Text = "Login";
-            formLogin.formPadre = this;
+            formLogin.FormLoginContainer = this;
             formLogin.Text = "Login";
             this.ShowLogin(formLogin);
             
         }
 
 
+        // SHOW
         public void ShowLogin(Form form)
         {
             if (this.panel1.Controls.Count > 0)

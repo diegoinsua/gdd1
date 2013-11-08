@@ -11,6 +11,8 @@ namespace Clinica_Frba.CapaPresentacion
 {
     public partial class frmClinica : Form
     {
+        //Propiedades
+        public Usuario usuario { get; set; }
         
         public frmClinica()
         {

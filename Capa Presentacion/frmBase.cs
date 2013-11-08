@@ -18,8 +18,13 @@ namespace Clinica_Frba.CapaPresentacion
         protected ToolTip ttp;
         protected bool huboErrores = false;
 
-
+        
+        // Propiedades
+        public frmClinica FormClinica { get; set; }
+        public CapaPresentacion.Login.frmLoginContainer FormLoginContainer { get; set; }
+        
         // Constructor
+        
         public frmBase()
         {
             InitializeComponent();
