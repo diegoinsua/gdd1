@@ -20,11 +20,17 @@ namespace Clinica_Frba.CapaPresentacion
 
         public Usuario()
         {
+            inicializarUsuario();
+        }
+
+
+        public void inicializarUsuario() 
+        {
             id = 0;
             nombre = string.Empty;
             apellido = string.Empty;
             planID = 0;
-            planNombre  = string.Empty;
+            planNombre = string.Empty;
             rolID = 0;
             rolNombre = string.Empty;
         }

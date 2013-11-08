@@ -25,6 +25,7 @@ namespace Clinica_Frba.CapaPresentacion
         // ------------------
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+
             this.validarErrores();
 
 
@@ -32,7 +33,6 @@ namespace Clinica_Frba.CapaPresentacion
             {
 
                 Clinica_frba.CapaDatos.LoginTDG loginTDG = new Clinica_frba.CapaDatos.LoginTDG();
-
                 bool loginValido = loginTDG.validarUsuario(txtUsuario.Text, txtContrasenia.Text);
 
 
@@ -41,8 +41,8 @@ namespace Clinica_Frba.CapaPresentacion
                 {
                      
                     // obtengo el id del usuario y su nombre
-                    FormLoginContainer.usuario.id = loginTDG.getIdUsuario(txtUsuario.Text);
-                    FormLoginContainer.usuario.nombre = txtUsuario.Text;
+                    this.FormLoginContainer.usuario.id = loginTDG.getIdUsuario(txtUsuario.Text);
+                    this.FormLoginContainer.usuario.nombre = txtUsuario.Text;
 
                     // Obtengo los roles del usuario
                     DataTable dtRoles = loginTDG.getRol(FormLoginContainer.usuario.id);
@@ -55,15 +55,15 @@ namespace Clinica_Frba.CapaPresentacion
                         frmLoginRol formRol = new frmLoginRol();
                         formRol.FormLoginContainer = this.FormLoginContainer;
 
-                        FormLoginContainer.Text = "Rol";
-                        FormLoginContainer.ShowLogin(formRol);
+                        this.FormLoginContainer.Text = "Rol";
+                        this.FormLoginContainer.ShowLogin(formRol);
                     }
 
-                    else
+                    else // Si solo tiene un rol
                     {                       
                         // Cargo el rol
-                        FormLoginContainer.usuario.rolID = (int)dtRoles.Rows[0][0];
-                        FormLoginContainer.usuario.rolNombre = dtRoles.Rows[0][1].ToString();
+                        this.FormLoginContainer.usuario.rolID = (int)dtRoles.Rows[0][0];
+                        this.FormLoginContainer.usuario.rolNombre = dtRoles.Rows[0][1].ToString();
                         
                         // Creo un formulario Clinica y seteo el usuario logueado
                         frmClinica formClinica = new frmClinica();
@@ -77,14 +77,14 @@ namespace Clinica_Frba.CapaPresentacion
                     }
 
                 }
-                else
+                else // Si el usurio o contraseña son incorrectos
                 {
                     // Acciones cuando clave de usuario o contraseña incorrecta
                 }
 
             }
 
-            else
+            else // Si lleno los textbox usuario y/o contraseña
             {
                 // Acciones cuando no completo los textbox
             }
