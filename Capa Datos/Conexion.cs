@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data.SqlClient;
+
+namespace Clinica_frba.CapaDatos
+{
+    public class Conexion
+    {
+        private static SqlConnection conexionDB = null;
+        private static string cadenaConexion = "Persist Security Info=False;User ID=gd;Password=gd2013;Initial Catalog=prueba;Server=localhost";
+
+        protected Conexion() { }
+
+
+        public static SqlConnection conexion
+        {
+            get
+            {
+                if (conexionDB == null)   conexionDB = new SqlConnection(cadenaConexion);
+
+                return conexionDB;
+            }
+        }
+
+    }
+}
+
+
+
+    
+

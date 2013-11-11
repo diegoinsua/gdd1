@@ -47,7 +47,10 @@
   <ItemGroup>
     <Compile Include="AdministrativoTDG.cs" />
     <Compile Include="AfiliadoTDG.cs" />
+    <Compile Include="Conexion.cs" />
     <Compile Include="LoginTDG.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="Parametros.cs" />
     <Compile Include="PlanTDG.cs" />
     <Compile Include="TableDataGateway.cs" />
     <Compile Include="ProfesionalTDG.cs" />
