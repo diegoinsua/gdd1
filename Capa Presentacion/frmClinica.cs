@@ -166,6 +166,7 @@ namespace Clinica_Frba.CapaPresentacion
                 {
                     Assembly frmAssembly = Assembly.LoadFile(Application.ExecutablePath);
                     Form form = (Form)frmAssembly.CreateInstance(formulario);
+                    this.ShowFormulario(form);
                 }
 
 
@@ -202,6 +203,22 @@ namespace Clinica_Frba.CapaPresentacion
                 deseleccionarTodos(item.DropDownItems);
 
             }
+        }
+
+
+        public void ShowFormulario(Form form)
+        {
+            if (this.panel1.Controls.Count > 0)
+            {
+                this.panel1.Controls.RemoveAt(0);
+            }
+
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            this.panel1.Controls.Add(form);
+            this.panel1.Tag = form;
+            form.Show();
         }
 
 
