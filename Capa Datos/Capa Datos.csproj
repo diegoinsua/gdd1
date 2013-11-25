@@ -8,7 +8,7 @@
     <ProjectGuid>{31BD9FE5-2F11-45EE-AA7A-FDBD410C28B6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Clinica_frba.CapaDatos</RootNamespace>
+    <RootNamespace>Clinica_Frba.CapaDatos</RootNamespace>
     <AssemblyName>CapaDatos</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

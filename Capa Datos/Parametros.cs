@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Clinica_frba.CapaDatos
+namespace Clinica_Frba.CapaDatos
 {
     public class Parametros 
     {

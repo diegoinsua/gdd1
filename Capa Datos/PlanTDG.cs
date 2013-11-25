@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 
-namespace Clinica_frba.CapaDatos
+namespace Clinica_Frba.CapaDatos
 {
     public class PlanTDG : TableDataGateway
     {

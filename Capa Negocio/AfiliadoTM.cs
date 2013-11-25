@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
 
-namespace Clinica_frba.CapaNegocio
+namespace Clinica_Frba.CapaNegocio
 {
     public class AfiliadoTM
     {

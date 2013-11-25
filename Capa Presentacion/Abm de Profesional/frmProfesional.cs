@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Clinica_frba.CapaDatos;
+using Clinica_Frba.CapaDatos;
 
 
 namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional

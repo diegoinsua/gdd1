@@ -11,7 +11,7 @@ namespace Clinica_Frba.CapaPresentacion
 {
     public partial class frmBase : Form
     {
-
+        
 
         // Atributos
         protected ErrorProvider erp;

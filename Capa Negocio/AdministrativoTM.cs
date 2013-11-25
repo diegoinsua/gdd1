@@ -5,7 +5,7 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace Clinica_frba.CapaNegocio
+namespace Clinica_Frba.CapaNegocio
 {
     class AdministrativoTM
     {

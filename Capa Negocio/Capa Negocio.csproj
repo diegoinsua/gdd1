@@ -8,7 +8,7 @@
     <ProjectGuid>{2DDDC964-43DF-429C-B457-9B9AECAD5C4F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Clinica_frba.CapaNegocio</RootNamespace>
+    <RootNamespace>Clinica_Frba.CapaNegocio</RootNamespace>
     <AssemblyName>CapaNegocio</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

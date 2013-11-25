@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Clinica Frba")]
+[assembly: AssemblyTitle("Clinica_Frba")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Hewlett-Packard")]
-[assembly: AssemblyProduct("Clinica Frba")]
+[assembly: AssemblyProduct("Clinica_Frba")]
 [assembly: AssemblyCopyright("Copyright © Hewlett-Packard 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

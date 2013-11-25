@@ -12,10 +12,11 @@ namespace Clinica_Frba.CapaPresentacion
 {
     public partial class frmClinica : Form
     {
+    
         //Propiedades
         public Usuario usuario { get; set; }
         public DataTable dtMenu { get; set; }
-
+        private System.Reflection.Assembly assembly;
 
         public frmClinica()
         {
@@ -29,7 +30,7 @@ namespace Clinica_Frba.CapaPresentacion
         // Construir Menú
         public void crearMenu()
         {
-            Clinica_frba.CapaDatos.Menu menuTDG = new Clinica_frba.CapaDatos.Menu();
+            Clinica_Frba.CapaDatos.Menu menuTDG = new Clinica_Frba.CapaDatos.Menu();
             
             dtMenu = menuTDG.getMenu(this.usuario.rolNombre);
 
@@ -161,13 +162,44 @@ namespace Clinica_Frba.CapaPresentacion
             {
                 string nombre = dr["item_nombre"].ToString().Trim();
                 string formulario = dr["form_ruta"].ToString().Trim();
-
+              //  System.Reflection.Assembly ass;
                 if (itemNombre == nombre)
                 {
-                    Assembly frmAssembly = Assembly.LoadFile(Application.ExecutablePath);
-                    Form form = (Form)frmAssembly.CreateInstance(formulario);
-                    this.ShowFormulario(form);
+                    
+                   
+                    assembly = Assembly.LoadFile(Application.ExecutablePath);
+                    Type t = assembly.GetType(formulario);
+                    // instanciamos un nuevo objeto en la memoria
+                    object o;
+                    // por si hemos seleccionado algo que no es una clase
+                    o = Activator.CreateInstance(t);
+                  
+                   
+                    //
+                    // si no es un formulario, mostramos un aviso y salimos
+                    if (!(o is Form))
+                    {
+                        MessageBox.Show(formulario + ", no es un formulario", "Mostrar formularios");
+                        return;
+                    }
+                    //
+                    // convertimos el objeto en un formulario
+                    // como sabemos que si llega aquí es un formulario,
+                    // usamos DirectCast que hace menos trabajo que CType.
+                    Form f = (Form)o;
+                    // si el nombre es el de este formulario,
+                    // lo cerramos y salimos.
+                    if (f.Name == this.Name)
+                    {
+                        // no volver a crear este formulario
+                        f.Close();
+                        this.BringToFront();
+                        return;
+                    }
+
+                    this.ShowFormulario(f);
                 }
+
 
 
             }

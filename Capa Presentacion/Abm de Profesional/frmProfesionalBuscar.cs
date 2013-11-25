@@ -86,7 +86,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
             // Si no hubo errores
             if (this.huboErrores == false)
             {
-                Clinica_frba.CapaDatos.ProfesionalTDG admTDG = new Clinica_frba.CapaDatos.ProfesionalTDG();
+                Clinica_Frba.CapaDatos.ProfesionalTDG admTDG = new Clinica_Frba.CapaDatos.ProfesionalTDG();
 
                 if (txtApellido.ReadOnly == false)
                     dgvProfesional.DataSource = admTDG.getAdmByApellido(txtApellido.Text);
@@ -161,7 +161,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
                 if (dr == DialogResult.Yes)
                 {
                     // Elimino el profesional
-                    Clinica_frba.CapaDatos.ProfesionalTDG admTDG = new Clinica_frba.CapaDatos.ProfesionalTDG();
+                    Clinica_Frba.CapaDatos.ProfesionalTDG admTDG = new Clinica_Frba.CapaDatos.ProfesionalTDG();
                     admTDG.delete(matricula);
 
                     // Reseteo el form
