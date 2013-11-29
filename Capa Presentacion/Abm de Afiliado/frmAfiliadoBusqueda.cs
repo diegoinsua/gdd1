@@ -68,6 +68,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
         private void frmAfiliadoBusqueda_Load(object sender, EventArgs e)
         {
             dgvAfiliado.personalizar();
+           
         }
         
         //--------------------------

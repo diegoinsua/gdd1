@@ -19,6 +19,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         public frmProfesional()
         {
             InitializeComponent();
+
         }
 
         // Métodos
@@ -128,6 +129,11 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.limpiarControles();
+        }
+
+        private void frmProfesional_Load(object sender, EventArgs e)
+        {
+            lblTitulo.Text = this.Text;
         }   
       
 

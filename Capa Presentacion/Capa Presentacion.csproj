@@ -56,23 +56,11 @@
     <Compile Include="Abm de Afiliado\frmAfiliadoAlta.Designer.cs">
       <DependentUpon>frmAfiliadoAlta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abm de Afiliado\frmAfiliadoABM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Abm de Afiliado\frmAfiliadoABM.Designer.cs">
-      <DependentUpon>frmAfiliadoABM.cs</DependentUpon>
-    </Compile>
     <Compile Include="Abm de Afiliado\frmAfiliadoBusqueda.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Abm de Afiliado\frmAfiliadoBusqueda.Designer.cs">
       <DependentUpon>frmAfiliadoBusqueda.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Abm de Profesional\frmProfesionalABM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Abm de Profesional\frmProfesionalABM.Designer.cs">
-      <DependentUpon>frmProfesionalABM.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm de Profesional\frmProfesional.cs">
       <SubType>Form</SubType>
@@ -86,23 +74,11 @@
     <Compile Include="Abm de Profesional\frmProfesionalBuscar.Designer.cs">
       <DependentUpon>frmProfesionalBuscar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmBase.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBase.Designer.cs">
       <DependentUpon>frmBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmBaseABM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBaseABM.Designer.cs">
-      <DependentUpon>frmBaseABM.cs</DependentUpon>
     </Compile>
     <Compile Include="frmClinica.cs">
       <SubType>Form</SubType>
@@ -200,14 +176,8 @@
     <EmbeddedResource Include="Abm de Afiliado\frmAfiliadoAlta.resx">
       <DependentUpon>frmAfiliadoAlta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Abm de Afiliado\frmAfiliadoABM.resx">
-      <DependentUpon>frmAfiliadoABM.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Abm de Afiliado\frmAfiliadoBusqueda.resx">
       <DependentUpon>frmAfiliadoBusqueda.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Abm de Profesional\frmProfesionalABM.resx">
-      <DependentUpon>frmProfesionalABM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Abm de Profesional\frmProfesional.resx">
       <DependentUpon>frmProfesional.cs</DependentUpon>
@@ -218,14 +188,8 @@
     <EmbeddedResource Include="Compra de Bono\frmCompraBonos.resx">
       <DependentUpon>frmCompraBonos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmBase.resx">
       <DependentUpon>frmBase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmBaseABM.resx">
-      <DependentUpon>frmBaseABM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClinica.resx">
       <DependentUpon>frmClinica.cs</DependentUpon>

@@ -38,6 +38,7 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfesional)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -49,7 +50,7 @@
             this.dgvProfesional.AllowUserToDeleteRows = false;
             this.dgvProfesional.AllowUserToResizeColumns = false;
             this.dgvProfesional.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProfesional.Location = new System.Drawing.Point(12, 152);
+            this.dgvProfesional.Location = new System.Drawing.Point(12, 188);
             this.dgvProfesional.Name = "dgvProfesional";
             this.dgvProfesional.ReadOnly = true;
             this.dgvProfesional.Size = new System.Drawing.Size(485, 259);
@@ -58,7 +59,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(429, 118);
+            this.btnBuscar.Location = new System.Drawing.Point(429, 154);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(69, 26);
             this.btnBuscar.TabIndex = 6;
@@ -68,7 +69,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(14, 120);
+            this.btnLimpiar.Location = new System.Drawing.Point(14, 156);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(69, 26);
             this.btnLimpiar.TabIndex = 5;
@@ -85,7 +86,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 48);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(486, 100);
             this.groupBox1.TabIndex = 4;
@@ -150,11 +151,23 @@
             this.label1.Tag = "";
             this.label1.Text = "Matricula Nº";
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
+            this.lblTitulo.Location = new System.Drawing.Point(12, 9);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(41, 13);
+            this.lblTitulo.TabIndex = 11;
+            this.lblTitulo.Text = "Título";
+            // 
             // frmProfesionalBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 496);
+            this.ClientSize = new System.Drawing.Size(514, 496);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.dgvProfesional);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnLimpiar);
@@ -167,6 +180,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -182,6 +196,7 @@
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label lblTitulo;
 
     }
 }

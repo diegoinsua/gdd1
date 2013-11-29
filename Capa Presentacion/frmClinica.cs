@@ -301,6 +301,7 @@ namespace Clinica_Frba.CapaPresentacion
             {
                 string nombre = dr["elem_nombre"].ToString().Trim();
                 string formulario = dr["form_ruta"].ToString().Trim();
+                
                 //  System.Reflection.Assembly ass;
                 if (itemNombre == nombre)
                 {
@@ -314,18 +315,18 @@ namespace Clinica_Frba.CapaPresentacion
                     o = Activator.CreateInstance(t);
 
 
-                    //
-                    // si no es un formulario, mostramos un aviso y salimos
+                    
+                    // si no es un formulario, muestro el error y salgo
                     if (!(o is Form))
                     {
                         MessageBox.Show(formulario + ", no es un formulario", "Mostrar formularios");
                         return;
                     }
-                    //
-                    // convertimos el objeto en un formulario
-                    // como sabemos que si llega aquí es un formulario,
-                    // usamos DirectCast que hace menos trabajo que CType.
+                   
+
                     Form f = (Form)o;
+                    f.Text = nombre;
+
                     // si el nombre es el de este formulario,
                     // lo cerramos y salimos.
                     if (f.Name == this.Name)

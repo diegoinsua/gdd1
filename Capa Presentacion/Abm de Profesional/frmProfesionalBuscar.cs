@@ -14,6 +14,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         public frmProfesionalBuscar()
         {
             InitializeComponent();
+
         }
 
 
@@ -124,6 +125,8 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         private void frmProfesionalBuscar_Load(object sender, EventArgs e)
         {
             dgvProfesional.personalizar();
+
+            lblTitulo.Text = this.Text;
         }
 
 

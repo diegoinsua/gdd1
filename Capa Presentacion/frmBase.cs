@@ -17,6 +17,8 @@ namespace Clinica_Frba.CapaPresentacion
         protected ErrorProvider erp;
         protected ToolTip ttp;
         protected bool huboErrores = false;
+        protected string formularioPadre = string.Empty;
+        protected string tipoABM;
 
         
         // Propiedades

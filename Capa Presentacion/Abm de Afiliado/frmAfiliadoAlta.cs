@@ -56,6 +56,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
 
         }
 
+
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
             //Una vez hecha la validación
