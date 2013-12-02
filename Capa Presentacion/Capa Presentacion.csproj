@@ -8,7 +8,7 @@
     <ProjectGuid>{71DE9239-635F-437B-BF7D-1D898AB408DD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Clinica_Frba.CapaPresentacion</RootNamespace>
+    <RootNamespace>Clinica_Frba.CapaDatos</RootNamespace>
     <AssemblyName>CapaPresentacion</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -74,6 +74,12 @@
     <Compile Include="Abm de Profesional\frmProfesionalBuscar.Designer.cs">
       <DependentUpon>frmProfesionalBuscar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Compra de Bono\frmCompraBonos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compra de Bono\frmCompraBonos.Designer.cs">
+      <DependentUpon>frmCompraBonos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,18 +133,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Registrar Agenda\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Compra de Bono\frmCompraBonos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Compra de Bono\frmCompraBonos.Designer.cs">
-      <DependentUpon>frmCompraBonos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pedir Turno\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pedir Turno\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Registro de LLegada\Form1.cs">
@@ -225,7 +219,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Capa Datos\Capa Datos.csproj">
@@ -236,6 +229,9 @@
       <Project>{2DDDC964-43DF-429C-B457-9B9AECAD5C4F}</Project>
       <Name>Capa Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pedir Turno\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

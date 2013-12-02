@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Clinica_Frba.CapaPresentacion
+namespace Clinica_Frba.CapaDatos
 {
     public partial class frmLoginUserAndPass : frmBase
     {

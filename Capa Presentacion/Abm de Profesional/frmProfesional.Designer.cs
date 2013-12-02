@@ -1,4 +1,4 @@
-﻿namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
+﻿namespace Clinica_Frba.CapaDatos.Abm_de_Profesional
 {
     partial class frmProfesional
     {
@@ -82,7 +82,7 @@
             this.groupBox1.Controls.Add(this.lbl_Nombre);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox1.Location = new System.Drawing.Point(29, 44);
+            this.groupBox1.Location = new System.Drawing.Point(36, 41);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(430, 127);
             this.groupBox1.TabIndex = 1;
@@ -191,7 +191,7 @@
             this.groupBox2.Controls.Add(this.lbl_Direccion);
             this.groupBox2.Controls.Add(this.txtDireccion);
             this.groupBox2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox2.Location = new System.Drawing.Point(29, 186);
+            this.groupBox2.Location = new System.Drawing.Point(36, 183);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(433, 127);
             this.groupBox2.TabIndex = 2;
@@ -256,7 +256,7 @@
             this.groupBox3.Controls.Add(this.txtMatricula);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox3.Location = new System.Drawing.Point(29, 331);
+            this.groupBox3.Location = new System.Drawing.Point(36, 328);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(433, 88);
             this.groupBox3.TabIndex = 3;
@@ -314,7 +314,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(387, 450);
+            this.btnGuardar.Location = new System.Drawing.Point(394, 447);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 12;
@@ -324,7 +324,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(29, 450);
+            this.btnLimpiar.Location = new System.Drawing.Point(36, 447);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 13;
@@ -335,8 +335,8 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(28, 9);
+            this.lblTitulo.ForeColor = System.Drawing.Color.DimGray;
+            this.lblTitulo.Location = new System.Drawing.Point(35, 6);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(41, 13);
             this.lblTitulo.TabIndex = 14;

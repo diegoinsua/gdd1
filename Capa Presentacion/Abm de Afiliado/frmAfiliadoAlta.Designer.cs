@@ -1,4 +1,4 @@
-﻿namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
+﻿namespace Clinica_Frba.CapaDatos.Abm_de_Afiliado
 {
     partial class frmAfiliadoAlta
     {

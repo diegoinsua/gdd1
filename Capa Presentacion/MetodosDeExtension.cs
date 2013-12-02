@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data;
 
-namespace Clinica_Frba.CapaPresentacion
+namespace Clinica_Frba.CapaDatos
 {
     
     //-------------------------------------

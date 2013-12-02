@@ -1,4 +1,4 @@
-﻿namespace Clinica_Frba.CapaPresentacion
+﻿namespace Clinica_Frba.CapaDatos
 {
     partial class frmBase
     {

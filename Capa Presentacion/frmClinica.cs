@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
 
-namespace Clinica_Frba.CapaPresentacion
+namespace Clinica_Frba.CapaDatos
 {
     public partial class frmClinica : Form
     {
@@ -324,7 +324,9 @@ namespace Clinica_Frba.CapaPresentacion
                     }
                    
 
-                    Form f = (Form)o;
+                    frmBase f = (frmBase)o;
+                    f.formularioPadre = this;
+                    f.usuario = usuario;
                     f.Text = nombre;
 
                     // si el nombre es el de este formulario,

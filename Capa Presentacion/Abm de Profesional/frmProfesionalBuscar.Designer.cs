@@ -1,4 +1,4 @@
-﻿namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
+﻿namespace Clinica_Frba.CapaDatos.Abm_de_Profesional
 {
     partial class frmProfesionalBuscar
     {
@@ -50,7 +50,7 @@
             this.dgvProfesional.AllowUserToDeleteRows = false;
             this.dgvProfesional.AllowUserToResizeColumns = false;
             this.dgvProfesional.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProfesional.Location = new System.Drawing.Point(12, 188);
+            this.dgvProfesional.Location = new System.Drawing.Point(20, 188);
             this.dgvProfesional.Name = "dgvProfesional";
             this.dgvProfesional.ReadOnly = true;
             this.dgvProfesional.Size = new System.Drawing.Size(485, 259);
@@ -59,7 +59,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(429, 154);
+            this.btnBuscar.Location = new System.Drawing.Point(437, 154);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(69, 26);
             this.btnBuscar.TabIndex = 6;
@@ -69,7 +69,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(14, 156);
+            this.btnLimpiar.Location = new System.Drawing.Point(22, 156);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(69, 26);
             this.btnLimpiar.TabIndex = 5;
@@ -86,7 +86,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox1.Location = new System.Drawing.Point(12, 48);
+            this.groupBox1.Location = new System.Drawing.Point(20, 48);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(486, 100);
             this.groupBox1.TabIndex = 4;
@@ -156,7 +156,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(12, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(20, 9);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(41, 13);
             this.lblTitulo.TabIndex = 11;

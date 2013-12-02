@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
+namespace Clinica_Frba.CapaDatos.Abm_de_Profesional
 {
     public partial class frmProfesionalBuscar : frmBase
     {

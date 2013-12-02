@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Clinica_Frba.CapaPresentacion
+namespace Clinica_Frba.CapaDatos
 {
     public partial class frmBase : Form
     {
@@ -17,13 +17,14 @@ namespace Clinica_Frba.CapaPresentacion
         protected ErrorProvider erp;
         protected ToolTip ttp;
         protected bool huboErrores = false;
-        protected string formularioPadre = string.Empty;
+        public Form formularioPadre = null;
+        public Usuario usuario = null;
         protected string tipoABM;
 
         
         // Propiedades
         public frmClinica FormClinica { get; set; }
-        public CapaPresentacion.Login.frmLoginContainer FormLoginContainer { get; set; }
+        public CapaDatos.Login.frmLoginContainer FormLoginContainer { get; set; }
         
         // Constructor
         
