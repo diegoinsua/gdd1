@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Data.OleDb;
 
-namespace Clinica_Frba.CapaDatos
+namespace Clinica_Frba.CapaPresentacion
 {
     public abstract class TableDataGateway
     {

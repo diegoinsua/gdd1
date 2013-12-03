@@ -1,4 +1,4 @@
-﻿namespace Clinica_Frba.CapaDatos.Compra_de_Bono
+﻿namespace Clinica_Frba.CapaPresentacion.Compra_de_Bono
 {
     partial class frmCompraBonos
     {
@@ -169,6 +169,7 @@
             // 
             // btnComprar
             // 
+            this.btnComprar.Enabled = false;
             this.btnComprar.Location = new System.Drawing.Point(407, 349);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(75, 23);

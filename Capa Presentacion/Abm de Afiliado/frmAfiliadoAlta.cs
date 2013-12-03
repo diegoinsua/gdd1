@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Clinica_Frba.CapaDatos;
+using Clinica_Frba.CapaPresentacion;
 
-namespace Clinica_Frba.CapaDatos.Abm_de_Afiliado
+namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
 {
     public partial class frmAfiliadoAlta : frmBase
     {

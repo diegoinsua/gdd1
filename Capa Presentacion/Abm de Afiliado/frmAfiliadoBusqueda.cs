@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Clinica_Frba.CapaDatos.Abm_de_Afiliado
+namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
 {
     public partial class frmAfiliadoBusqueda : frmBase
     {
@@ -32,7 +32,7 @@ namespace Clinica_Frba.CapaDatos.Abm_de_Afiliado
             // Si no hubo errores
             if (this.huboErrores == false)
             {
-                Clinica_Frba.CapaDatos.AfiliadoTDG aflTDG = new Clinica_Frba.CapaDatos.AfiliadoTDG();
+                Clinica_Frba.CapaPresentacion.AfiliadoTDG aflTDG = new Clinica_Frba.CapaPresentacion.AfiliadoTDG();
 
                 if (txtApellido.ReadOnly == false)
                     dgvAfiliado.DataSource = aflTDG.getAflByApellido(txtApellido.Text);
@@ -105,7 +105,7 @@ namespace Clinica_Frba.CapaDatos.Abm_de_Afiliado
                 if (dr == DialogResult.Yes)
                 {
                     // Elimino el profesional
-                    Clinica_Frba.CapaDatos.AfiliadoTDG aflTDG = new Clinica_Frba.CapaDatos.AfiliadoTDG();
+                    Clinica_Frba.CapaPresentacion.AfiliadoTDG aflTDG = new Clinica_Frba.CapaPresentacion.AfiliadoTDG();
                     aflTDG.delete(apellido);
 
                     // Reseteo el form

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Clinica_Frba.CapaDatos
+namespace Clinica_Frba.CapaPresentacion
 {
     public partial class frmBase : Form
     {
@@ -24,7 +24,7 @@ namespace Clinica_Frba.CapaDatos
         
         // Propiedades
         public frmClinica FormClinica { get; set; }
-        public CapaDatos.Login.frmLoginContainer FormLoginContainer { get; set; }
+        public CapaPresentacion.Login.frmLoginContainer FormLoginContainer { get; set; }
         
         // Constructor
         

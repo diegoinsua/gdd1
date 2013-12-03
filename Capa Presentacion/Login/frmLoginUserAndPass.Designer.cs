@@ -1,4 +1,4 @@
-﻿namespace Clinica_Frba.CapaDatos
+﻿namespace Clinica_Frba.CapaPresentacion
 {
     partial class frmLoginUserAndPass
     {

@@ -8,7 +8,7 @@
     <ProjectGuid>{71DE9239-635F-437B-BF7D-1D898AB408DD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Clinica_Frba.CapaDatos</RootNamespace>
+    <RootNamespace>Clinica_Frba.CapaPresentacion</RootNamespace>
     <AssemblyName>CapaPresentacion</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -32,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -111,6 +110,12 @@
       <DependentUpon>frmLoginRol.cs</DependentUpon>
     </Compile>
     <Compile Include="MetodosDeExtension.cs" />
+    <Compile Include="Pedir Turno\frmTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedir Turno\frmTurno.Designer.cs">
+      <DependentUpon>frmTurno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registro de Usuario\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +205,9 @@
       <DependentUpon>frmLoginUserAndPass.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pedir Turno\frmTurno.resx">
+      <DependentUpon>frmTurno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -229,9 +237,6 @@
       <Project>{2DDDC964-43DF-429C-B457-9B9AECAD5C4F}</Project>
       <Name>Capa Negocio</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pedir Turno\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

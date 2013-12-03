@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 
-namespace Clinica_Frba.CapaDatos
+namespace Clinica_Frba.CapaPresentacion
 {
     public class Conexion
     {

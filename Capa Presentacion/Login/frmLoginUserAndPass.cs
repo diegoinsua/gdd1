@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Clinica_Frba.CapaDatos
+namespace Clinica_Frba.CapaPresentacion
 {
     public partial class frmLoginUserAndPass : frmBase
     {
@@ -32,7 +32,7 @@ namespace Clinica_Frba.CapaDatos
             if (!huboErrores)
             {
 
-                Clinica_Frba.CapaDatos.LoginTDG loginTDG = new Clinica_Frba.CapaDatos.LoginTDG();
+                Clinica_Frba.CapaPresentacion.LoginTDG loginTDG = new Clinica_Frba.CapaPresentacion.LoginTDG();
                 bool loginValido = loginTDG.validarUsuario(txtUsuario.Text, txtContrasenia.Text);
 
 

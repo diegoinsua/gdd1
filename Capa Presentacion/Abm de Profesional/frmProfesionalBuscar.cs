@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Clinica_Frba.CapaDatos.Abm_de_Profesional
+namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 {
     public partial class frmProfesionalBuscar : frmBase
     {
@@ -87,7 +87,7 @@ namespace Clinica_Frba.CapaDatos.Abm_de_Profesional
             // Si no hubo errores
             if (this.huboErrores == false)
             {
-                Clinica_Frba.CapaDatos.ProfesionalTDG admTDG = new Clinica_Frba.CapaDatos.ProfesionalTDG();
+                Clinica_Frba.CapaPresentacion.ProfesionalTDG admTDG = new Clinica_Frba.CapaPresentacion.ProfesionalTDG();
 
                 if (txtApellido.ReadOnly == false)
                     dgvProfesional.DataSource = admTDG.getAdmByApellido(txtApellido.Text);
@@ -164,7 +164,7 @@ namespace Clinica_Frba.CapaDatos.Abm_de_Profesional
                 if (dr == DialogResult.Yes)
                 {
                     // Elimino el profesional
-                    Clinica_Frba.CapaDatos.ProfesionalTDG admTDG = new Clinica_Frba.CapaDatos.ProfesionalTDG();
+                    Clinica_Frba.CapaPresentacion.ProfesionalTDG admTDG = new Clinica_Frba.CapaPresentacion.ProfesionalTDG();
                     admTDG.delete(matricula);
 
                     // Reseteo el form
