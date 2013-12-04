@@ -48,7 +48,7 @@ namespace Clinica_Frba.CapaPresentacion
 
         
 
-        public void comprarBonos(int cantBonosConsulta, int cantBonosFarmacia) { return; }
+        public void comprarBonos(decimal cantBonosConsulta, decimal cantBonosFarmacia) { return; }
     }
 
 }
