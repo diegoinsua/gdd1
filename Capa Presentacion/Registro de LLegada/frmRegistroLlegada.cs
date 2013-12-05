@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Clinica_Frba.NewFolder5
+namespace Clinica_Frba.CapaPresentacion.Registro_de_LLegada
 {
-    public partial class Form1 : Form
+    public partial class frmRegistroLlegada : Form
     {
-        public Form1()
+        public frmRegistroLlegada()
         {
             InitializeComponent();
         }

@@ -20,6 +20,8 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         {
             InitializeComponent();
 
+            this.Text = "Alta Profesional";
+
         }
 
         // Métodos
@@ -34,51 +36,17 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 
        
 
-        private DataTable dtProfesional()
-        {
-
-            Type caracter = typeof(char);
-            Type cadena = typeof(string);
-            Type numero = typeof(Int32);
-            Type fecha = typeof(DateTime);
-
-            DataTable dt = new DataTable();
-                          
-            dt.Columns.Add(nuevaColumna("nombre", cadena));
-            dt.Columns.Add(nuevaColumna("apellido", cadena));
-            dt.Columns.Add(nuevaColumna("dni", numero));
-            dt.Columns.Add(nuevaColumna("sexo", caracter));
-            dt.Columns.Add(nuevaColumna("fechaNacimiento", fecha));
-            dt.Columns.Add(nuevaColumna("direccion", cadena));
-            dt.Columns.Add(nuevaColumna("telefono", numero));
-            dt.Columns.Add(nuevaColumna("mail", cadena));
-            dt.Columns.Add(nuevaColumna("especialidad", cadena));
-            dt.Columns.Add(nuevaColumna("matricula", numero));
-
-            
-            return dt;
-
-        }
-
-
         // Eventos
         private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
-            bool a = txtDNI.validarCaracter("0123456789", e, "Solo puede ingresar números.");
-            
-                            
-                // toolTip1.AutoPopDelay = 8000;
-                // toolTip1.InitialDelay = 1000;
-                // toolTip1.ReshowDelay = 500;
-            //MessageBox.Show(ttp.GetToolTip(txtDNI));
-            if (a)
-            {
-                erp.SetError(txtDNI, "error error");
-                
-                
-            }
+            bool charValido = txtDNI.validarCaracter("0123456789", e, "Solo puede ingresar números.");
+                        
+            if (charValido)  erp.SetError(txtDNI, "error error");            
             
         }
+
+
+
 
         private void txtMatriculaNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -97,7 +65,71 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 
 
             if (huboErrores == false) {
+                
+                AdministrativoTDG adm = new AdministrativoTDG();
+                DataTable dt = crearProfesionalDT();
+                 
+                bool resultado;
 
+                if (this.Text == "Alta Profesional")  resultado = adm.insert(dt);
+                if (this.Text == "Modificar Profesional") resultado = adm.update(dt);
+                 
+                if ( resultado ) { 
+                     limpiarControles();
+                     if (this.Text == "Modificar Profesional") this.Dispose(); // cierro el form si es una modificación
+                 }
+                                
+            }
+
+            huboErrores = false;
+        }
+
+
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            this.limpiarControles();
+        }
+
+
+
+        private void frmProfesional_Load(object sender, EventArgs e)
+        {
+            lblTitulo.Text = this.Text;
+        }
+
+
+
+        private DataTable dtProfesional()
+        {
+
+            Type caracter = typeof(char);
+            Type cadena = typeof(string);
+            Type numero = typeof(Int32);
+            Type fecha = typeof(DateTime);
+
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add(nuevaColumna("nombre", cadena));
+            dt.Columns.Add(nuevaColumna("apellido", cadena));
+            dt.Columns.Add(nuevaColumna("dni", numero));
+            dt.Columns.Add(nuevaColumna("sexo", caracter));
+            dt.Columns.Add(nuevaColumna("fechaNacimiento", fecha));
+            dt.Columns.Add(nuevaColumna("direccion", cadena));
+            dt.Columns.Add(nuevaColumna("telefono", numero));
+            dt.Columns.Add(nuevaColumna("mail", cadena));
+            dt.Columns.Add(nuevaColumna("especialidad", cadena));
+            dt.Columns.Add(nuevaColumna("matricula", numero));
+
+
+            return dt;
+
+        }
+
+
+
+        private DataTable crearProfesionalDT()
+        {
                 DataTable dt = this.dtProfesional();
                 DataRow dr = dt.NewRow();
 
@@ -111,31 +143,8 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
                 dr["mail"] = txtMail.Text;
                 dr["especialidad"] = cmbEspecialidad.ValueMember;
 
-
-                 AdministrativoTDG adm = new AdministrativoTDG();
-                 bool resultado = adm.insert(dr);
-                 
-                if ( resultado ) { 
-                     limpiarControles();
-                     if (this.Text == "Modificar Profesional") this.Dispose(); // cierro el form si es una modificación
-                 }
-                                
-            }
-
-            huboErrores = false;
+                return dt;
         }
-
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            this.limpiarControles();
-        }
-
-        private void frmProfesional_Load(object sender, EventArgs e)
-        {
-            lblTitulo.Text = this.Text;
-        }   
-      
 
               
     }
