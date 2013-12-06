@@ -5,9 +5,9 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Clinica_Frba.CapaPresentacion
+namespace Clinica_Frba.CapaDatos
 {
-    class TurnosTDG : TableDataGateway
+    class Turnos : TableDataGateway
     {
         public void insert(DataRow turno) { }
         public void update(DataTable turno) { }

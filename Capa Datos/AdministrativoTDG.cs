@@ -5,12 +5,12 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace Clinica_Frba.CapaPresentacion
+namespace Clinica_Frba.CapaDatos
 {
 
 
 
-    public class AdministrativoTDG : TableDataGateway
+    public class Administrativo : TableDataGateway
     {
         // Habrá un objeto TDG por cada tabla en la DB.
         // Heredan todos los métodos de la superclase TableDataGateway.
@@ -19,7 +19,7 @@ namespace Clinica_Frba.CapaPresentacion
         // Se valen de los métodos exucteQuery y executeNonQuery para realizar las operaciones de consultas. Los heredan de la superclase.
 
         public bool insert(DataTable adm) { return true; }
-        public void update(DataTable adm) { }
+        public bool update(DataTable adm) { return true; }
         public void delete(string matriculaNumero) { }
         public DataSet getAdmById(int id) { return new DataSet(); }
         public DataSet getAdmByAtributos(string apellido) { return new DataSet(); }

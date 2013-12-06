@@ -95,8 +95,17 @@ namespace Clinica_Frba.CapaPresentacion
 
 
         //-------------------------------------
-        // FORM
+        // COMBOBOX
         //-------------------------------------
+        public static void llenar(this ComboBox cmb, DataTable dt)
+        {
+            // Llena el combo usando las dos primeras columnas de la tala.
+            // La primera columna la usa para el valor a mostrar y la segunda para el valor real.
+            
+            cmb.DataSource = dt;
+            cmb.DisplayMember = dt.Columns[0].ColumnName.ToString();
+            cmb.ValueMember = dt.Columns[1].ColumnName.ToString();
+        }
 
      }                 
 

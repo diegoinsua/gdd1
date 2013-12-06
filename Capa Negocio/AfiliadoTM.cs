@@ -11,10 +11,10 @@ namespace Clinica_Frba.CapaNegocio
     public class AfiliadoTM
     {
         // Atributos
-        CapaPresentacion.AfiliadoTDG afiliadoTDG; // Del tipo AfiliadoTDG, clase que se encuentra en la Capa de Datos
+        CapaDatos.Afiliado afiliadoTDG; // Del tipo AfiliadoTDG, clase que se encuentra en la Capa de Datos
 
         // Constructor 
-        public AfiliadoTM() { afiliadoTDG = new CapaPresentacion.AfiliadoTDG(); }
+        public AfiliadoTM() { afiliadoTDG = new CapaDatos.Afiliado(); }
        
         // Métodos
         public DataSet getAfiliadoByAtributos() { return new DataSet(); }

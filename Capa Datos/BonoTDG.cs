@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Data;
 
-namespace Clinica_Frba.CapaPresentacion
+namespace Clinica_Frba.CapaDatos
 {
 
 
-    public class BonoTDG : TableDataGateway
+    public class Bono : TableDataGateway
     {
         private Usuario usuario { get; set; }
         public decimal precioBonoFarmacia { get; set; }
         public decimal precioBonoConsulta { get; set; }
 
-        public BonoTDG(Usuario user)
+        public Bono(Usuario user)
         {
             usuario = user;
             setPrecios();

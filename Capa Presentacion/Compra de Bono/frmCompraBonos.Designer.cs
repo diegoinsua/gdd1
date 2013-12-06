@@ -38,14 +38,16 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTotalTitulo = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblAfiliadoNumero = new System.Windows.Forms.Label();
-            this.txtAfiliadoID = new System.Windows.Forms.TextBox();
             this.btnComprar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblAfiliadoNumero = new System.Windows.Forms.Label();
+            this.txtAfiliadoID = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBonosConsulta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBonosFarmacia)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -59,16 +61,16 @@
             this.groupBox1.Controls.Add(this.lblTotal);
             this.groupBox1.Controls.Add(this.lblTotalTitulo);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(15, 91);
+            this.groupBox1.Location = new System.Drawing.Point(15, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(467, 192);
+            this.groupBox1.Size = new System.Drawing.Size(598, 123);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             // 
             // lblValorBonoFarmacia
             // 
             this.lblValorBonoFarmacia.AutoSize = true;
-            this.lblValorBonoFarmacia.Location = new System.Drawing.Point(186, 93);
+            this.lblValorBonoFarmacia.Location = new System.Drawing.Point(177, 81);
             this.lblValorBonoFarmacia.Name = "lblValorBonoFarmacia";
             this.lblValorBonoFarmacia.Size = new System.Drawing.Size(109, 13);
             this.lblValorBonoFarmacia.TabIndex = 23;
@@ -78,7 +80,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(17, 21);
+            this.label3.Location = new System.Drawing.Point(17, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(241, 13);
             this.label3.TabIndex = 21;
@@ -87,7 +89,7 @@
             // lblValorBonoConsulta
             // 
             this.lblValorBonoConsulta.AutoSize = true;
-            this.lblValorBonoConsulta.Location = new System.Drawing.Point(186, 67);
+            this.lblValorBonoConsulta.Location = new System.Drawing.Point(177, 55);
             this.lblValorBonoConsulta.Name = "lblValorBonoConsulta";
             this.lblValorBonoConsulta.Size = new System.Drawing.Size(107, 13);
             this.lblValorBonoConsulta.TabIndex = 22;
@@ -95,7 +97,7 @@
             // 
             // nudBonosConsulta
             // 
-            this.nudBonosConsulta.Location = new System.Drawing.Point(116, 65);
+            this.nudBonosConsulta.Location = new System.Drawing.Point(107, 53);
             this.nudBonosConsulta.Name = "nudBonosConsulta";
             this.nudBonosConsulta.Size = new System.Drawing.Size(43, 20);
             this.nudBonosConsulta.TabIndex = 0;
@@ -105,7 +107,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 67);
+            this.label4.Location = new System.Drawing.Point(17, 55);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 13);
             this.label4.TabIndex = 18;
@@ -113,7 +115,7 @@
             // 
             // nudBonosFarmacia
             // 
-            this.nudBonosFarmacia.Location = new System.Drawing.Point(116, 91);
+            this.nudBonosFarmacia.Location = new System.Drawing.Point(107, 79);
             this.nudBonosFarmacia.Name = "nudBonosFarmacia";
             this.nudBonosFarmacia.Size = new System.Drawing.Size(43, 20);
             this.nudBonosFarmacia.TabIndex = 20;
@@ -123,7 +125,7 @@
             // 
             this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(373, 162);
+            this.lblTotal.Location = new System.Drawing.Point(494, 81);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(75, 22);
             this.lblTotal.TabIndex = 13;
@@ -134,7 +136,7 @@
             // 
             this.lblTotalTitulo.AutoSize = true;
             this.lblTotalTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTitulo.Location = new System.Drawing.Point(280, 167);
+            this.lblTotalTitulo.Location = new System.Drawing.Point(401, 86);
             this.lblTotalTitulo.Name = "lblTotalTitulo";
             this.lblTotalTitulo.Size = new System.Drawing.Size(87, 13);
             this.lblTotalTitulo.TabIndex = 12;
@@ -143,34 +145,16 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 93);
+            this.label5.Location = new System.Drawing.Point(17, 81);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 13);
             this.label5.TabIndex = 19;
             this.label5.Text = "Bonos Farmacia:";
             // 
-            // lblAfiliadoNumero
-            // 
-            this.lblAfiliadoNumero.AutoSize = true;
-            this.lblAfiliadoNumero.Location = new System.Drawing.Point(12, 53);
-            this.lblAfiliadoNumero.Name = "lblAfiliadoNumero";
-            this.lblAfiliadoNumero.Size = new System.Drawing.Size(56, 13);
-            this.lblAfiliadoNumero.TabIndex = 25;
-            this.lblAfiliadoNumero.Text = "Afiliado N°";
-            this.lblAfiliadoNumero.Visible = false;
-            // 
-            // txtAfiliadoID
-            // 
-            this.txtAfiliadoID.Location = new System.Drawing.Point(70, 50);
-            this.txtAfiliadoID.Name = "txtAfiliadoID";
-            this.txtAfiliadoID.Size = new System.Drawing.Size(100, 20);
-            this.txtAfiliadoID.TabIndex = 24;
-            this.txtAfiliadoID.Visible = false;
-            // 
             // btnComprar
             // 
             this.btnComprar.Enabled = false;
-            this.btnComprar.Location = new System.Drawing.Point(407, 349);
+            this.btnComprar.Location = new System.Drawing.Point(538, 275);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(75, 23);
             this.btnComprar.TabIndex = 26;
@@ -188,14 +172,41 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "Compra de Bonos";
             // 
+            // lblAfiliadoNumero
+            // 
+            this.lblAfiliadoNumero.AutoSize = true;
+            this.lblAfiliadoNumero.Location = new System.Drawing.Point(15, 20);
+            this.lblAfiliadoNumero.Name = "lblAfiliadoNumero";
+            this.lblAfiliadoNumero.Size = new System.Drawing.Size(56, 13);
+            this.lblAfiliadoNumero.TabIndex = 29;
+            this.lblAfiliadoNumero.Text = "Afiliado N°";
+            this.lblAfiliadoNumero.Visible = false;
+            // 
+            // txtAfiliadoID
+            // 
+            this.txtAfiliadoID.Location = new System.Drawing.Point(73, 17);
+            this.txtAfiliadoID.Name = "txtAfiliadoID";
+            this.txtAfiliadoID.Size = new System.Drawing.Size(100, 20);
+            this.txtAfiliadoID.TabIndex = 28;
+            this.txtAfiliadoID.Visible = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtAfiliadoID);
+            this.groupBox2.Controls.Add(this.lblAfiliadoNumero);
+            this.groupBox2.Location = new System.Drawing.Point(15, 169);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(598, 46);
+            this.groupBox2.TabIndex = 30;
+            this.groupBox2.TabStop = false;
+            // 
             // frmCompraBonos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 394);
+            this.ClientSize = new System.Drawing.Size(628, 310);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lblAfiliadoNumero);
-            this.Controls.Add(this.txtAfiliadoID);
             this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.label1);
             this.Name = "frmCompraBonos";
@@ -206,6 +217,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBonosConsulta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBonosFarmacia)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,9 +236,10 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblTotalTitulo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblAfiliadoNumero;
-        private System.Windows.Forms.TextBox txtAfiliadoID;
         private System.Windows.Forms.Button btnComprar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAfiliadoNumero;
+        private System.Windows.Forms.TextBox txtAfiliadoID;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

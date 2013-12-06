@@ -6,8 +6,9 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Data.OleDb;
 
-namespace Clinica_Frba.CapaPresentacion
+namespace Clinica_Frba.CapaDatos
 {
+    
     public abstract class TableDataGateway
     {
 
@@ -16,6 +17,8 @@ namespace Clinica_Frba.CapaPresentacion
         //----------------//
         //protected string cadenaConexion = "reemplazar con la cadena de conexion";
         private SqlConnection conexion;
+        public string cadena = "";
+        public DataTable dt = null;
 
 
         //----------------//
@@ -52,9 +55,15 @@ namespace Clinica_Frba.CapaPresentacion
             // Creo un comando y lo seteo
             SqlCommand cmd = conexion.CreateCommand();          
             cmd.CommandText = cadenaSQL;
-            foreach (SqlParameter p in parametros.parametros)
+
+
+            // Agrego los parametros
+            if (parametros != null)
             {
-                cmd.Parameters.Add(p);
+                foreach (SqlParameter p in parametros.parametros)
+                {
+                    cmd.Parameters.Add(p);
+                }
             }
 
             // Creo el data adapter

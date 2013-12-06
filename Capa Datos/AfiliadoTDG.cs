@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
+using Clinica_Frba.CapaDatos;
 
-namespace Clinica_Frba.CapaPresentacion
+namespace Clinica_Frba.CapaDatos
 {
-    public class AfiliadoTDG : TableDataGateway
+    public class Afiliado : TableDataGateway
     {
         public bool insert(DataRow afl) { return true; }
         public DataSet getAflByApellido(string apellido) { DataSet afl = new DataSet(); return afl; }

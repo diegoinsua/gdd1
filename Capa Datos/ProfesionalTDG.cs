@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Data;
 
-namespace Clinica_Frba.CapaPresentacion
+namespace Clinica_Frba.CapaDatos
 {
-    public class ProfesionalTDG : TableDataGateway
+    public class Profesional : TableDataGateway
     {
         public DataSet getAdmByApellido(string apellido)
         {
@@ -38,6 +38,16 @@ namespace Clinica_Frba.CapaPresentacion
             return dt;
         }
 
-        public void delete(string matriculaNumero) { }
+
+        public DataTable getEspecialidades()
+        {
+            Especialidad e = new Especialidad();
+
+            return e.getEspecialidades();
+        }
+
+        public bool insert(DataTable dt) { return true; }
+        public bool update(DataTable dt) { return true; }
+        public bool delete(int matricula) { return true; }
     }
 }

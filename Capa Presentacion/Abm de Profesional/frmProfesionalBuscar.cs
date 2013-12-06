@@ -87,7 +87,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
             // Si no hubo errores
             if (this.huboErrores == false)
             {
-                Clinica_Frba.CapaPresentacion.ProfesionalTDG admTDG = new Clinica_Frba.CapaPresentacion.ProfesionalTDG();
+                Clinica_Frba.CapaDatos.Profesional admTDG = new Clinica_Frba.CapaDatos.Profesional();
 
                 if (txtApellido.ReadOnly == false)
                     dgvProfesional.DataSource = admTDG.getAdmByApellido(txtApellido.Text);
@@ -158,14 +158,14 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
                 // Pregunto al usuario si esta seguro de eliminar al Profesional
                 string matricula = dgvProfesional.valorColumna(e, "Matricula");
                 DialogResult dr = MessageBox.Show("¿Esta seguro que desea eliminar al profesional cuya matrícula es " + matricula + "?.",
-                                                         "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                                                   "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                
                 // Si la respuesta es afirmativa, lo elimino.
                 if (dr == DialogResult.Yes)
                 {
                     // Elimino el profesional
-                    Clinica_Frba.CapaPresentacion.ProfesionalTDG admTDG = new Clinica_Frba.CapaPresentacion.ProfesionalTDG();
-                    admTDG.delete(matricula);
+                    Clinica_Frba.CapaDatos.Profesional admTDG = new Clinica_Frba.CapaDatos.Profesional();
+                    admTDG.delete(Int32.Parse(matricula));
 
                     // Reseteo el form
                     dgvProfesional.Columns.Clear();

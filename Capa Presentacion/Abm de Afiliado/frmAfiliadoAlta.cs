@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Clinica_Frba.CapaPresentacion;
+using Clinica_Frba.CapaDatos;
 
 namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
 {
@@ -82,7 +83,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
                 dr["Personas a cargo"] = mtxaCargo;
                 dr["Plan médico"] = mtxPlan;
 
-                AfiliadoTDG adm = new AfiliadoTDG();
+                Afiliado adm = new Afiliado();
                 bool resultado = adm.insert(dr);
 
                 if (resultado)

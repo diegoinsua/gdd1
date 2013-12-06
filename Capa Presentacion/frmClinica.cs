@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
+using Clinica_Frba.CapaDatos;
 
 namespace Clinica_Frba.CapaPresentacion
 {
@@ -30,7 +31,7 @@ namespace Clinica_Frba.CapaPresentacion
         // Construir Menú
         public void crearMenu()
         {
-            Clinica_Frba.CapaPresentacion.Menu menuTDG = new Clinica_Frba.CapaPresentacion.Menu();
+            Clinica_Frba.CapaDatos.Menu menuTDG = new Clinica_Frba.CapaDatos.Menu();
 
             string rol = this.usuario.rolNombre;
 

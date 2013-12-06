@@ -6,37 +6,95 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Clinica_Frba.CapaPresentacion;
 
 
 namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 {
     public partial class frmProfesional : frmBase
     {
-        
-       
-        
+        CapaDatos.Profesional prof = null;
+
+        // ------------------
+        //  CONSTRUCTOR
+        // ------------------
         public frmProfesional()
         {
             InitializeComponent();
-
-            this.Text = "Alta Profesional";
-
         }
 
-        // Métodos
-        private DataColumn nuevaColumna(string nombre, Type tipoDato)
+
+
+        //---------------
+        // BOTON GUARDAR
+        //---------------
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-            DataColumn columna = new DataColumn();
-            columna.DataType = tipoDato;
-            columna.ColumnName = nombre;
 
-            return columna;
+            this.validarErrores();
+            this.validarMail(txtMail);
+
+
+            if (huboErrores == false)
+            {
+                DataTable dt = crearProfesionalDT();
+                bool accionCompletada = false;
+
+
+                // Modifico la DB
+                if (this.Text == "Alta Profesional") accionCompletada = prof.insert(dt);
+                if (this.Text == "Modificar Profesional") accionCompletada = prof.update(dt);
+
+
+                // Acciones posteriores 
+                if (accionCompletada)
+                {
+                    limpiarControles();
+                    if (this.Text == "Modificar Profesional") this.Dispose(); // cierro el form si es una modificación
+                }
+
+                else
+
+                    MessageBox.Show("Se produjo un error que impidio completar el proceso. Intente nuevamente.");
+                
+            }
+
+            huboErrores = false;
         }
 
-       
 
-        // Eventos
+
+        //---------------
+        // BOTON LIMPIAR
+        //---------------
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            this.limpiarControles();
+        }
+
+
+
+
+
+        // ------------------
+        // EVENTOS
+        // ------------------
+
+        // Load
+        private void frmProfesional_Load(object sender, EventArgs e)
+        {
+            // Creo un objeto profesional
+            prof = new Clinica_Frba.CapaDatos.Profesional();
+            
+            // Seteo el label con el titulo
+            lblTitulo.Text = this.Text;
+
+            // Lleno el combobox especialidades
+            DataTable dt = prof.getEspecialidades();
+            cmbEspecialidad.llenar(dt);
+        }
+
+
+        // txtDNI KeyPress
         private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
             bool charValido = txtDNI.validarCaracter("0123456789", e, "Solo puede ingresar números.");
@@ -46,61 +104,21 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         }
 
 
-
-
+        // txtMatriculaNumero KeyPress
         private void txtMatriculaNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtDNI.validarCaracter("0123456789", e, "Solo puede ingresar números.");
         }
 
-        //-----------
-        // GUARDAR
-        //-----------
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-
-            this.validarErrores();
-            this.validarMail(txtMail);
-                       
-
-
-            if (huboErrores == false) {
-                
-                AdministrativoTDG adm = new AdministrativoTDG();
-                DataTable dt = crearProfesionalDT();
-                 
-                bool resultado;
-
-                if (this.Text == "Alta Profesional")  resultado = adm.insert(dt);
-                if (this.Text == "Modificar Profesional") resultado = adm.update(dt);
-                 
-                if ( resultado ) { 
-                     limpiarControles();
-                     if (this.Text == "Modificar Profesional") this.Dispose(); // cierro el form si es una modificación
-                 }
-                                
-            }
-
-            huboErrores = false;
-        }
 
 
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            this.limpiarControles();
-        }
 
 
-
-        private void frmProfesional_Load(object sender, EventArgs e)
-        {
-            lblTitulo.Text = this.Text;
-        }
-
-
-
-        private DataTable dtProfesional()
+        //-----------------------
+        // DATATABLE PROFESIONAL
+        //-----------------------
+        private DataTable getDtProfesional()
         {
 
             Type caracter = typeof(char);
@@ -127,10 +145,20 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         }
 
 
+        private DataColumn nuevaColumna(string nombre, Type tipoDato)
+        {
+            DataColumn columna = new DataColumn();
+            columna.DataType = tipoDato;
+            columna.ColumnName = nombre;
+
+            return columna;
+        }
+
+
 
         private DataTable crearProfesionalDT()
         {
-                DataTable dt = this.dtProfesional();
+                DataTable dt = this.getDtProfesional();
                 DataRow dr = dt.NewRow();
 
                 dr["nombre"] = txtNombre.Text;
@@ -145,6 +173,9 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 
                 return dt;
         }
+
+
+        // FIN DATATABLE
 
               
     }

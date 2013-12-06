@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Data;
 
-namespace Clinica_Frba.CapaPresentacion
+namespace Clinica_Frba.CapaDatos
 {
-    public class LoginTDG : TableDataGateway
+    public class Login : TableDataGateway
     {
         public bool validarUsuario(string usuario, string contrasenia)
         {

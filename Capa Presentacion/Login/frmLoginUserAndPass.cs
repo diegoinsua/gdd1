@@ -32,7 +32,7 @@ namespace Clinica_Frba.CapaPresentacion
             if (!huboErrores)
             {
 
-                Clinica_Frba.CapaPresentacion.LoginTDG loginTDG = new Clinica_Frba.CapaPresentacion.LoginTDG();
+                Clinica_Frba.CapaDatos.Login loginTDG = new Clinica_Frba.CapaDatos.Login();
                 bool loginValido = loginTDG.validarUsuario(txtUsuario.Text, txtContrasenia.Text);
 
 
