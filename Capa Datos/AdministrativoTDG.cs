@@ -18,7 +18,7 @@ namespace Clinica_Frba.CapaPresentacion
         // La cantidad de métodos varía para cada clase, por ej podría haber dos métodos delete distintos uno que elimine según una id y otro según un apellido.
         // Se valen de los métodos exucteQuery y executeNonQuery para realizar las operaciones de consultas. Los heredan de la superclase.
 
-        public bool insert(DataRow adm) { return true; }
+        public bool insert(DataTable adm) { return true; }
         public void update(DataTable adm) { }
         public void delete(string matriculaNumero) { }
         public DataSet getAdmById(int id) { return new DataSet(); }
