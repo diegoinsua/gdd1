@@ -35,7 +35,7 @@ namespace Clinica_Frba.CapaDatos
             Parametros parametros = new Parametros();
 
             // Agrego los parametros al objeto
-            parametros.add("@idPlan", usuario.planID);
+            parametros.add("@idPlan", usuario.planCodigo);
 
             // Ejecuto el Select
             DataTable dt = this.executeQuery(cadenaSQL, parametros);

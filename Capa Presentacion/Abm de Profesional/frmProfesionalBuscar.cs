@@ -90,13 +90,13 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
                 Clinica_Frba.CapaDatos.Profesional admTDG = new Clinica_Frba.CapaDatos.Profesional();
 
                 if (txtApellido.ReadOnly == false)
-                    dgvProfesional.DataSource = admTDG.getAdmByApellido(txtApellido.Text);
+                    //dgvProfesional.DataSource = admTDG.getAdmByApellido(txtApellido.Text);
 
                 if (txtMatricula.ReadOnly == false)
                     dgvProfesional.DataSource = admTDG.getAdmByMatricula(txtMatricula.Text);
 
                 if (txtDNI.ReadOnly == false)
-                    dgvProfesional.DataSource = admTDG.getAdmByDNI(txtDNI.Text);
+                    //dgvProfesional.DataSource = admTDG.getAdmByDNI(txtDNI.Text);
 
 
 

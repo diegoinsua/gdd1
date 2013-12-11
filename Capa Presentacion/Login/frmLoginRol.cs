@@ -30,7 +30,7 @@ namespace Clinica_Frba.CapaPresentacion
                 //
                 // CHEQUEAR!!!
                 //
-                FormLoginContainer.usuario.rolID = (int)cmbRol.SelectedValue;
+                FormLoginContainer.usuario.planCodigo = (int)cmbRol.SelectedValue;
                 FormLoginContainer.usuario.rolNombre = cmbRol.ValueMember;
 
                 frmClinica formClinica = new frmClinica();

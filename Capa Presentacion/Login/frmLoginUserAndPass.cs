@@ -41,11 +41,11 @@ namespace Clinica_Frba.CapaPresentacion
                 {
                      
                     // obtengo el id del usuario y su nombre
-                    this.FormLoginContainer.usuario.id = loginTDG.getIdUsuario(txtUsuario.Text);
-                    this.FormLoginContainer.usuario.nombre = txtUsuario.Text;
+                    this.FormLoginContainer.usuario.dni = loginTDG.getIdUsuario(txtUsuario.Text);
+                    this.FormLoginContainer.usuario.nombres  = txtUsuario.Text;
 
                     // Obtengo los roles del usuario
-                    DataTable dtRoles = loginTDG.getRol(FormLoginContainer.usuario.id);
+                    DataTable dtRoles = loginTDG.getRol(FormLoginContainer.usuario.dni);
 
 
 
@@ -58,7 +58,7 @@ namespace Clinica_Frba.CapaPresentacion
                     else // Si solo tiene un rol
                     {
                         // Cargo el rol
-                        this.FormLoginContainer.usuario.rolID = (int)dtRoles.Rows[0][0];
+                        this.FormLoginContainer.usuario.planCodigo = (int)dtRoles.Rows[0][0];
                         this.FormLoginContainer.usuario.rolNombre = dtRoles.Rows[0][1].ToString();
                         
                         this.lanzarAplicaciones();                     

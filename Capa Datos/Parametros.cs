@@ -12,12 +12,14 @@ namespace Clinica_Frba.CapaDatos
         
         public List<SqlParameter> parametros{ get; set; }
 
+      
 
         public Parametros()
         {
             parametros = new List<SqlParameter>();
         }
 
+        
         public void add(string parametroNombre, string parametroValor) 
         {
             SqlParameter p = new SqlParameter();

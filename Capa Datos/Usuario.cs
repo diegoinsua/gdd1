@@ -6,16 +6,26 @@ using System.Data;
 
 namespace Clinica_Frba.CapaDatos
 {
-    public class Usuario
+    public class Usuario : TableDataGateway
     {
-        
-        public int id { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public int planID { get; set; }
-        public string planNombre { get; set; }
-        public int rolID { get; set; }
-        public string rolNombre { get; set; }
+        // PROPIEDADES
+        public int      dni; 
+        public string   username; 
+        public string   clave; 
+        public int      intentos; 
+        public bool     habilitado; 
+        public string   tipoDocumento; 
+        public string   nombres; 
+        public string   apellido; 
+        public string   direccion; 
+        public int      telefono; 
+        public string   mail;
+        public DateTime fechaNacimiento;
+        public char     sexo; 
+
+        public string rolNombre;  
+        public int planCodigo;  
+
 
 
         public Usuario()
@@ -26,13 +36,17 @@ namespace Clinica_Frba.CapaDatos
 
         public void inicializarUsuario() 
         {
-            id = 0;
-            nombre = string.Empty;
+            dni = 0;
+            nombres = string.Empty;
             apellido = string.Empty;
-            planID = 0;
-            planNombre = string.Empty;
-            rolID = 0;
+            planCodigo = 0;
             rolNombre = string.Empty;
+        }
+
+        public DataTable getUsuarioByDNI(int dni) 
+        {
+            DataTable dt = new DataTable();
+            return dt; 
         }
     }
 }

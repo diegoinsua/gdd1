@@ -41,7 +41,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 
 
                 // Modifico la DB
-                if (this.Text == "Alta Profesional") accionCompletada = prof.insert(dt);
+               // if (this.Text == "Alta Profesional") accionCompletada = prof.insert(dt);
                 if (this.Text == "Modificar Profesional") accionCompletada = prof.update(dt);
 
 

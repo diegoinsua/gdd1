@@ -14,14 +14,12 @@ namespace Clinica_Frba.CapaDatos
         protected Conexion() { }
 
 
-        public static SqlConnection conexion
-        {
-            get
-            {
+        public static SqlConnection crearConexion()
+        {          
                 if (conexionDB == null)   conexionDB = new SqlConnection(cadenaConexion);
 
                 return conexionDB;
-            }
+            
         }
 
     }
