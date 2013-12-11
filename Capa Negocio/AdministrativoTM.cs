@@ -13,7 +13,7 @@ namespace Clinica_Frba.CapaNegocio
         CapaDatos.Administrativo admTDG; // Notar que es del tipo AdministrativoTDG, clase que se encuentra en la Capa de Datos
                 
         // Constructor 
-        public AdministrativoTM() { admTDG = new CapaDatos.Administrativo(); }
+    //    public AdministrativoTM() { admTDG = new CapaDatos.Administrativo(); }
         
         
         // Métodos

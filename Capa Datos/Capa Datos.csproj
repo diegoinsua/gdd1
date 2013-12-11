@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdministrativoTDG.cs" />
     <Compile Include="AfiliadoTDG.cs" />
     <Compile Include="BonoTDG.cs" />
     <Compile Include="Conexion.cs" />
