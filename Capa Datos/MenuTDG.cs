@@ -12,8 +12,8 @@ namespace Clinica_Frba.CapaDatos
         {
             // Creo la cadena SQL
             string cadenaSQL = "SELECT elem_nombre, elem_padre, elem_menu, form_ruta " +
-                               "FROM elementos left join formularios on elem_form = form_nombre, menuXrol " +
-                               "WHERE (menuXrol.mero_rol = @Admin) AND  (mero_menu = elem_menu) " +
+                               "FROM VARIETE_GDD.elementos left join VARIETE_GDD.formularios on elem_form = form_nombre, VARIETE_GDD.menuXrol " +
+                               "WHERE (mero_rol = @Admin) AND  (mero_menu = elem_menu) " +
                                "ORDER BY elem_menu, elem_form asc";
             
             // Creo un objeto de la clase Parametros
