@@ -18,7 +18,7 @@ namespace Clinica_Frba.CapaDatos
         public string   nombres; 
         public string   apellido; 
         public string   direccion; 
-        public int      telefono; 
+        public string   telefono; 
         public string   mail;
         public DateTime fechaNacimiento;
         public char     sexo; 

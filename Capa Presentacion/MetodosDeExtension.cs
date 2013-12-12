@@ -103,8 +103,8 @@ namespace Clinica_Frba.CapaPresentacion
             // La primera columna la usa para el valor a mostrar y la segunda para el valor real.
             
             cmb.DataSource = dt;
-            cmb.DisplayMember = dt.Columns[0].ColumnName.ToString();
-            cmb.ValueMember = dt.Columns[1].ColumnName.ToString();
+            cmb.DisplayMember = dt.Columns[1].ColumnName.ToString();
+            cmb.ValueMember = dt.Columns[0].ColumnName.ToString();
         }
 
      }                 

@@ -64,15 +64,15 @@ namespace Clinica_Frba.CapaPresentacion
 
                 string mail = email.Text;
 
-                if (mail.Contains("@") && (mail.Contains(".com") || mail.Contains(".net") ||
+                if (!(mail.Contains("@") && (mail.Contains(".com") || mail.Contains(".net") ||
                                              mail.Contains(".edu") || mail.Contains(".gov") ||
-                                             mail.Contains(".gob")))
+                                             mail.Contains(".gob"))))
                 {
                     erp.SetError(email, String.Empty);
                     return;
                 }
 
-                if (mail.Length != 0)
+                if (mail.Length == 0)
                 {
                     erp.SetError(email, "La dirección de E-Mail que ingresó no es válida");
                     huboErrores = true;

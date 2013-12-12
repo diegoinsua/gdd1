@@ -9,7 +9,7 @@ namespace Clinica_Frba.CapaDatos
     public class Conexion
     {
         private static SqlConnection conexionDB = null;
-        private static string cadenaConexion = "Persist Security Info=False;User ID=gd;Password=gd2013;Initial Catalog=gd;Server=localhost\\SQLSERVER2008";
+        private static string cadenaConexion = "Persist Security Info=False;User ID=gd;Password=gd2013;Initial Catalog=GD2C2013;Server=localhost\\SQLSERVER2008";
 
         protected Conexion() { }
 

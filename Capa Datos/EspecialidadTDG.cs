@@ -11,7 +11,7 @@ namespace Clinica_Frba.CapaDatos
         public DataTable getEspecialidades()
         {
             //TODO: CHEQUEAR CADENA
-            cadena = "SELECT CODIGO, DESCRIPCION FROM ESPECIALIDADES";
+            cadena = "SELECT ESP_CODIGO, ESP_DESCRIPCION FROM VARIETE_GDD.ESPECIALIDADES";
 
             return executeQuery(cadena, null);
         }

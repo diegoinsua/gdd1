@@ -36,21 +36,21 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 
             if (huboErrores == false)
             {
-                DataTable dt = crearProfesionalDT();
-                bool accionCompletada = false;
+                this.crearProfesionalDT();
+                int accionCompletada; 
 
 
                 // Modifico la DB
-               // if (this.Text == "Alta Profesional") accionCompletada = prof.insert(dt);
-                if (this.Text == "Modificar Profesional") accionCompletada = prof.update(dt);
+                if (this.Text == "Alta Profesional") accionCompletada = prof.insert(prof);
+               // if (this.Text == "Alta Profesional") accionCompletada = prof.update(dt);
 
 
                 // Acciones posteriores 
-                if (accionCompletada)
-                {
-                    limpiarControles();
-                    if (this.Text == "Modificar Profesional") this.Dispose(); // cierro el form si es una modificación
-                }
+                //if (accionCompletada )
+                //{
+                //    limpiarControles();
+                //    if (this.Text == "Modificar Profesional") this.Dispose(); // cierro el form si es una modificación
+                //}
 
                 else
 
@@ -134,7 +134,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
             dt.Columns.Add(nuevaColumna("sexo", caracter));
             dt.Columns.Add(nuevaColumna("fechaNacimiento", fecha));
             dt.Columns.Add(nuevaColumna("direccion", cadena));
-            dt.Columns.Add(nuevaColumna("telefono", numero));
+            dt.Columns.Add(nuevaColumna("telefono", cadena));
             dt.Columns.Add(nuevaColumna("mail", cadena));
             dt.Columns.Add(nuevaColumna("especialidad", cadena));
             dt.Columns.Add(nuevaColumna("matricula", numero));
@@ -156,22 +156,33 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 
 
 
-        private DataTable crearProfesionalDT()
+        private void crearProfesionalDT()
         {
                 DataTable dt = this.getDtProfesional();
                 DataRow dr = dt.NewRow();
 
-                dr["nombre"] = txtNombre.Text;
-                dr["apellido"] = txtApellido.Text;
-                dr["dni"] = txtDNI.Text;
-                dr["sexo"] = cmbSexo.Text;
-                dr["fechaNacimiento"] = mtxFechaNacimiento.Text;
-                dr["direccion"] = txtDireccion.Text;
-                dr["telefono"] = txtTelefono.Text;
-                dr["mail"] = txtMail.Text;
-                dr["especialidad"] = cmbEspecialidad.ValueMember;
+                //dr["nombre"] = txtNombre.Text;
+                //dr["apellido"] = txtApellido.Text;
+                //dr["dni"] = txtDNI.Text;
+                //dr["sexo"] = cmbSexo.Text;
+                ////dr["fechaNacimiento"] = DateTime.Parse(mtxFechaNacimiento.Text);
+                //dr["direccion"] = txtDireccion.Text;
+                //dr["telefono"] = txtTelefono.Text;
+                //dr["mail"] = txtMail.Text;
+                //dr["especialidad"] = cmbEspecialidad.ValueMember;
 
-                return dt;
+                //return dt;
+
+
+                prof.nombres = txtNombre.Text;
+                prof.apellido = txtApellido.Text;
+                prof.tipoDocumento = txtDNI.Text;
+                prof.sexo = Char.Parse( cmbSexo.Text);
+                prof.fechaNacimiento = Convert.ToDateTime(mtxFechaNacimiento.Text);
+                prof.direccion = txtDireccion.Text;
+                prof.telefono = txtTelefono.Text;
+                prof.mail = txtMail.Text;
+                prof.matricula = cmbEspecialidad.ValueMember;
         }
 
 

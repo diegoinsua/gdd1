@@ -72,34 +72,34 @@ namespace Clinica_Frba.CapaDatos
 
                 
                 string cadProfesional = "INSERT INTO [GD2C2013].[VARIETE_GDD].[PROFESIONAL] " +
-                                        "([PRO_DNI], "       +
-                                        " [PRO_MATRICULA]) " +
+                                        "(PRO_DNI, "       +
+                                        " PRO_MATRICULA) " +
                                         " VALUES "           +
                                         "(@dni, @matricula);";
 
 
-                string cadUsuario = " INSERT INTO [GD2C2013].[VARIETE_GDD].[USUARIO], " +
-                                     "([USU_DNI], "               +
-                                     " [USU_USERNAME], "          +
-                                     " [USU_CLAVE], "             +
-                                     " [USU_HABILITADO], "        +
-                                     " [USU_TIPO_DOCUMENTO], "    +
-                                     " [USU_NOMBRES], "           +
-                                     " [USU_APELLIDO], "          +
-                                     " [USU_DIRECCION], "         +
-                                     " [USU_TELEFONO], "          +
-                                     " [USU_MAIL], "              +
-                                     " [USU_FECHA_NACIMIENTO], "  +
-                                     " [USU_SEXO]) "              +
+                string cadUsuario = " INSERT INTO [GD2C2013].[VARIETE_GDD].[USUARIO] " +
+                                     "(USU_DNI, "               +
+                                     " USU_USERNAME, "          +
+                                     " USU_CLAVE, "             +
+                                  //   " [USU_HABILITADO], "        +
+                                     " USU_TIPO_DOCUMENTO, "    +
+                                     " USU_NOMBRES, "           +
+                                     " USU_APELLIDO, "          +
+                                     " USU_DIRECCION, "         +
+                                     " USU_TELEFONO, "          +
+                                     " USU_MAIL, "              +
+                                     " USU_FECHA_NACIMIENTO, "  +
+                                     " USU_SEXO) "              +
 
                                      " VALUES " +
 
-                                     "(@dni, @username, @clave,  @habilitado, " +
+                                     "(@dni, @username, @clave, " +
                                      " @tipoDocumento, @nombres, @apellido, @direccion, " +
                                      " @telefono, @mail, @fechaNacimiento, @sexo); ";
 
 
-                string cadenaSQL = cadProfesional + cadUsuario;
+                string cadenaSQL = cadUsuario + cadProfesional;
 
                            
                 // Agrego los parametros
@@ -107,9 +107,10 @@ namespace Clinica_Frba.CapaDatos
                 param.add("@dni", p.dni);
                 param.add("@username", p.username);
                 param.add("@clave", p.clave);
-                param.add("@habilitado", p.habilitado);
+               // param.add("@habilitado", p.habilitado);
                 param.add("@tipoDocumento", p.tipoDocumento);
                 param.add("@nombres", p.nombres);
+                param.add("@apellido", p.apellido);
                 param.add("@direccion", p.direccion);
                 param.add("@telefono", p.telefono);
                 param.add("@mail", p.mail);

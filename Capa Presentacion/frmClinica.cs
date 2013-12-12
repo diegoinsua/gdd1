@@ -51,10 +51,10 @@ namespace Clinica_Frba.CapaPresentacion
                  * padre del menu o submenu del registro actual. */
 
 
-                string nombreElemento = dr["elem_nombre"].ToString().Trim();
-                string nombreMenu = dr["elem_menu"].ToString().Trim();
-                string nombrePadre = dr["elem_padre"].ToString().Trim();
-                string formulario = dr["form_ruta"].ToString().Trim();
+                string nombreElemento = dr["ele_nombre"].ToString().Trim();
+                string nombreMenu = dr["ele_menu"].ToString().Trim();
+                string nombrePadre = dr["ele_padre"].ToString().Trim();
+                string formulario = dr["for_ruta"].ToString().Trim();
 
                 ToolStripMenuItem menu = buscarElemento(nombreMenu, menuStrip1);
                 ToolStripMenuItem padre = buscarElemento(nombrePadre, menu);
@@ -300,8 +300,8 @@ namespace Clinica_Frba.CapaPresentacion
 
             foreach (DataRow dr in dtMenu.Rows)
             {
-                string nombre = dr["elem_nombre"].ToString().Trim();
-                string formulario = dr["form_ruta"].ToString().Trim();
+                string nombre = dr["ele_nombre"].ToString().Trim();
+                string formulario = dr["for_ruta"].ToString().Trim();
                 
                 //  System.Reflection.Assembly ass;
                 if (itemNombre == nombre)
