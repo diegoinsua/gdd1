@@ -19,7 +19,20 @@ namespace Clinica_Frba.CapaDatos
             parametros = new List<SqlParameter>();
         }
 
-        
+
+        public void add(string parametroNombre, char parametroValor)
+        {
+            SqlParameter p = new SqlParameter();
+
+            p.SqlDbType = SqlDbType.Char;
+            p.ParameterName = parametroNombre;
+            p.Value = parametroValor;
+            p.Direction = ParameterDirection.Input;
+
+            parametros.Add(p);
+
+        }
+
         public void add(string parametroNombre, string parametroValor) 
         {
             SqlParameter p = new SqlParameter();

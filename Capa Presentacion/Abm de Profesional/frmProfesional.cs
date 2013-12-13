@@ -32,33 +32,38 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 
             this.validarErrores();
             this.validarMail(txtMail);
-
+            this.validarFecha(mtxFechaNacimiento);
+            
+            int filasAfectadas = 0;
 
             if (huboErrores == false)
             {
                 this.crearProfesionalDT();
-                int accionCompletada; 
 
 
-                // Modifico la DB
-                if (this.Text == "Alta Profesional") accionCompletada = prof.insert(prof);
-               // if (this.Text == "Alta Profesional") accionCompletada = prof.update(dt);
+                // Realizo la operación correspondiente
+                if (this.Text == "Alta Profesional") filasAfectadas = prof.insert(prof);
 
-
-                // Acciones posteriores 
-                //if (accionCompletada )
-                //{
-                //    limpiarControles();
-                //    if (this.Text == "Modificar Profesional") this.Dispose(); // cierro el form si es una modificación
-                //}
-
-                else
-
-                    MessageBox.Show("Se produjo un error que impidio completar el proceso. Intente nuevamente.");
-                
+                if (this.Text == "Modificar Profesional") filasAfectadas = prof.update(prof); // cierro el form si es una modificación
+                                            
             }
+            
+                // Si el usuario cometio errores en el ingreso de datos.
+            else MessageBox.Show("Se encontraron errores en los datos ingresados. Corrija los errores y vuelva a intentarlo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+
+            // Reseteo la bandera de errores de usuario.
             huboErrores = false;
+
+
+            // Si la operación se completo con éxito limpio los controles e informo.
+            if (filasAfectadas > 0) {
+
+                MessageBox.Show("El profesional se agregó correctamente.", "Operación realizada.", MessageBoxButtons.OK, MessageBoxIcon.Information );
+                limpiarControles();
+
+            }
+            
         }
 
 
@@ -94,22 +99,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         }
 
 
-        // txtDNI KeyPress
-        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            bool charValido = txtDNI.validarCaracter("0123456789", e, "Solo puede ingresar números.");
-                        
-            if (charValido)  erp.SetError(txtDNI, "error error");            
-            
-        }
-
-
-        // txtMatriculaNumero KeyPress
-        private void txtMatriculaNumero_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            txtDNI.validarCaracter("0123456789", e, "Solo puede ingresar números.");
-        }
-
+        
 
 
 
@@ -158,35 +148,48 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 
         private void crearProfesionalDT()
         {
-                DataTable dt = this.getDtProfesional();
-                DataRow dr = dt.NewRow();
+              
 
-                //dr["nombre"] = txtNombre.Text;
-                //dr["apellido"] = txtApellido.Text;
-                //dr["dni"] = txtDNI.Text;
-                //dr["sexo"] = cmbSexo.Text;
-                ////dr["fechaNacimiento"] = DateTime.Parse(mtxFechaNacimiento.Text);
-                //dr["direccion"] = txtDireccion.Text;
-                //dr["telefono"] = txtTelefono.Text;
-                //dr["mail"] = txtMail.Text;
-                //dr["especialidad"] = cmbEspecialidad.ValueMember;
-
-                //return dt;
-
-
+                // Datos de usuario
+                prof.dni = Int32.Parse(txtDNI.Text);
+                prof.username = txtUsername.Text;
+                prof.clave = txtClave.Text;
+                //prof.intentos
+                //prof.habilitado
+                prof.tipoDocumento = cmbTipoDocumento.Text;
                 prof.nombres = txtNombre.Text;
                 prof.apellido = txtApellido.Text;
-                prof.tipoDocumento = txtDNI.Text;
-                prof.sexo = Char.Parse( cmbSexo.Text);
-                prof.fechaNacimiento = Convert.ToDateTime(mtxFechaNacimiento.Text);
                 prof.direccion = txtDireccion.Text;
                 prof.telefono = txtTelefono.Text;
                 prof.mail = txtMail.Text;
+                prof.fechaNacimiento = Convert.ToDateTime(mtxFechaNacimiento.Text);
+                prof.sexo = cmbSexo.Text.Trim().ToCharArray()[0];
+                
+                                
+                // Datos de profesional                
                 prof.matricula = cmbEspecialidad.ValueMember;
+                prof.especialidad = cmbEspecialidad.Text;
         }
 
 
-        // FIN DATATABLE
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtTelefono.soloNumeros(erp, e);
+        }
+
+        // txtDNI KeyPress
+        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtDNI.soloNumeros(erp, e);
+        }
+
+        private void txtMatricula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtMatricula.soloNumeros(erp, e);
+        }
+       
+
 
               
     }

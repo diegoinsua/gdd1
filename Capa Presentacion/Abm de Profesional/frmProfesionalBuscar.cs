@@ -23,7 +23,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         //--------------------
         private void txtMatricula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtMatricula.validarCaracter("0123456789", e, "Solo puede ingresar números.");
+            txtMatricula.soloNumeros(erp, e);            
         }
 
         //--------------------
@@ -31,7 +31,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         //--------------------
         private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtMatricula.validarCaracter("0123456789", e, "Solo puede ingresar números.");
+            txtMatricula.soloNumeros(erp, e);  
         }
 
 
@@ -87,16 +87,16 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
             // Si no hubo errores
             if (this.huboErrores == false)
             {
-                Clinica_Frba.CapaDatos.Profesional admTDG = new Clinica_Frba.CapaDatos.Profesional();
+                Clinica_Frba.CapaDatos.Profesional profesional = new Clinica_Frba.CapaDatos.Profesional();
 
                 if (txtApellido.ReadOnly == false)
-                    //dgvProfesional.DataSource = admTDG.getAdmByApellido(txtApellido.Text);
+                    dgvProfesional.DataSource = profesional.getProfByApellido(txtApellido.Text);
 
                 if (txtMatricula.ReadOnly == false)
-                    dgvProfesional.DataSource = admTDG.getAdmByMatricula(txtMatricula.Text);
+                    dgvProfesional.DataSource = profesional.getProfByMatricula(Convert.ToInt32(txtMatricula.Text));
 
                 if (txtDNI.ReadOnly == false)
-                    //dgvProfesional.DataSource = admTDG.getAdmByDNI(txtDNI.Text);
+                    dgvProfesional.DataSource = profesional.getProfByDNI(Convert.ToInt32(txtDNI.Text));
 
 
 
@@ -156,7 +156,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
             if (this.Text == "Baja Profesional")
             {
                 // Pregunto al usuario si esta seguro de eliminar al Profesional
-                string matricula = dgvProfesional.valorColumna(e, "Matricula");
+                string matricula = dgvProfesional.valorColumna(e, "PRO_MATRICULA");
                 DialogResult dr = MessageBox.Show("¿Esta seguro que desea eliminar al profesional cuya matrícula es " + matricula + "?.",
                                                    "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                
@@ -165,7 +165,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
                 {
                     // Elimino el profesional
                     Clinica_Frba.CapaDatos.Profesional admTDG = new Clinica_Frba.CapaDatos.Profesional();
-                    admTDG.delete(Int32.Parse(matricula));
+                    profesional.delete(Int32.Parse(matricula));
 
                     // Reseteo el form
                     dgvProfesional.Columns.Clear();

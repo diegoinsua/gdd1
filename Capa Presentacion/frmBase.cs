@@ -64,20 +64,22 @@ namespace Clinica_Frba.CapaPresentacion
 
                 string mail = email.Text;
 
-                if (!(mail.Contains("@") && (mail.Contains(".com") || mail.Contains(".net") ||
-                                             mail.Contains(".edu") || mail.Contains(".gov") ||
-                                             mail.Contains(".gob"))))
-                {
-                    erp.SetError(email, String.Empty);
-                    return;
-                }
-
                 if (mail.Length == 0)
                 {
-                    erp.SetError(email, "La dirección de E-Mail que ingresó no es válida");
+                    erp.SetError(email, "Debe ingresar una dirección de E-Mail.");
                     huboErrores = true;
 
                 }
+
+                else if (!((mail.Contains("@") && (mail.Contains(".com") || mail.Contains(".net") ||
+                                              mail.Contains(".edu") || mail.Contains(".gov") ||
+                                              mail.Contains(".gob")))))
+                {
+                    erp.SetError(email, "La dirección de E-Mail que ingresó no es válida");
+                    huboErrores = true;
+                }
+
+                
             }
 
         }
@@ -138,15 +140,9 @@ namespace Clinica_Frba.CapaPresentacion
         }
 
 
-        private void limpiarError(Control control)
-        {
-            erp.SetError(control, string.Empty);
-        }
-
-        
         protected void validarFecha(Control fecha, DateTime fechaMinima)
         {
-            if ( estaDeshabilitado(fecha) )
+            if (estaDeshabilitado(fecha))
             {
                 limpiarError(fecha);
             }
@@ -169,6 +165,13 @@ namespace Clinica_Frba.CapaPresentacion
             }
 
         }
+        private void limpiarError(Control control)
+        {
+            erp.SetError(control, string.Empty);
+        }
+
+        
+       
 
 
         private bool estaDeshabilitado(Control c)

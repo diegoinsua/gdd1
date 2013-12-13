@@ -95,6 +95,8 @@ namespace Clinica_Frba.CapaDatos
             SqlCommand cmd = execute(cadenaSQL, parametros);
             
             conexion.Open();
+            transaccion = conexion.BeginTransaction();
+            cmd.Transaction = transaccion;
 
             try
             {
@@ -102,9 +104,12 @@ namespace Clinica_Frba.CapaDatos
                 transaccion.Commit();
             }
             catch (Exception ex)
-            {
-                //string error = ex.Message;                
+            {                           
                 transaccion.Rollback();
+                
+                string msjError = "La operación no pudo realizarse debido a que se produjo el siguiente error: \n";
+                System.Windows.Forms.MessageBox.Show(msjError + ex.ToString(), "Error.");
+                
                 filasAfectadas = 0;
             }
 

@@ -73,10 +73,10 @@
     <Compile Include="Abm de Profesional\frmProfesionalBuscar.Designer.cs">
       <DependentUpon>frmProfesionalBuscar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Compra de Bono\frmCompraBonos.cs">
+    <Compile Include="Login\Compra de Bono\frmCompraBonos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compra de Bono\frmCompraBonos.Designer.cs">
+    <Compile Include="Login\Compra de Bono\frmCompraBonos.Designer.cs">
       <DependentUpon>frmCompraBonos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBase.cs">
@@ -184,7 +184,7 @@
     <EmbeddedResource Include="Abm de Profesional\frmProfesionalBuscar.resx">
       <DependentUpon>frmProfesionalBuscar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Compra de Bono\frmCompraBonos.resx">
+    <EmbeddedResource Include="Login\Compra de Bono\frmCompraBonos.resx">
       <DependentUpon>frmCompraBonos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBase.resx">

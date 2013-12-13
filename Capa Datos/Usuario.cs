@@ -45,8 +45,21 @@ namespace Clinica_Frba.CapaDatos
 
         public DataTable getUsuarioByDNI(int dni) 
         {
-            DataTable dt = new DataTable();
-            return dt; 
+            // Creo la cadena SQL
+            //string cadenaSQL = "SELECT * FROM VARIETE_GDD.USUARIO where USU_DNI=@dni AND USU_TIPO_DOCUMENTO=@tipoDocumento";
+            string cadenaSQL = "SELECT * FROM VARIETE_GDD.USUARIO where USU_DNI=@dni";
+
+            // Creo un objeto de la clase Parametros
+            Parametros parametros = new Parametros();
+
+            // Agrego los parametros al objeto
+            parametros.add("@dni", dni);
+            parametros.add("@tipoDocumento", tipoDocumento);
+
+            // Ejecuto el Select
+            DataTable dt = this.executeQuery(cadenaSQL, parametros);
+
+            return dt;    
         }
     }
 }

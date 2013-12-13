@@ -15,25 +15,31 @@ namespace Clinica_Frba.CapaPresentacion
     {
 
 
-        public static Boolean validarCaracter(this TextBox txt, string caracteresPermitidos, KeyPressEventArgs e, string mensaje) 
+        public static Boolean validarCaracter(this TextBox txt, string caracteresPermitidos, KeyPressEventArgs e) 
         {
     
             String Aceptados = caracteresPermitidos + Convert.ToChar(8);
 
             if (Aceptados.Contains(""+ e.KeyChar))
             {
-                return e.Handled = false;
+                return !(e.Handled = false);
             }
             else
             {
                 System.Media.SystemSounds.Beep.Play();
                 //txt.mensaje(mensaje);
-                return e.Handled = true;
+                return !(e.Handled = true);
             }
         }
 
 
-        
+        public static void soloNumeros(this TextBox txt, ErrorProvider erp, KeyPressEventArgs e)
+        {
+            bool charValido = txt.validarCaracter("0123456789", e);
+
+            if (!charValido) erp.SetError(txt, "Solo puede ingresar números.");
+            else erp.SetError(txt, String.Empty);
+        }
        
         public static void mensaje(this Control control, string mensaje)
         {
