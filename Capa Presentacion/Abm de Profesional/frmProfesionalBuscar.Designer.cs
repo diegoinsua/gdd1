@@ -50,16 +50,16 @@
             this.dgvProfesional.AllowUserToDeleteRows = false;
             this.dgvProfesional.AllowUserToResizeColumns = false;
             this.dgvProfesional.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProfesional.Location = new System.Drawing.Point(20, 188);
+            this.dgvProfesional.Location = new System.Drawing.Point(21, 166);
             this.dgvProfesional.Name = "dgvProfesional";
             this.dgvProfesional.ReadOnly = true;
-            this.dgvProfesional.Size = new System.Drawing.Size(485, 259);
+            this.dgvProfesional.Size = new System.Drawing.Size(664, 304);
             this.dgvProfesional.TabIndex = 7;
             this.dgvProfesional.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfesional_CellClick);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(437, 154);
+            this.btnBuscar.Location = new System.Drawing.Point(616, 132);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(69, 26);
             this.btnBuscar.TabIndex = 6;
@@ -69,7 +69,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(22, 156);
+            this.btnLimpiar.Location = new System.Drawing.Point(23, 134);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(69, 26);
             this.btnLimpiar.TabIndex = 5;
@@ -88,25 +88,25 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox1.Location = new System.Drawing.Point(20, 48);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(486, 100);
+            this.groupBox1.Size = new System.Drawing.Size(664, 70);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de Búsqueda";
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(62, 61);
+            this.txtDNI.Location = new System.Drawing.Point(438, 27);
             this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(142, 20);
+            this.txtDNI.Size = new System.Drawing.Size(93, 20);
             this.txtDNI.TabIndex = 11;
             this.txtDNI.Click += new System.EventHandler(this.txtDNI_Click);
             this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // txtMatricula
             // 
-            this.txtMatricula.Location = new System.Drawing.Point(330, 27);
+            this.txtMatricula.Location = new System.Drawing.Point(252, 27);
             this.txtMatricula.Name = "txtMatricula";
-            this.txtMatricula.Size = new System.Drawing.Size(139, 20);
+            this.txtMatricula.Size = new System.Drawing.Size(92, 20);
             this.txtMatricula.TabIndex = 8;
             this.txtMatricula.Click += new System.EventHandler(this.txtMatricula_Click);
             this.txtMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatricula_KeyPress);
@@ -125,7 +125,7 @@
             // 
             this.txtApellido.Location = new System.Drawing.Point(62, 27);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(181, 20);
+            this.txtApellido.Size = new System.Drawing.Size(100, 20);
             this.txtApellido.TabIndex = 9;
             this.txtApellido.Click += new System.EventHandler(this.txtApellido_Click);
             // 
@@ -133,18 +133,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(21, 68);
+            this.label2.Location = new System.Drawing.Point(358, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 5;
             this.label2.Tag = "";
-            this.label2.Text = "D.N.I.";
+            this.label2.Text = "Nº Documento";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(259, 30);
+            this.label1.Location = new System.Drawing.Point(181, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 3;
@@ -166,7 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 496);
+            this.ClientSize = new System.Drawing.Size(696, 496);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.dgvProfesional);
             this.Controls.Add(this.btnBuscar);

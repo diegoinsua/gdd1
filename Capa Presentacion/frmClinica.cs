@@ -52,7 +52,7 @@ namespace Clinica_Frba.CapaPresentacion
 
 
                 string nombreElemento = dr["ele_nombre"].ToString().Trim();
-                string nombreMenu = dr["ele_menu"].ToString().Trim();
+                string nombreMenu = dr["ele_funcionalidad"].ToString().Trim();
                 string nombrePadre = dr["ele_padre"].ToString().Trim();
                 string formulario = dr["for_ruta"].ToString().Trim();
 

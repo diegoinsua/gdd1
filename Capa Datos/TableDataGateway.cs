@@ -123,37 +123,7 @@ namespace Clinica_Frba.CapaDatos
         
 
 
-        protected void t()
-        {
-                    
-           
-            transaccion = conexion.BeginTransaction();
-
-            // Must assign both transaction object and connection
-            // to Command object for a pending local transaction
-            SqlCommand cmd = conexion.CreateCommand();
-            cmd.Connection = conexion;
-            cmd.Transaction = transaccion;
-
-            try
-            {
-                cmd.CommandText = "Insert into Region (RegionID, RegionDescription) VALUES (100, 'Description')";
-                cmd.ExecuteNonQuery();
-                cmd.CommandText = "Insert into Region (RegionID, RegionDescription) VALUES (101, 'Description')";
-                cmd.ExecuteNonQuery();
-
-                // Attempt to commit the transaction.
-                transaccion.Commit();
-            }
-
-            catch (Exception ex)
-            {
-               string error = ex.Message;
-               transaccion.Rollback();     
-             
-            }
-
-        }
+        
 
     }
 }

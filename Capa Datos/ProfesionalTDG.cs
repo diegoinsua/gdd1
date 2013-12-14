@@ -11,16 +11,33 @@ namespace Clinica_Frba.CapaDatos
     {
         // PROPIEDADES
         public string matricula;
-        public string especialidad;
+        public int especialidadCodigo;
 
 
 
         public DataTable getProfByDNI(int dni)
         {
             // Creo la cadena SQL
-            string cadenaSQL = "SELECT * " +
-                               "FROM VARIETE_GDD.PROFESIONAL, VARIETE_GDD.USUARIO " +   
-                               "WHERE PRO_DNI=@dni AND USU_DNI=@dni";
+            string cadenaSQL = "SELECT " +
+                               "[USU_DNI] [Documento Nº] " +
+                               ",[PRO_MATRICULA] Matricula " +
+                               ",[USU_TIPO_DOCUMENTO] Tipo " +
+                               ",[USU_NOMBRES] Nombres " +
+                               ",[USU_APELLIDO] Apellido " +
+                               ",[USU_USERNAME] Username " +
+                               ",[USU_DIRECCION] Direccion " +
+                               ",[USU_TELEFONO] Teléfono " +
+                               ",[USU_MAIL] [E-Mail] " +
+                               ",[USU_FECHA_NACIMIENTO] [Fecha Nac.] " +
+                               ",[USU_SEXO] Sexo " +
+                               ",[ESP_DESCRIPCION] Especialidad " +
+                               " FROM [GD2C2013].[VARIETE_GDD].[USUARIO]," +
+                               "      [GD2C2013].[VARIETE_GDD].[PROFESIONAL], " +
+                               "      [GD2C2013].[VARIETE_GDD].[ESPECIALIDADES], " +
+                               "      [GD2C2013].[VARIETE_GDD].[PROFESIONAL_ESPECIALIDADES] " +
+                               " WHERE USU_DNI=@dni AND PRO_DNI=@dni AND PROESP_PROFESIONAL=@dni AND PROESP_ESPECIALIDAD=ESP_CODIGO" ;
+
+
 
             // Creo un objeto de la clase Parametros
             Parametros parametros = new Parametros();
@@ -99,12 +116,17 @@ namespace Clinica_Frba.CapaDatos
                                         " VALUES " +
                                         "(@dni, @matricula);";
 
+                string cadEspecialidad = "INSERT INTO [GD2C2013].[VARIETE_GDD].[PROFESIONAL_ESPECIALIDADES] " +
+                                        "(PROESP_PROFESIONAL, " +
+                                        " PROESP_ESPECIALIDAD) " +
+                                        " VALUES " +
+                                        "(@dni, @especialidad);";
 
                 string cadUsuario = " INSERT INTO [GD2C2013].[VARIETE_GDD].[USUARIO] " +
                                      "(USU_DNI, " +
-                                     " USU_USERNAME, " +
-                                     " USU_CLAVE, " +
-                    //   " [USU_HABILITADO], "        +
+                                //   " USU_USERNAME, " +
+                                //   " USU_CLAVE, " +
+                                //   " [USU_HABILITADO], "        +
                                      " USU_TIPO_DOCUMENTO, " +
                                      " USU_NOMBRES, " +
                                      " USU_APELLIDO, " +
@@ -116,18 +138,17 @@ namespace Clinica_Frba.CapaDatos
 
                                      " VALUES " +
 
-                                     "(@dni, @username, @clave, " +
-                                     " @tipoDocumento, @nombres, @apellido, @direccion, " +
+                                     "(@dni, @tipoDocumento, @nombres, @apellido, @direccion, " +
                                      " @telefono, @mail, @fechaNacimiento, @sexo); ";
 
 
-                string cadenaSQL = cadUsuario + cadProfesional;
+                string cadenaSQL = cadUsuario + cadProfesional + cadEspecialidad;
 
                 // Agrego los parametros
                 Parametros param = new Parametros();
                 param.add("@dni", p.dni);
-                param.add("@username", p.username);
-                param.add("@clave", p.clave);
+                //param.add("@username", p.username);
+                //param.add("@clave", p.clave);
                 // param.add("@habilitado", p.habilitado);
                 param.add("@tipoDocumento", p.tipoDocumento);
                 param.add("@nombres", p.nombres);
@@ -139,6 +160,7 @@ namespace Clinica_Frba.CapaDatos
                 param.add("@sexo", p.sexo);
 
                 param.add("@matricula", p.matricula);
+                param.add("@especialidad", p.especialidadCodigo);
 
                 return executeNonQuery(cadenaSQL, param);
 
@@ -157,6 +179,22 @@ namespace Clinica_Frba.CapaDatos
 
       
         public int update(Profesional p) { return 0; }
-        public bool delete(int matricula) { return true; }
+        public int delete(int dni) {
+            // Creo la cadena SQL
+            string cadenaSQL = "UPDATE [GD2C2013].[VARIETE_GDD].[USUARIO] " +
+                              "SET USU_HABILITADO=@deshabilitar " +
+                              "WHERE USU_DNI=@dni";
+
+            // Creo un objeto de la clase Parametros
+            Parametros parametros = new Parametros();
+
+            // Agrego los parametros al objeto
+            parametros.add("@dni", dni);
+            parametros.add("@deshabilitar", false);
+
+            // Ejecuto el Select
+            return this.executeNonQuery(cadenaSQL, parametros);
+
+        }
     }
 }

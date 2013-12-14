@@ -6,7 +6,7 @@ using System.Data;
 
 namespace Clinica_Frba.CapaDatos
 {
-    class Especialidad : TableDataGateway
+    public class Especialidad : TableDataGateway
     {
         public DataTable getEspecialidades()
         {

@@ -99,6 +99,11 @@ namespace Clinica_Frba.CapaPresentacion
 
         }
 
+        public static bool click(this DataGridView dgv, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgv.ColumnCount - 1) return true;
+            else return false;
+        }
 
         //-------------------------------------
         // COMBOBOX
@@ -111,6 +116,7 @@ namespace Clinica_Frba.CapaPresentacion
             cmb.DataSource = dt;
             cmb.DisplayMember = dt.Columns[1].ColumnName.ToString();
             cmb.ValueMember = dt.Columns[0].ColumnName.ToString();
+            cmb.SelectedIndex = -1;
         }
 
      }                 

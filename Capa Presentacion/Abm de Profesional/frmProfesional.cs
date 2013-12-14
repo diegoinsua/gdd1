@@ -12,7 +12,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 {
     public partial class frmProfesional : frmBase
     {
-        CapaDatos.Profesional prof = null;
+        CapaDatos.Profesional p = null;
 
         // ------------------
         //  CONSTRUCTOR
@@ -38,13 +38,13 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
 
             if (huboErrores == false)
             {
-                this.crearProfesionalDT();
+                this.setearProfesional();
 
 
                 // Realizo la operación correspondiente
-                if (this.Text == "Alta Profesional") filasAfectadas = prof.insert(prof);
+                if (this.Text == "Alta Profesional") filasAfectadas = p.insert(p);
 
-                if (this.Text == "Modificar Profesional") filasAfectadas = prof.update(prof); // cierro el form si es una modificación
+                if (this.Text == "Modificar Profesional") filasAfectadas = p.update(p); // cierro el form si es una modificación
                                             
             }
             
@@ -88,87 +88,46 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         private void frmProfesional_Load(object sender, EventArgs e)
         {
             // Creo un objeto profesional
-            prof = new Clinica_Frba.CapaDatos.Profesional();
+            p = new Clinica_Frba.CapaDatos.Profesional();
             
             // Seteo el label con el titulo
-            lblTitulo.Text = this.Text;
+            lblTitulo.Text = this.Text.ToUpper();
 
             // Lleno el combobox especialidades
-            DataTable dt = prof.getEspecialidades();
-            cmbEspecialidad.llenar(dt);
+            if (cmbEspecialidad.Items.Count == 0)
+            {
+                DataTable dt = p.getEspecialidades();
+                cmbEspecialidad.llenar(dt);
+            }
+
+            
         }
 
 
         
 
 
+        private void setearProfesional()    
+        {      
 
-
-
-        //-----------------------
-        // DATATABLE PROFESIONAL
-        //-----------------------
-        private DataTable getDtProfesional()
-        {
-
-            Type caracter = typeof(char);
-            Type cadena = typeof(string);
-            Type numero = typeof(Int32);
-            Type fecha = typeof(DateTime);
-
-            DataTable dt = new DataTable();
-
-            dt.Columns.Add(nuevaColumna("nombre", cadena));
-            dt.Columns.Add(nuevaColumna("apellido", cadena));
-            dt.Columns.Add(nuevaColumna("dni", numero));
-            dt.Columns.Add(nuevaColumna("sexo", caracter));
-            dt.Columns.Add(nuevaColumna("fechaNacimiento", fecha));
-            dt.Columns.Add(nuevaColumna("direccion", cadena));
-            dt.Columns.Add(nuevaColumna("telefono", cadena));
-            dt.Columns.Add(nuevaColumna("mail", cadena));
-            dt.Columns.Add(nuevaColumna("especialidad", cadena));
-            dt.Columns.Add(nuevaColumna("matricula", numero));
-
-
-            return dt;
-
-        }
-
-
-        private DataColumn nuevaColumna(string nombre, Type tipoDato)
-        {
-            DataColumn columna = new DataColumn();
-            columna.DataType = tipoDato;
-            columna.ColumnName = nombre;
-
-            return columna;
-        }
-
-
-
-        private void crearProfesionalDT()
-        {
-              
-
-                // Datos de usuario
-                prof.dni = Int32.Parse(txtDNI.Text);
-                prof.username = txtUsername.Text;
-                prof.clave = txtClave.Text;
+                p.dni = Int32.Parse(txtDNI.Text);
+                //prof.username = txtUsername.Text;
+                //prof.clave = txtClave.Text;
                 //prof.intentos
                 //prof.habilitado
-                prof.tipoDocumento = cmbTipoDocumento.Text;
-                prof.nombres = txtNombre.Text;
-                prof.apellido = txtApellido.Text;
-                prof.direccion = txtDireccion.Text;
-                prof.telefono = txtTelefono.Text;
-                prof.mail = txtMail.Text;
-                prof.fechaNacimiento = Convert.ToDateTime(mtxFechaNacimiento.Text);
-                prof.sexo = cmbSexo.Text.Trim().ToCharArray()[0];
+                p.tipoDocumento = cmbTipoDocumento.Text;
+                p.nombres = txtNombre.Text;
+                p.apellido = txtApellido.Text;
+                p.direccion = txtDireccion.Text;
+                p.telefono = txtTelefono.Text;
+                p.mail = txtMail.Text;
+                p.fechaNacimiento = Convert.ToDateTime(mtxFechaNacimiento.Text);
+                p.sexo = cmbSexo.Text.Trim().ToCharArray()[0];
                 
                                 
                 // Datos de profesional                
-                prof.matricula = cmbEspecialidad.ValueMember;
-                prof.especialidad = cmbEspecialidad.Text;
+                p.matricula = txtMatricula.Text;
+                p.especialidadCodigo = Convert.ToInt32(cmbEspecialidad.SelectedValue.ToString());
         }
 
 
@@ -188,6 +147,8 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         {
             txtMatricula.soloNumeros(erp, e);
         }
+
+       
        
 
 
