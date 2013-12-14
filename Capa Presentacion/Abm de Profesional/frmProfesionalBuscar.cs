@@ -132,7 +132,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
         {
             dgvProfesional.personalizar();
 
-            lblTitulo.Text = this.Text;
+            lblTitulo.Text = this.Text.ToUpper();
         }
 
 

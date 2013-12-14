@@ -50,16 +50,16 @@
             this.dgvProfesional.AllowUserToDeleteRows = false;
             this.dgvProfesional.AllowUserToResizeColumns = false;
             this.dgvProfesional.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProfesional.Location = new System.Drawing.Point(21, 166);
+            this.dgvProfesional.Location = new System.Drawing.Point(25, 166);
             this.dgvProfesional.Name = "dgvProfesional";
             this.dgvProfesional.ReadOnly = true;
-            this.dgvProfesional.Size = new System.Drawing.Size(664, 304);
+            this.dgvProfesional.Size = new System.Drawing.Size(653, 304);
             this.dgvProfesional.TabIndex = 7;
             this.dgvProfesional.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfesional_CellClick);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(616, 132);
+            this.btnBuscar.Location = new System.Drawing.Point(609, 134);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(69, 26);
             this.btnBuscar.TabIndex = 6;
@@ -69,7 +69,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(23, 134);
+            this.btnLimpiar.Location = new System.Drawing.Point(27, 134);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(69, 26);
             this.btnLimpiar.TabIndex = 5;
@@ -86,9 +86,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox1.Location = new System.Drawing.Point(20, 48);
+            this.groupBox1.Location = new System.Drawing.Point(24, 48);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(664, 70);
+            this.groupBox1.Size = new System.Drawing.Size(654, 70);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de Búsqueda";
@@ -154,11 +154,11 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(20, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(31, 16);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(41, 13);
+            this.lblTitulo.Size = new System.Drawing.Size(33, 12);
             this.lblTitulo.TabIndex = 11;
             this.lblTitulo.Text = "Título";
             // 
