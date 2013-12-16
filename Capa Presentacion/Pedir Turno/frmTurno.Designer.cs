@@ -160,7 +160,7 @@
             // btnSolicitarTurno
             // 
             this.btnSolicitarTurno.Enabled = false;
-            this.btnSolicitarTurno.Location = new System.Drawing.Point(499, 435);
+            this.btnSolicitarTurno.Location = new System.Drawing.Point(494, 435);
             this.btnSolicitarTurno.Name = "btnSolicitarTurno";
             this.btnSolicitarTurno.Size = new System.Drawing.Size(86, 23);
             this.btnSolicitarTurno.TabIndex = 20;

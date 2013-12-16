@@ -73,7 +73,7 @@ namespace Clinica_Frba.CapaPresentacion
         {
             //dgv.RowHeadersVisible = false;
             dgv.RowHeadersWidth = 25;
-            dgv.Height = 300;
+            //dgv.Height = 300;
             dgv.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
             dgv.AllowUserToAddRows = false;
             dgv.AllowUserToDeleteRows = false;
@@ -117,6 +117,30 @@ namespace Clinica_Frba.CapaPresentacion
             cmb.DisplayMember = dt.Columns[1].ColumnName.ToString();
             cmb.ValueMember = dt.Columns[0].ColumnName.ToString();
             cmb.SelectedIndex = -1;
+        }
+
+
+        //----------------------------
+        // DATE TIME PICKER
+        //----------------------------
+        public static void noEditable(this DateTimePicker dtp, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) != false & char.IsControl(e.KeyChar) == false)
+            {
+                e.Handled = true;
+
+            }
+        }
+        
+        public static void limpiar(this DateTimePicker dtp)
+        {
+            dtp.Format = DateTimePickerFormat.Custom;
+            dtp.CustomFormat = " ";
+        }
+
+        public static void mostrarFechaCorta(this DateTimePicker dtp)
+        {
+            dtp.Format = DateTimePickerFormat.Short;       
         }
 
      }                 

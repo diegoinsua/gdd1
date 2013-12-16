@@ -13,6 +13,45 @@ namespace Clinica_Frba.CapaDatos
         public string matricula;
         public int especialidadCodigo;
 
+        public DataTable getProfesionales()
+        {
+            string cadenaSQL = "SELECT USU_APELLIDO + ',' + USU_NOMBRES Profesional " +
+                               "FROM [GD2C2013].[VARIETE_GDD].[USUARIO]," +
+                               "     [GD2C2013].[VARIETE_GDD].[PROFESIONAL] " +
+                               "WHERE USU_DNI = PRO_DNI";
+
+            
+
+            // Ejecuto el Select
+            DataTable dt = this.executeQuery(cadenaSQL, null);
+
+            return dt;   
+        }
+
+
+        public DataTable getProfesionalesByEspecialidad(int Especialidad)
+        {
+            string cadenaSQL = "SELECT USU_APELLIDO + ',' + USU_NOMBRES Profesional " +
+                               "FROM [GD2C2013].[VARIETE_GDD].[USUARIO]," +
+                               "     [GD2C2013].[VARIETE_GDD].[PROFESIONAL] " +
+                               "     [GD2C2013].[VARIETE_GDD].[PROFESIONAL_ESPECIALIDADES] " +
+                               "WHERE USU_DNI = PRO_DNI AND USU_DNI=PROESP_DNI AND PROESP_ESPECIALIDAD = @Especialidad";
+
+            // Creo un objeto de la clase Parametros
+            Parametros parametros = new Parametros();
+
+            // Agrego los parametros al objeto
+            parametros.add("@especialidad", Especialidad);
+
+
+
+            // Ejecuto el Select
+            DataTable dt = this.executeQuery(cadenaSQL, null);
+
+            return dt;
+        }
+
+
 
 
         public DataTable getProfByDNI(int dni)

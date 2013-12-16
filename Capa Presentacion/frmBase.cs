@@ -181,6 +181,7 @@ namespace Clinica_Frba.CapaPresentacion
             if (c is ComboBox && ((ComboBox)c).Enabled == false)       return true;
             if (c is CheckBox && ((CheckBox)c).Enabled == false)       return true;
             if (c is RadioButton && ((RadioButton)c).Enabled == false) return true;
+            if (c is DateTimePicker && ((DateTimePicker)c).Enabled == false) return true;
 
             return false;
         }
@@ -257,6 +258,8 @@ namespace Clinica_Frba.CapaPresentacion
                 if (ctrl is RadioButton) { ((RadioButton)ctrl).Checked = false; }
 
                 if (ctrl is ComboBox) { ((ComboBox)ctrl).SelectedIndex = -1; }
+
+                if (ctrl is DateTimePicker) { ((DateTimePicker)ctrl).limpiar(); }
 
 
                 // Si es un contenedor

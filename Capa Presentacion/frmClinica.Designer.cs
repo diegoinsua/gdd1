@@ -50,14 +50,14 @@
             // 
             this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(702, 485);
+            this.panel1.Size = new System.Drawing.Size(702, 507);
             this.panel1.TabIndex = 1;
             // 
             // frmClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 515);
+            this.ClientSize = new System.Drawing.Size(704, 537);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
