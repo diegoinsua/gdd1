@@ -16,7 +16,7 @@ namespace Clinica_Frba.CapaPresentacion.Compra_de_Bono
         //--------------
         //  ATRIBUTOS
         // --------------
-        Clinica_Frba.CapaDatos.Bono bonoTDG;
+        Clinica_Frba.CapaDatos.BonoTDG bonoTDG;
         // El usuario tiene el id del plan y del bono
 
 
@@ -36,9 +36,10 @@ namespace Clinica_Frba.CapaPresentacion.Compra_de_Bono
         // LOAD
         private void frmCompraBonos_Load(object sender, EventArgs e)
         {
-            if (usuario.rolNombre == "Administrativo") groupBox2.Visible = true;
-            
-            bonoTDG = new Bono(usuario);
+            if (usuario.rolNombre == "Administrativo") 
+               pfrmIngresarAfiliado formAfiliado = new frmIngresarAfiliado();
+               formAfiliado.ShowDialog();
+            bonoTDG = new BonoTDG(usuario);
 
             
             // Seteo los label que informan el valor de los bonos
@@ -99,6 +100,11 @@ namespace Clinica_Frba.CapaPresentacion.Compra_de_Bono
 
 
 
+        }
+
+        private void txtAfiliadoID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtAfiliadoID.soloNumeros(erp, e);
         }
 
 

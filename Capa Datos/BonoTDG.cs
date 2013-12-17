@@ -6,19 +6,26 @@ using System.Data;
 
 namespace Clinica_Frba.CapaDatos
 {
+    // ATRIBUTOS
 
+  
 
-    public class Bono : TableDataGateway
+    public class BonoTDG : TableDataGateway
     {
+        // PROPIEDADES
         private Usuario usuario { get; set; }
-        public decimal precioBonoFarmacia { get; set; }
-        public decimal precioBonoConsulta { get; set; }
+        public Decimal precioBonoFarmacia { get; set; }
+        public Decimal precioBonoConsulta { get; set; }
 
-        public Bono(Usuario user)
+       
+        
+       
+        public BonoTDG(Usuario user)
         {
             usuario = user;
             setPrecios();
         }
+
 
 
         // Consulta la DB, obtiene el precio de los bonos para el plan del usuario
@@ -27,23 +34,23 @@ namespace Clinica_Frba.CapaDatos
         {
         
             // Creo la cadena SQL
-            string cadenaSQL = "SELECT tipo, precio " +
-                               "FROM bono " +
-                               "WHERE plan = @idPlan ";
+            string cadenaSQL = "SELECT PLA_PRECIO_BONO_FARMACIA, PLA_PRECIO_BONO_CONSULTA " +
+                               "FROM VARIETE_GDD.PLANES " +
+                               "WHERE PLA_CODIGO = @planCodigo ";
             
             // Creo un objeto de la clase Parametros
             Parametros parametros = new Parametros();
 
             // Agrego los parametros al objeto
-            parametros.add("@idPlan", usuario.planCodigo);
+            parametros.add("@codigoPlan", usuario.planCodigo);
 
             // Ejecuto el Select
             DataTable dt = this.executeQuery(cadenaSQL, parametros);
 
-            // precioBonoFarmacia = dt.... 
-            // precioBonoConsulta = dt....  
-
+            precioBonoFarmacia = Decimal.Parse(dt.Rows[0]["PLA_PRECIO_BONO_FARMACIA"].ToString());
+            precioBonoConsulta = Decimal.Parse(dt.Rows[0]["PLA_PRECIO_BONO_CONSULTA"].ToString());
        
+
         }
 
         
