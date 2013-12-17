@@ -11,10 +11,10 @@ namespace Clinica_Frba.CapaDatos
         public DataTable getMenu(string rol) 
         {
             // Creo la cadena SQL
-            string cadenaSQL = "SELECT ele_nombre, ele_padre, ele_funcionalidad, for_ruta " +
-                               "FROM VARIETE_GDD.elemento left join VARIETE_GDD.formulario on ele_form = for_nombre, VARIETE_GDD.rol_funcionalidades " +
-                               "WHERE (rolfun_rol = @Admin) AND  (rolfun_funcionalidad = ele_funcionalidad) " +
-                               "ORDER BY ele_funcionalidad, ele_form asc";
+            string cadenaSQL = "SELECT ELE_NOMBRE, ELE_PADRE, ELE_FUNCIONALIDAD, FOR_RUTA " +
+                               "FROM VARIETE_GDD.ELEMENTO left join VARIETE_GDD.FORMULARIO on ELE_FORM = FOR_NOMBRE, VARIETE_GDD.ROL_FUNCIONALIDADES " +
+                               "WHERE (ROLFUN_ROL = @Admin) AND  (ROLFUN_FUNCIONALIDAD = ELE_FUNCIONALIDAD) " +
+                               "ORDER BY ELE_FUNCIONALIDAD, ELE_FORM asc";
             
             // Creo un objeto de la clase Parametros
             Parametros parametros = new Parametros();
