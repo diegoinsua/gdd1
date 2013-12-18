@@ -83,7 +83,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
                 dr["Personas a cargo"] = mtxaCargo;
                 dr["Plan médico"] = mtxPlan;
 
-                Afiliado adm = new Afiliado();
+                AfiliadoTDG adm = new AfiliadoTDG();
                 bool resultado = adm.insert(dr);
 
                 if (resultado)

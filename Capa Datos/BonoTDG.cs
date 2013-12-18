@@ -23,26 +23,27 @@ namespace Clinica_Frba.CapaDatos
         public BonoTDG(Usuario user)
         {
             usuario = user;
-            setPrecios();
+            setPrecios(usuario.planCodigo);
         }
 
+       
 
 
         // Consulta la DB, obtiene el precio de los bonos para el plan del usuario
         // y setea las propiedades de precios de los bonos farmacia y consulta.
-        public void setPrecios()
+        public void setPrecios(int codigoPlan)
         {
         
             // Creo la cadena SQL
             string cadenaSQL = "SELECT PLA_PRECIO_BONO_FARMACIA, PLA_PRECIO_BONO_CONSULTA " +
                                "FROM VARIETE_GDD.PLANES " +
-                               "WHERE PLA_CODIGO = @planCodigo ";
+                               "WHERE PLA_CODIGO = @codigoPlan ";
             
             // Creo un objeto de la clase Parametros
             Parametros parametros = new Parametros();
 
             // Agrego los parametros al objeto
-            parametros.add("@codigoPlan", usuario.planCodigo);
+            parametros.add("@codigoPlan", codigoPlan);
 
             // Ejecuto el Select
             DataTable dt = this.executeQuery(cadenaSQL, parametros);

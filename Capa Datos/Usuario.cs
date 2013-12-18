@@ -18,13 +18,15 @@ namespace Clinica_Frba.CapaDatos
         public string   nombres; 
         public string   apellido; 
         public string   direccion; 
-        public string   telefono; 
+        public int   telefono; 
         public string   mail;
         public DateTime fechaNacimiento;
         public char     sexo; 
 
-        public string rolNombre;  
-        public int planCodigo;  
+        public string rol = null;  
+        public int planCodigo = 0;
+
+        public bool existe = false;
 
 
 
@@ -40,10 +42,10 @@ namespace Clinica_Frba.CapaDatos
             nombres = string.Empty;
             apellido = string.Empty;
             planCodigo = 0;
-            rolNombre = string.Empty;
+            rol = string.Empty;
         }
 
-        public DataTable getUsuarioByDNI(int dni) 
+        public void setUsuarioByDNI(int dni) 
         {
             // Creo la cadena SQL
             //string cadenaSQL = "SELECT * FROM VARIETE_GDD.USUARIO where USU_DNI=@dni AND USU_TIPO_DOCUMENTO=@tipoDocumento";
@@ -56,10 +58,35 @@ namespace Clinica_Frba.CapaDatos
             parametros.add("@dni", dni);
             parametros.add("@tipoDocumento", tipoDocumento);
 
+
+
             // Ejecuto el Select
             DataTable dt = this.executeQuery(cadenaSQL, parametros);
 
-            return dt;    
+            // Cargo los datos
+            if (dt.Rows.Count == 1)
+            {
+                existe = true;
+
+                dni = (int)dt.Rows[0]["USU_DNI"];
+                username = (string)dt.Rows[0]["USU_USERNAME"];
+                clave = (string)dt.Rows[0]["USU_CLAVE"];
+                intentos = (int)dt.Rows[0]["USU_CANTIDAD_INTENTOS"];
+                habilitado = (bool)dt.Rows[0]["USU_HABILITADO"];
+                tipoDocumento = (string)dt.Rows[0]["USU_TIPO_DOCUMENTO"];
+                nombres = (string)dt.Rows[0]["USU_NOMBRES"];
+                apellido = (string)dt.Rows[0]["USU_APELLIDO"];
+                direccion = (string)dt.Rows[0]["USU_DIRECCION"];
+                telefono = (int)dt.Rows[0]["USU_TELEFONO"];
+                mail = (string)dt.Rows[0]["USU_MAIL"];
+                fechaNacimiento = (DateTime)dt.Rows[0]["USU_FECHA_NACIMIENTO"];
+                sexo = (char)dt.Rows[0]["USU_SEXO"];
+            }
+            else
+                existe = false;
+
+            
+            
         }
     }
 }

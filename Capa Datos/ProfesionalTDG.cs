@@ -145,10 +145,10 @@ namespace Clinica_Frba.CapaDatos
            
 
             // Si no existe ningun usuario en la DB con este DNI
-            if (getUsuarioByDNI(p.dni).Rows.Count == 0)
+            if (setUsuarioByDNI(p.dni).Rows.Count == 0)
             {
 
-                System.Windows.Forms.MessageBox.Show(getUsuarioByDNI(p.dni).Rows.Count.ToString());
+                System.Windows.Forms.MessageBox.Show(setUsuarioByDNI(p.dni).Rows.Count.ToString());
                 string cadProfesional = "INSERT INTO [GD2C2013].[VARIETE_GDD].[PROFESIONAL] " +
                                         "(PRO_DNI, " +
                                         " PRO_MATRICULA) " +

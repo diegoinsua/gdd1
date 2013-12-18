@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbxCantidad = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.nudBonosConsulta = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,34 +40,42 @@
             this.lblValorBonoConsulta = new System.Windows.Forms.Label();
             this.btnComprar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.gbxPrecio = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lkbAfiliado = new System.Windows.Forms.LinkLabel();
+            this.lklAfiliado = new System.Windows.Forms.LinkLabel();
             this.lblAfiliadoNumero = new System.Windows.Forms.Label();
+            this.gbxAfiliado = new System.Windows.Forms.GroupBox();
+            this.lblBuscarAfiliado = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblAfiliadoInexistente = new System.Windows.Forms.Label();
+            this.btnBuscarAfiliado = new System.Windows.Forms.Button();
+            this.lblAfiliado = new System.Windows.Forms.Label();
+            this.txtAfiliado = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gbxCantidad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBonosConsulta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBonosFarmacia)).BeginInit();
-            this.groupBox3.SuspendLayout();
+            this.gbxPrecio.SuspendLayout();
+            this.gbxAfiliado.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbxCantidad
             // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.nudBonosConsulta);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.nudBonosFarmacia);
-            this.groupBox1.Controls.Add(this.lblTotal);
-            this.groupBox1.Controls.Add(this.lblTotalTitulo);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(18, 184);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(598, 123);
-            this.groupBox1.TabIndex = 27;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Compra de Bonos";
+            this.gbxCantidad.Controls.Add(this.label3);
+            this.gbxCantidad.Controls.Add(this.nudBonosConsulta);
+            this.gbxCantidad.Controls.Add(this.label4);
+            this.gbxCantidad.Controls.Add(this.nudBonosFarmacia);
+            this.gbxCantidad.Controls.Add(this.lblTotal);
+            this.gbxCantidad.Controls.Add(this.lblTotalTitulo);
+            this.gbxCantidad.Controls.Add(this.label5);
+            this.gbxCantidad.Enabled = false;
+            this.gbxCantidad.Location = new System.Drawing.Point(18, 272);
+            this.gbxCantidad.Name = "gbxCantidad";
+            this.gbxCantidad.Size = new System.Drawing.Size(598, 123);
+            this.gbxCantidad.TabIndex = 27;
+            this.gbxCantidad.TabStop = false;
+            this.gbxCantidad.Text = "Compra de Bonos";
             // 
             // label3
             // 
@@ -156,7 +164,7 @@
             // btnComprar
             // 
             this.btnComprar.Enabled = false;
-            this.btnComprar.Location = new System.Drawing.Point(541, 341);
+            this.btnComprar.Location = new System.Drawing.Point(541, 427);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(75, 23);
             this.btnComprar.TabIndex = 26;
@@ -175,18 +183,19 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "COMPRA DE BONOS";
             // 
-            // groupBox3
+            // gbxPrecio
             // 
-            this.groupBox3.Controls.Add(this.lblValorBonoFarmacia);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.lblValorBonoConsulta);
-            this.groupBox3.Location = new System.Drawing.Point(18, 67);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(598, 95);
-            this.groupBox3.TabIndex = 31;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Precio de los Bonos";
+            this.gbxPrecio.Controls.Add(this.lblValorBonoFarmacia);
+            this.gbxPrecio.Controls.Add(this.label6);
+            this.gbxPrecio.Controls.Add(this.label2);
+            this.gbxPrecio.Controls.Add(this.lblValorBonoConsulta);
+            this.gbxPrecio.Enabled = false;
+            this.gbxPrecio.Location = new System.Drawing.Point(18, 159);
+            this.gbxPrecio.Name = "gbxPrecio";
+            this.gbxPrecio.Size = new System.Drawing.Size(598, 95);
+            this.gbxPrecio.TabIndex = 31;
+            this.gbxPrecio.TabStop = false;
+            this.gbxPrecio.Text = "Precio de los Bonos";
             // 
             // label6
             // 
@@ -206,46 +215,123 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Bonos Consulta:";
             // 
-            // lkbAfiliado
+            // lklAfiliado
             // 
-            this.lkbAfiliado.AutoSize = true;
-            this.lkbAfiliado.Location = new System.Drawing.Point(548, 46);
-            this.lkbAfiliado.Name = "lkbAfiliado";
-            this.lkbAfiliado.Size = new System.Drawing.Size(55, 13);
-            this.lkbAfiliado.TabIndex = 32;
-            this.lkbAfiliado.TabStop = true;
-            this.lkbAfiliado.Text = "linkLabel1";
+            this.lklAfiliado.AutoSize = true;
+            this.lklAfiliado.Location = new System.Drawing.Point(552, 42);
+            this.lklAfiliado.Name = "lklAfiliado";
+            this.lklAfiliado.Size = new System.Drawing.Size(55, 13);
+            this.lklAfiliado.TabIndex = 32;
+            this.lklAfiliado.TabStop = true;
+            this.lklAfiliado.Text = "linkLabel1";
+            this.ttp.SetToolTip(this.lklAfiliado, "Haga click para cambiar el afiliado.");
             // 
             // lblAfiliadoNumero
             // 
             this.lblAfiliadoNumero.AutoSize = true;
-            this.lblAfiliadoNumero.Location = new System.Drawing.Point(486, 46);
+            this.lblAfiliadoNumero.Location = new System.Drawing.Point(490, 42);
             this.lblAfiliadoNumero.Name = "lblAfiliadoNumero";
             this.lblAfiliadoNumero.Size = new System.Drawing.Size(56, 13);
             this.lblAfiliadoNumero.TabIndex = 33;
             this.lblAfiliadoNumero.Text = "Afiliado Nº";
             // 
+            // gbxAfiliado
+            // 
+            this.gbxAfiliado.Controls.Add(this.lblBuscarAfiliado);
+            this.gbxAfiliado.Controls.Add(this.label7);
+            this.gbxAfiliado.Controls.Add(this.lblAfiliadoInexistente);
+            this.gbxAfiliado.Controls.Add(this.btnBuscarAfiliado);
+            this.gbxAfiliado.Controls.Add(this.lblAfiliado);
+            this.gbxAfiliado.Controls.Add(this.txtAfiliado);
+            this.gbxAfiliado.Location = new System.Drawing.Point(18, 58);
+            this.gbxAfiliado.Name = "gbxAfiliado";
+            this.gbxAfiliado.Size = new System.Drawing.Size(598, 83);
+            this.gbxAfiliado.TabIndex = 34;
+            this.gbxAfiliado.TabStop = false;
+            this.gbxAfiliado.Text = "Afiliado";
+            // 
+            // lblBuscarAfiliado
+            // 
+            this.lblBuscarAfiliado.AutoSize = true;
+            this.lblBuscarAfiliado.Location = new System.Drawing.Point(20, 19);
+            this.lblBuscarAfiliado.Name = "lblBuscarAfiliado";
+            this.lblBuscarAfiliado.Size = new System.Drawing.Size(285, 13);
+            this.lblBuscarAfiliado.TabIndex = 31;
+            this.lblBuscarAfiliado.Text = "Ingrese el número del afiliado que desea adquirir los bonos.";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(152, -15);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(273, 13);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Ingrese el número del afiliado que desea comprar bonos.";
+            // 
+            // lblAfiliadoInexistente
+            // 
+            this.lblAfiliadoInexistente.AutoSize = true;
+            this.lblAfiliadoInexistente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAfiliadoInexistente.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblAfiliadoInexistente.Location = new System.Drawing.Point(291, 49);
+            this.lblAfiliadoInexistente.Name = "lblAfiliadoInexistente";
+            this.lblAfiliadoInexistente.Size = new System.Drawing.Size(294, 13);
+            this.lblAfiliadoInexistente.TabIndex = 29;
+            this.lblAfiliadoInexistente.Text = "No existe ningún afiliado con el número ingresado.";
+            this.lblAfiliadoInexistente.Visible = false;
+            // 
+            // btnBuscarAfiliado
+            // 
+            this.btnBuscarAfiliado.Location = new System.Drawing.Point(200, 45);
+            this.btnBuscarAfiliado.Name = "btnBuscarAfiliado";
+            this.btnBuscarAfiliado.Size = new System.Drawing.Size(71, 23);
+            this.btnBuscarAfiliado.TabIndex = 28;
+            this.btnBuscarAfiliado.Text = "Buscar";
+            this.btnBuscarAfiliado.UseVisualStyleBackColor = true;
+            this.btnBuscarAfiliado.Click += new System.EventHandler(this.btnBuscarAfiliado_Click);
+            // 
+            // lblAfiliado
+            // 
+            this.lblAfiliado.AutoSize = true;
+            this.lblAfiliado.Location = new System.Drawing.Point(20, 50);
+            this.lblAfiliado.Name = "lblAfiliado";
+            this.lblAfiliado.Size = new System.Drawing.Size(56, 13);
+            this.lblAfiliado.TabIndex = 27;
+            this.lblAfiliado.Text = "Afiliado Nº";
+            // 
+            // txtAfiliado
+            // 
+            this.txtAfiliado.Location = new System.Drawing.Point(85, 47);
+            this.txtAfiliado.Name = "txtAfiliado";
+            this.txtAfiliado.Size = new System.Drawing.Size(100, 20);
+            this.txtAfiliado.TabIndex = 26;
+            this.ttp.SetToolTip(this.txtAfiliado, "Ingrese el número del afiliado el cual desea adquirir bonos.");
+            this.txtAfiliado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAfiliado_KeyPress);
+            // 
             // frmCompraBonos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 426);
+            this.ClientSize = new System.Drawing.Size(628, 472);
+            this.Controls.Add(this.gbxAfiliado);
             this.Controls.Add(this.lblAfiliadoNumero);
-            this.Controls.Add(this.lkbAfiliado);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.lklAfiliado);
+            this.Controls.Add(this.gbxPrecio);
+            this.Controls.Add(this.gbxCantidad);
             this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.label1);
             this.Name = "frmCompraBonos";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmCompraBonos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbxCantidad.ResumeLayout(false);
+            this.gbxCantidad.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBonosConsulta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBonosFarmacia)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gbxPrecio.ResumeLayout(false);
+            this.gbxPrecio.PerformLayout();
+            this.gbxAfiliado.ResumeLayout(false);
+            this.gbxAfiliado.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,7 +339,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbxCantidad;
         private System.Windows.Forms.Label lblValorBonoFarmacia;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblValorBonoConsulta;
@@ -265,10 +351,17 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnComprar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gbxPrecio;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel lkbAfiliado;
+        private System.Windows.Forms.LinkLabel lklAfiliado;
         private System.Windows.Forms.Label lblAfiliadoNumero;
+        private System.Windows.Forms.GroupBox gbxAfiliado;
+        private System.Windows.Forms.Label lblBuscarAfiliado;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblAfiliadoInexistente;
+        private System.Windows.Forms.Button btnBuscarAfiliado;
+        private System.Windows.Forms.Label lblAfiliado;
+        private System.Windows.Forms.TextBox txtAfiliado;
     }
 }

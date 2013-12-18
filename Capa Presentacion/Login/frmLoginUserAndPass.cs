@@ -59,7 +59,7 @@ namespace Clinica_Frba.CapaPresentacion
                     {
                         // Cargo el rol
                         this.FormLoginContainer.usuario.planCodigo = (int)dtRoles.Rows[0][0];
-                        this.FormLoginContainer.usuario.rolNombre = dtRoles.Rows[0][1].ToString();
+                        this.FormLoginContainer.usuario.rol = dtRoles.Rows[0][1].ToString();
                         
                         this.lanzarAplicaciones();                     
                     }

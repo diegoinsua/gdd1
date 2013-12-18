@@ -18,7 +18,8 @@ namespace Clinica_Frba.CapaPresentacion
         protected ErrorProvider erp;
         protected ToolTip ttp;
         protected bool huboErrores = false;
-        public Form formularioPadre = null;
+        //public Form formularioPadre = null;
+        public frmClinica formularioClinica = null;
         public Usuario usuario = null;
         protected string tipoABM;
 

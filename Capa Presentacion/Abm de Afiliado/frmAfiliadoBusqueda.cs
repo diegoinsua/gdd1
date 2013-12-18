@@ -32,7 +32,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
             // Si no hubo errores
             if (this.huboErrores == false)
             {
-                Clinica_Frba.CapaDatos.Afiliado aflTDG = new Clinica_Frba.CapaDatos.Afiliado();
+                Clinica_Frba.CapaDatos.AfiliadoTDG aflTDG = new Clinica_Frba.CapaDatos.AfiliadoTDG();
 
                 if (txtApellido.ReadOnly == false)
                     dgvAfiliado.DataSource = aflTDG.getAflByApellido(txtApellido.Text);
@@ -105,7 +105,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
                 if (dr == DialogResult.Yes)
                 {
                     // Elimino el profesional
-                    Clinica_Frba.CapaDatos.Afiliado aflTDG = new Clinica_Frba.CapaDatos.Afiliado();
+                    Clinica_Frba.CapaDatos.AfiliadoTDG aflTDG = new Clinica_Frba.CapaDatos.AfiliadoTDG();
                     aflTDG.delete(apellido);
 
                     // Reseteo el form

@@ -23,7 +23,7 @@ namespace Clinica_Frba.CapaPresentacion
         {
             InitializeComponent();
             usuario = new Usuario();
-            usuario.rolNombre = "Administrador";
+            usuario.rol = "Administrador";
             crearMenu();
         }
 
@@ -33,7 +33,7 @@ namespace Clinica_Frba.CapaPresentacion
         {
             Clinica_Frba.CapaDatos.Menu menuTDG = new Clinica_Frba.CapaDatos.Menu();
 
-            string rol = this.usuario.rolNombre;
+            string rol = this.usuario.rol;
 
             dtMenu = menuTDG.getMenu(rol);
 
@@ -65,8 +65,8 @@ namespace Clinica_Frba.CapaPresentacion
                 // Si el formulario es distinto de null es un botón
                 if (formulario != string.Empty)  
                 {
-                    if (nombreElemento == nombreMenu)   agregarItem(nombreElemento, menuStrip1);  
-                    else agregarItem(nombreElemento, padre);
+                    if (nombreElemento == nombreMenu)   agregarElemento(nombreElemento, menuStrip1);  
+                    else agregarElemento(nombreElemento, padre);
                 
                 }
 
@@ -149,8 +149,9 @@ namespace Clinica_Frba.CapaPresentacion
         
         
                  
-
-          
+        // -----------------------
+        // BUSCAR ELEMENTO    
+        // -----------------------
 
         private ToolStripMenuItem buscarElemento(string nombreElemento, ToolStrip barra) 
         {
@@ -198,7 +199,12 @@ namespace Clinica_Frba.CapaPresentacion
             return elemento;
         }
 
-        // Constuir Item
+
+
+
+        // -----------------------
+        // AGREGAR MENU  
+        // -----------------------
         private ToolStripMenuItem agregarMenu(string textoMenu, MenuStrip barraMenu)
         {
             // Creo un objeto menu
@@ -230,11 +236,15 @@ namespace Clinica_Frba.CapaPresentacion
             return subMenu;
         }
 
-       
 
-       
 
-       
+
+
+
+
+        // -----------------------
+        // BUSCAR PADRE ACTUAL   
+        // -----------------------
 
         private ToolStripMenuItem buscarPadreActual(string elementoBuscado, ToolStripMenuItem elementoMenu)
         {
@@ -256,13 +266,17 @@ namespace Clinica_Frba.CapaPresentacion
         }
 
 
-    
 
 
 
 
-        // Agrega items que tiene como padres a un Menu.
-        private void agregarItem(string nombre, ToolStripMenuItem menu)
+
+        // -----------------------
+        // AGREGAR ELEMENTO    
+        // -----------------------
+
+        // Agrega elementos que tiene como padres a un Menu.
+        private void agregarElemento(string nombre, ToolStripMenuItem menu)
         {
             ToolStripMenuItem subitem = new ToolStripMenuItem(nombre);
          
@@ -275,8 +289,8 @@ namespace Clinica_Frba.CapaPresentacion
 
         }
 
-         // Agrega items que no tienen un menu commo padres
-        private void agregarItem(string nombre, MenuStrip barra)
+         // Agrega elementos que no tienen un menu commo padres
+        private void agregarElemento(string nombre, MenuStrip barra)
         {
             ToolStripMenuItem item = new ToolStripMenuItem(nombre);
         
@@ -290,13 +304,17 @@ namespace Clinica_Frba.CapaPresentacion
         }
 
 
-        // 
+
+        // -----------------------
+        // CONTROLADOR CLICK  
+        // -----------------------
+
         private void Menu1_Click(object sender, EventArgs e)
         {
             // Obtengo el item o subitem seleccionado
             ToolStripMenuItem itemSelect = (ToolStripMenuItem)sender;
 
-            string itemNombre = itemSelect.Text;
+            string elementoNombre = itemSelect.Text;
 
             foreach (DataRow dr in dtMenu.Rows)
             {
@@ -304,7 +322,7 @@ namespace Clinica_Frba.CapaPresentacion
                 string formulario = dr["for_ruta"].ToString().Trim();
                 
                 //  System.Reflection.Assembly ass;
-                if (itemNombre == nombre)
+                if (elementoNombre == nombre)
                 {
 
 
@@ -326,7 +344,7 @@ namespace Clinica_Frba.CapaPresentacion
                    
 
                     frmBase f = (frmBase)o;
-                    f.formularioPadre = this;
+                    f.formularioClinica = this;
                     f.usuario = usuario;
                     f.Text = nombre;
 
@@ -357,6 +375,9 @@ namespace Clinica_Frba.CapaPresentacion
 
 
 
+        // -----------------------
+        // DESELECCIONAR ELEMENTOS   
+        // -----------------------
         private void deseleccionarTodos()
         {
 
@@ -380,6 +401,11 @@ namespace Clinica_Frba.CapaPresentacion
             }
         }
 
+
+
+        // ------------------------
+        // MOSTRAR FORMULARIO HIJO    
+        // ------------------------
 
         public void ShowFormulario(Form form)
         {
