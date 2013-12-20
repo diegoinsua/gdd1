@@ -31,7 +31,8 @@ namespace Clinica_Frba.CapaDatos
 
         // Consulta la DB, obtiene el precio de los bonos para el plan del usuario
         // y setea las propiedades de precios de los bonos farmacia y consulta.
-        public void setPrecios(int codigoPlan)
+        public void 
+            setPrecios(int codigoPlan)
         {
         
             // Creo la cadena SQL
@@ -48,9 +49,12 @@ namespace Clinica_Frba.CapaDatos
             // Ejecuto el Select
             DataTable dt = this.executeQuery(cadenaSQL, parametros);
 
-            precioBonoFarmacia = Decimal.Parse(dt.Rows[0]["PLA_PRECIO_BONO_FARMACIA"].ToString());
-            precioBonoConsulta = Decimal.Parse(dt.Rows[0]["PLA_PRECIO_BONO_CONSULTA"].ToString());
-       
+
+            if (dt.Rows.Count > 0)
+            {
+                precioBonoFarmacia = Decimal.Parse(dt.Rows[0]["PLA_PRECIO_BONO_FARMACIA"].ToString());
+                precioBonoConsulta = Decimal.Parse(dt.Rows[0]["PLA_PRECIO_BONO_CONSULTA"].ToString());
+            }
 
         }
 

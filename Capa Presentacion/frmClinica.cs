@@ -332,15 +332,8 @@ namespace Clinica_Frba.CapaPresentacion
                     object o;
                     // por si hemos seleccionado algo que no es una clase
                     o = Activator.CreateInstance(t);
-
-
-                    
-                    // si no es un formulario, muestro el error y salgo
-                    if (!(o is Form))
-                    {
-                        MessageBox.Show(formulario + ", no es un formulario", "Mostrar formularios");
-                        return;
-                    }
+                                
+                   
                    
 
                     frmBase f = (frmBase)o;

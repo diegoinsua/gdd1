@@ -119,7 +119,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Profesional
                 p.nombres = txtNombre.Text;
                 p.apellido = txtApellido.Text;
                 p.direccion = txtDireccion.Text;
-                p.telefono = txtTelefono.Text;
+                p.telefono = Int32.Parse(txtTelefono.Text);
                 p.mail = txtMail.Text;
                 p.fechaNacimiento = Convert.ToDateTime(mtxFechaNacimiento.Text);
                 p.sexo = cmbSexo.Text.Trim().ToCharArray()[0];

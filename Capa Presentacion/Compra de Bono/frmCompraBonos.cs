@@ -36,6 +36,7 @@ namespace Clinica_Frba.CapaPresentacion.Compra_de_Bono
         // -----------------
         private void frmCompraBonos_Load(object sender, EventArgs e)
         {
+            usuario.rol = "Afiliado";
             if (usuario.rol == "Afiliado")
             {
                 gbxAfiliado.Visible = false;
@@ -45,16 +46,18 @@ namespace Clinica_Frba.CapaPresentacion.Compra_de_Bono
                 gbxPrecio.Location = new Point(18, 58);
                 gbxCantidad.Location = new Point(18, 159);
 
-                this.mostrarPrecios();
-
                 // Si es un afiliado el que comprará el bono ya puedo crear el objeto Bono.
                 bonoTDG = new BonoTDG(usuario);
+
+                this.mostrarPrecios();
+
+       
             }
 
-                        
-            // Seteo los label que informan el valor de los bonos
-            lblValorBonoConsulta.Text = bonoTDG.precioBonoConsulta.ToString();
-            lblValorBonoFarmacia.Text = bonoTDG.precioBonoFarmacia.ToString();
+
+            lblValorBonoConsulta.Text = "";
+            lblValorBonoFarmacia.Text = "";
+           
         }
 
 
@@ -65,8 +68,9 @@ namespace Clinica_Frba.CapaPresentacion.Compra_de_Bono
         // -----------------
         private void mostrarPrecios()
         {
-            lblValorBonoConsulta.Text = bonoTDG.precioBonoConsulta.ToString();
-            lblValorBonoFarmacia.Text = bonoTDG.precioBonoFarmacia.ToString();
+           
+            lblValorBonoConsulta.Text = "$ " + bonoTDG.precioBonoConsulta.ToString() + ".-";
+            lblValorBonoFarmacia.Text = "$ " + bonoTDG.precioBonoFarmacia.ToString() + ".-";
         }
 
 
@@ -138,7 +142,7 @@ namespace Clinica_Frba.CapaPresentacion.Compra_de_Bono
            int afiliado = Int32.Parse(txtAfiliado.Text);
 
             // Si el afiliado existe muestro el precio de los bonos
-           if (afiTDG.setAfiliadoByNro(afiliado) > 0)
+           if (afiTDG.existe)
            {
                if (esAfiliadoActivo(afiTDG.dni))
                {

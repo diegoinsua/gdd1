@@ -29,7 +29,7 @@ namespace Clinica_Frba.CapaDatos
         //------------------------
         // SET AFILIADO BY NUMERO
         //------------------------
-        public void setAfiliadoByNro(int afiliadoNumero) 
+        public DataTable setAfiliadoByNro(int afiliadoNumero) 
         {
 
             string cadenaSQL = "SELECT * " +
@@ -61,7 +61,9 @@ namespace Clinica_Frba.CapaDatos
                 cantConsultas = (int)dt.Rows[0]["AFI_CANTIDAD_CONSULTAS"];
             }
             else
-                existe = false;            
+                existe = false;
+
+            return dt;
    
         }
 

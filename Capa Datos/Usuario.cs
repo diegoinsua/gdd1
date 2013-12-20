@@ -9,21 +9,21 @@ namespace Clinica_Frba.CapaDatos
     public class Usuario : TableDataGateway
     {
         // PROPIEDADES
-        public int      dni; 
-        public string   username; 
-        public string   clave; 
-        public int      intentos; 
-        public bool     habilitado; 
-        public string   tipoDocumento; 
-        public string   nombres; 
-        public string   apellido; 
-        public string   direccion; 
-        public int   telefono; 
-        public string   mail;
+        public int dni;
+        public string username;
+        public string clave;
+        public int intentos;
+        public bool habilitado;
+        public string tipoDocumento;
+        public string nombres;
+        public string apellido;
+        public string direccion;
+        public int telefono;
+        public string mail;
         public DateTime fechaNacimiento;
-        public char     sexo; 
+        public char sexo;
 
-        public string rol = null;  
+        public string rol = null;
         public int planCodigo = 0;
 
         public bool existe = false;
@@ -36,7 +36,7 @@ namespace Clinica_Frba.CapaDatos
         }
 
 
-        public void inicializarUsuario() 
+        public void inicializarUsuario()
         {
             dni = 0;
             nombres = string.Empty;
@@ -45,7 +45,7 @@ namespace Clinica_Frba.CapaDatos
             rol = string.Empty;
         }
 
-        public void setUsuarioByDNI(int dni) 
+        public int setUsuarioByDNI(int dni)
         {
             // Creo la cadena SQL
             //string cadenaSQL = "SELECT * FROM VARIETE_GDD.USUARIO where USU_DNI=@dni AND USU_TIPO_DOCUMENTO=@tipoDocumento";
@@ -56,37 +56,50 @@ namespace Clinica_Frba.CapaDatos
 
             // Agrego los parametros al objeto
             parametros.add("@dni", dni);
-            parametros.add("@tipoDocumento", tipoDocumento);
+            //parametros.add("@tipoDocumento", tipoDocumento);
 
 
 
             // Ejecuto el Select
             DataTable dt = this.executeQuery(cadenaSQL, parametros);
 
-            // Cargo los datos
+
+            // Si la consulta devolvio un usuario
             if (dt.Rows.Count == 1)
             {
                 existe = true;
 
-                dni = (int)dt.Rows[0]["USU_DNI"];
-                username = (string)dt.Rows[0]["USU_USERNAME"];
-                clave = (string)dt.Rows[0]["USU_CLAVE"];
-                intentos = (int)dt.Rows[0]["USU_CANTIDAD_INTENTOS"];
-                habilitado = (bool)dt.Rows[0]["USU_HABILITADO"];
-                tipoDocumento = (string)dt.Rows[0]["USU_TIPO_DOCUMENTO"];
-                nombres = (string)dt.Rows[0]["USU_NOMBRES"];
-                apellido = (string)dt.Rows[0]["USU_APELLIDO"];
-                direccion = (string)dt.Rows[0]["USU_DIRECCION"];
-                telefono = (int)dt.Rows[0]["USU_TELEFONO"];
-                mail = (string)dt.Rows[0]["USU_MAIL"];
-                fechaNacimiento = (DateTime)dt.Rows[0]["USU_FECHA_NACIMIENTO"];
-                sexo = (char)dt.Rows[0]["USU_SEXO"];
+                // Vuelco los datos del dt en los atributos del usuario
+                setUsuario(dt);
             }
             else
                 existe = false;
 
-            
-            
+
+            // Devuelve 0 si no encontro ningun usuario para ese dni.
+            return dt.Rows.Count;
+
+        }
+
+
+
+        private void setUsuario(DataTable dt)
+        {
+            dni = (int)dt.Rows[0]["USU_DNI"];
+            username = (string)dt.Rows[0]["USU_USERNAME"];
+            clave = (string)dt.Rows[0]["USU_CLAVE"];
+            intentos = (int)dt.Rows[0]["USU_CANTIDAD_INTENTOS"];
+            habilitado = (bool)dt.Rows[0]["USU_HABILITADO"];
+            tipoDocumento = (string)dt.Rows[0]["USU_TIPO_DOCUMENTO"];
+            nombres = (string)dt.Rows[0]["USU_NOMBRES"];
+            apellido = (string)dt.Rows[0]["USU_APELLIDO"];
+            direccion = (string)dt.Rows[0]["USU_DIRECCION"];
+            telefono = (int)dt.Rows[0]["USU_TELEFONO"];
+            mail = (string)dt.Rows[0]["USU_MAIL"];
+            fechaNacimiento = (DateTime)dt.Rows[0]["USU_FECHA_NACIMIENTO"];
+            sexo = (char)dt.Rows[0]["USU_SEXO"];
+
         }
     }
+
 }

@@ -38,7 +38,7 @@ namespace Clinica_Frba.CapaPresentacion.Abm_de_Afiliado
                     dgvAfiliado.DataSource = aflTDG.getAflByApellido(txtApellido.Text);
 
                 if (mtxNroAfiliado.ReadOnly == false)
-                    dgvAfiliado.DataSource = aflTDG.getAflByNroAfiliado(mtxNroAfiliado.Text);
+                    dgvAfiliado.DataSource = aflTDG.setAfiliadoByNro(Int32.Parse(mtxNroAfiliado.Text));
 
                 if (mtxDNI.ReadOnly == false)
                     dgvAfiliado.DataSource = aflTDG.getAflByDNI(Convert.ToInt32(mtxDNI.Text));
